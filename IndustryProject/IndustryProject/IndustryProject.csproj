@@ -46,15 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\..\Desktop\FinishedInterface.cs">
+    <Compile Include="FinishedInterface.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\..\..\..\..\Desktop\FinishedInterface.Designer.cs">
+    <Compile Include="FinishedInterface.designer.cs">
       <DependentUpon>FinishedInterface.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="..\..\..\..\..\Desktop\FinishedInterface.resx">
+    <EmbeddedResource Include="FinishedInterface.resx">
       <DependentUpon>FinishedInterface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
