@@ -33,5 +33,15 @@ namespace IndustryProject.Properties {
                 return ((string)(this["dbIndigenousPlaceNamesConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Tyler-PC;Initial Catalog=Login;Integrated Security=True")]
+        public string LoginConnectionString {
+            get {
+                return ((string)(this["LoginConnectionString"]));
+            }
+        }
     }
 }
