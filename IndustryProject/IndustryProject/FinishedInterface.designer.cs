@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.grpSearch = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNewPlace = new System.Windows.Forms.Button();
@@ -536,9 +537,10 @@
             this.ClientSize = new System.Drawing.Size(1681, 1091);
             this.Controls.Add(this.grpNameList);
             this.Controls.Add(this.grpSearch);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Indigenous Interface";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grpSearch.ResumeLayout(false);
             this.grpSearch.PerformLayout();
