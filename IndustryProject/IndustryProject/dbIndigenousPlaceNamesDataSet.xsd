@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dbIndigenousPlaceNamesDataSet" targetNamespace="http://tempuri.org/dbIndigenousPlaceNamesDataSet.xsd" xmlns:mstns="http://tempuri.org/dbIndigenousPlaceNamesDataSet.xsd" xmlns="http://tempuri.org/dbIndigenousPlaceNamesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="dbIndigenousPlaceNamesConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbIndigenousPlaceNamesConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IndustryProject.Properties.Settings.GlobalReference.Default.dbIndigenousPlaceNamesConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Manitoba_MapperTableAdapter" GeneratorDataComponentClassName="Manitoba_MapperTableAdapter" Name="Manitoba_Mapper" UserDataComponentName="Manitoba_MapperTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbIndigenousPlaceNamesConnectionString (Settings)" DbObjectName="dbIndigenousPlaceNames.dbo.Manitoba_Mapper" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [Geographical Name], [Unique National Identifier], [Feature Code], [NTS 250000 Map Sheet], [NTS 50000 Submap Sheet], [LATITUDE Degrees], [LATITUDE Minutes], [LATITUDE Seconds], [LONGITUDE Degrees], [LONGITUDE Minutes], [LONGITUDE Seconds], [Casualty Hometown], [Casualty Regimental Number], [Casualty Rank], [Casualty Surname], [Casualty Given Name(s)], [Casualty Date of Death], [Casualty Regiment], [Casualty Place of Burial], [Feature Type], [Feature Type Description], [Longitude Decimal], [Latitude Decimal] FROM dbo.Manitoba_Mapper</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Geographical Name" DataSetColumn="Geographical Name" />
+              <Mapping SourceColumn="Unique National Identifier" DataSetColumn="Unique National Identifier" />
+              <Mapping SourceColumn="Feature Code" DataSetColumn="Feature Code" />
+              <Mapping SourceColumn="NTS 250000 Map Sheet" DataSetColumn="NTS 250000 Map Sheet" />
+              <Mapping SourceColumn="NTS 50000 Submap Sheet" DataSetColumn="NTS 50000 Submap Sheet" />
+              <Mapping SourceColumn="LATITUDE Degrees" DataSetColumn="LATITUDE Degrees" />
+              <Mapping SourceColumn="LATITUDE Minutes" DataSetColumn="LATITUDE Minutes" />
+              <Mapping SourceColumn="LATITUDE Seconds" DataSetColumn="LATITUDE Seconds" />
+              <Mapping SourceColumn="LONGITUDE Degrees" DataSetColumn="LONGITUDE Degrees" />
+              <Mapping SourceColumn="LONGITUDE Minutes" DataSetColumn="LONGITUDE Minutes" />
+              <Mapping SourceColumn="LONGITUDE Seconds" DataSetColumn="LONGITUDE Seconds" />
+              <Mapping SourceColumn="Casualty Hometown" DataSetColumn="Casualty Hometown" />
+              <Mapping SourceColumn="Casualty Regimental Number" DataSetColumn="Casualty Regimental Number" />
+              <Mapping SourceColumn="Casualty Rank" DataSetColumn="Casualty Rank" />
+              <Mapping SourceColumn="Casualty Surname" DataSetColumn="Casualty Surname" />
+              <Mapping SourceColumn="Casualty Given Name(s)" DataSetColumn="Casualty Given Name(s)" />
+              <Mapping SourceColumn="Casualty Date of Death" DataSetColumn="Casualty Date of Death" />
+              <Mapping SourceColumn="Casualty Regiment" DataSetColumn="Casualty Regiment" />
+              <Mapping SourceColumn="Casualty Place of Burial" DataSetColumn="Casualty Place of Burial" />
+              <Mapping SourceColumn="Feature Type" DataSetColumn="Feature Type" />
+              <Mapping SourceColumn="Feature Type Description" DataSetColumn="Feature Type Description" />
+              <Mapping SourceColumn="Longitude Decimal" DataSetColumn="Longitude Decimal" />
+              <Mapping SourceColumn="Latitude Decimal" DataSetColumn="Latitude Decimal" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dbIndigenousPlaceNamesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dbIndigenousPlaceNamesDataSet" msprop:Generator_UserDSName="dbIndigenousPlaceNamesDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Manitoba_Mapper" msprop:Generator_TableClassName="Manitoba_MapperDataTable" msprop:Generator_TableVarName="tableManitoba_Mapper" msprop:Generator_TablePropName="Manitoba_Mapper" msprop:Generator_RowDeletingName="Manitoba_MapperRowDeleting" msprop:Generator_RowChangingName="Manitoba_MapperRowChanging" msprop:Generator_RowEvHandlerName="Manitoba_MapperRowChangeEventHandler" msprop:Generator_RowDeletedName="Manitoba_MapperRowDeleted" msprop:Generator_UserTableName="Manitoba_Mapper" msprop:Generator_RowChangedName="Manitoba_MapperRowChanged" msprop:Generator_RowEvArgName="Manitoba_MapperRowChangeEvent" msprop:Generator_RowClassName="Manitoba_MapperRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Geographical_x0020_Name" msprop:Generator_ColumnVarNameInTable="columnGeographical_Name" msprop:Generator_ColumnPropNameInRow="Geographical_Name" msprop:Generator_ColumnPropNameInTable="Geographical_NameColumn" msprop:Generator_UserColumnName="Geographical Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Unique_x0020_National_x0020_Identifier" msprop:Generator_ColumnVarNameInTable="columnUnique_National_Identifier" msprop:Generator_ColumnPropNameInRow="Unique_National_Identifier" msprop:Generator_ColumnPropNameInTable="Unique_National_IdentifierColumn" msprop:Generator_UserColumnName="Unique National Identifier" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Feature_x0020_Code" msprop:Generator_ColumnVarNameInTable="columnFeature_Code" msprop:Generator_ColumnPropNameInRow="Feature_Code" msprop:Generator_ColumnPropNameInTable="Feature_CodeColumn" msprop:Generator_UserColumnName="Feature Code" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NTS_x0020_250000_x0020_Map_x0020_Sheet" msprop:Generator_ColumnVarNameInTable="columnNTS_250000_Map_Sheet" msprop:Generator_ColumnPropNameInRow="NTS_250000_Map_Sheet" msprop:Generator_ColumnPropNameInTable="NTS_250000_Map_SheetColumn" msprop:Generator_UserColumnName="NTS 250000 Map Sheet" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NTS_x0020_50000_x0020_Submap_x0020_Sheet" msprop:Generator_ColumnVarNameInTable="columnNTS_50000_Submap_Sheet" msprop:Generator_ColumnPropNameInRow="NTS_50000_Submap_Sheet" msprop:Generator_ColumnPropNameInTable="NTS_50000_Submap_SheetColumn" msprop:Generator_UserColumnName="NTS 50000 Submap Sheet" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LATITUDE_x0020_Degrees" msprop:Generator_ColumnVarNameInTable="columnLATITUDE_Degrees" msprop:Generator_ColumnPropNameInRow="LATITUDE_Degrees" msprop:Generator_ColumnPropNameInTable="LATITUDE_DegreesColumn" msprop:Generator_UserColumnName="LATITUDE Degrees" type="xs:decimal" />
+              <xs:element name="LATITUDE_x0020_Minutes" msprop:Generator_ColumnVarNameInTable="columnLATITUDE_Minutes" msprop:Generator_ColumnPropNameInRow="LATITUDE_Minutes" msprop:Generator_ColumnPropNameInTable="LATITUDE_MinutesColumn" msprop:Generator_UserColumnName="LATITUDE Minutes" type="xs:decimal" />
+              <xs:element name="LATITUDE_x0020_Seconds" msprop:Generator_ColumnVarNameInTable="columnLATITUDE_Seconds" msprop:Generator_ColumnPropNameInRow="LATITUDE_Seconds" msprop:Generator_ColumnPropNameInTable="LATITUDE_SecondsColumn" msprop:Generator_UserColumnName="LATITUDE Seconds" type="xs:decimal" />
+              <xs:element name="LONGITUDE_x0020_Degrees" msprop:Generator_ColumnVarNameInTable="columnLONGITUDE_Degrees" msprop:Generator_ColumnPropNameInRow="LONGITUDE_Degrees" msprop:Generator_ColumnPropNameInTable="LONGITUDE_DegreesColumn" msprop:Generator_UserColumnName="LONGITUDE Degrees" type="xs:decimal" />
+              <xs:element name="LONGITUDE_x0020_Minutes" msprop:Generator_ColumnVarNameInTable="columnLONGITUDE_Minutes" msprop:Generator_ColumnPropNameInRow="LONGITUDE_Minutes" msprop:Generator_ColumnPropNameInTable="LONGITUDE_MinutesColumn" msprop:Generator_UserColumnName="LONGITUDE Minutes" type="xs:decimal" />
+              <xs:element name="LONGITUDE_x0020_Seconds" msprop:Generator_ColumnVarNameInTable="columnLONGITUDE_Seconds" msprop:Generator_ColumnPropNameInRow="LONGITUDE_Seconds" msprop:Generator_ColumnPropNameInTable="LONGITUDE_SecondsColumn" msprop:Generator_UserColumnName="LONGITUDE Seconds" type="xs:decimal" />
+              <xs:element name="Casualty_x0020_Hometown" msprop:Generator_ColumnVarNameInTable="columnCasualty_Hometown" msprop:Generator_ColumnPropNameInRow="Casualty_Hometown" msprop:Generator_ColumnPropNameInTable="Casualty_HometownColumn" msprop:Generator_UserColumnName="Casualty Hometown" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Casualty_x0020_Regimental_x0020_Number" msprop:Generator_ColumnVarNameInTable="columnCasualty_Regimental_Number" msprop:Generator_ColumnPropNameInRow="Casualty_Regimental_Number" msprop:Generator_ColumnPropNameInTable="Casualty_Regimental_NumberColumn" msprop:Generator_UserColumnName="Casualty Regimental Number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Casualty_x0020_Rank" msprop:Generator_ColumnVarNameInTable="columnCasualty_Rank" msprop:Generator_ColumnPropNameInRow="Casualty_Rank" msprop:Generator_ColumnPropNameInTable="Casualty_RankColumn" msprop:Generator_UserColumnName="Casualty Rank" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Casualty_x0020_Surname" msprop:Generator_ColumnVarNameInTable="columnCasualty_Surname" msprop:Generator_ColumnPropNameInRow="Casualty_Surname" msprop:Generator_ColumnPropNameInTable="Casualty_SurnameColumn" msprop:Generator_UserColumnName="Casualty Surname">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Casualty_x0020_Given_x0020_Name_x0028_s_x0029_" msprop:Generator_ColumnVarNameInTable="_columnCasualty_Given_Name_s_" msprop:Generator_ColumnPropNameInRow="_Casualty_Given_Name_s_" msprop:Generator_ColumnPropNameInTable="_Casualty_Given_Name_s_Column" msprop:Generator_UserColumnName="Casualty Given Name(s)">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Casualty_x0020_Date_x0020_of_x0020_Death" msprop:Generator_ColumnVarNameInTable="columnCasualty_Date_of_Death" msprop:Generator_ColumnPropNameInRow="Casualty_Date_of_Death" msprop:Generator_ColumnPropNameInTable="Casualty_Date_of_DeathColumn" msprop:Generator_UserColumnName="Casualty Date of Death" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Casualty_x0020_Regiment" msprop:Generator_ColumnVarNameInTable="columnCasualty_Regiment" msprop:Generator_ColumnPropNameInRow="Casualty_Regiment" msprop:Generator_ColumnPropNameInTable="Casualty_RegimentColumn" msprop:Generator_UserColumnName="Casualty Regiment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Casualty_x0020_Place_x0020_of_x0020_Burial" msprop:Generator_ColumnVarNameInTable="columnCasualty_Place_of_Burial" msprop:Generator_ColumnPropNameInRow="Casualty_Place_of_Burial" msprop:Generator_ColumnPropNameInTable="Casualty_Place_of_BurialColumn" msprop:Generator_UserColumnName="Casualty Place of Burial" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Feature_x0020_Type" msprop:Generator_ColumnVarNameInTable="columnFeature_Type" msprop:Generator_ColumnPropNameInRow="Feature_Type" msprop:Generator_ColumnPropNameInTable="Feature_TypeColumn" msprop:Generator_UserColumnName="Feature Type">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Feature_x0020_Type_x0020_Description" msprop:Generator_ColumnVarNameInTable="columnFeature_Type_Description" msprop:Generator_ColumnPropNameInRow="Feature_Type_Description" msprop:Generator_ColumnPropNameInTable="Feature_Type_DescriptionColumn" msprop:Generator_UserColumnName="Feature Type Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Longitude_x0020_Decimal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLongitude_Decimal" msprop:Generator_ColumnPropNameInRow="Longitude_Decimal" msprop:Generator_ColumnPropNameInTable="Longitude_DecimalColumn" msprop:Generator_UserColumnName="Longitude Decimal" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Latitude_x0020_Decimal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLatitude_Decimal" msprop:Generator_ColumnPropNameInRow="Latitude_Decimal" msprop:Generator_ColumnPropNameInTable="Latitude_DecimalColumn" msprop:Generator_UserColumnName="Latitude Decimal" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

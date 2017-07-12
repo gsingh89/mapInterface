@@ -8,12 +8,15 @@ using System.Data;
 
 namespace IndustryProject
 {
-    class ConnectionClass
+    public static class ConnectionClass
     {
-        public void Initialize()
+        static String conString;
+        static SqlConnection con;
+
+        public static void Initialize()
         {
-            String conString = "Data Source=Localhost;Initial Catalog=dbIndigenousPlaceNames;Integrated Security=True";
-            SqlConnection con = new SqlConnection(conString);
+            conString = "Data Source=Localhost;Initial Catalog=dbIndigenousPlaceNames;Integrated Security=True";
+            con = new SqlConnection(conString);
 
             try
             {
@@ -23,18 +26,21 @@ namespace IndustryProject
             {
                 throw ex;
             }
-
-            SqlCommand cmd = new SqlCommand("SELECT * FROM NAMES JOIN NAME_PLACES ON NAMES.NAME_ID = NAME_PLACES.NAME_ID JOIN PLACES ON NAME_PLACES.PLACE_ID = PLACES.PLACE_ID JOIN MULTIMEDIA_ASSETS ON MULTIMEDIA_ASSETS.PLACE_ID = PLACES.PLACE_ID JOIN FEATURE_TYPES.FEAT_CODE = PLACES.FEAT_CODE", con);
-            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-            DataTable dataTab = new DataTable("dbIndigenousPlaceNames");
-            adapt.Fill(dataTab);
-            con.Close();
-
-            if (dataTab.Rows.Count > 0)
-            {
-                
-            }
         }
 
+        public static DataSet getSQLData(string SQLQueryText)
+        {
+            SqlCommand SQLQuery = new SqlCommand(SQLQueryText, con);
+            SqlDataAdapter adapter = new SqlDataAdapter(SQLQuery);
+            DataSet queryResult = new DataSet();
+            adapter.Fill(queryResult);
+
+            return queryResult;
+        }
+
+        public static void myClose()
+        {
+            con.Close();
+        }
     }
 }
