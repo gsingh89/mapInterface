@@ -19,7 +19,7 @@ namespace IndustryProject
         {            
             SqlConnection con = new SqlConnection();
             // Connection with Login Database
-            con.ConnectionString = "Data Source=Tyler-PC\\SQLEXPRESS;Initial Catalog=Login;Integrated Security=True";
+            con.ConnectionString = "Data Source=Localhost\\SQLEXPRESS;Initial Catalog=dbLogin;Integrated Security=True";
             InitializeComponent();
         }
 
@@ -32,7 +32,7 @@ namespace IndustryProject
         private void btnLogin_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=Tyler-PC\\SQLEXPRESS;Initial Catalog=Login;Integrated Security=True";
+            con.ConnectionString = "Data Source=Localhost\\SQLEXPRESS;Initial Catalog=dbLogin;Integrated Security=True";
             con.Open();
 
             string user = txtUsername.Text;
@@ -63,7 +63,7 @@ namespace IndustryProject
         /// <param name="e"></param>
         private void Login_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=Tyler-PC\\SQLEXPRESS;Initial Catalog=Login;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=Localhost\\SQLEXPRESS;Initial Catalog=dbLogin;Integrated Security=True");
             con.Open();
         }
     }
