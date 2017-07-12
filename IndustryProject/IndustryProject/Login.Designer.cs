@@ -40,7 +40,7 @@
             this.btnLogin.Location = new System.Drawing.Point(59, 130);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 0;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -51,7 +51,7 @@
             this.label1.Location = new System.Drawing.Point(12, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Username: ";
             // 
             // btnPassword
@@ -60,7 +60,7 @@
             this.btnPassword.Location = new System.Drawing.Point(12, 82);
             this.btnPassword.Name = "btnPassword";
             this.btnPassword.Size = new System.Drawing.Size(59, 13);
-            this.btnPassword.TabIndex = 3;
+            this.btnPassword.TabIndex = 5;
             this.btnPassword.Text = "Password: ";
             // 
             // txtUsername
@@ -68,14 +68,15 @@
             this.txtUsername.Location = new System.Drawing.Point(80, 38);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(100, 20);
-            this.txtUsername.TabIndex = 4;
+            this.txtUsername.TabIndex = 0;
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(80, 79);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
-            this.txtPassword.TabIndex = 5;
+            this.txtPassword.TabIndex = 1;
             // 
             // Login
             // 
@@ -89,7 +90,6 @@
             this.Controls.Add(this.btnLogin);
             this.Name = "Login";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

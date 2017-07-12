@@ -1,4 +1,4 @@
-﻿namespace IndustryProject
+﻿    namespace IndustryProject
 {
     partial class Form1
     {
