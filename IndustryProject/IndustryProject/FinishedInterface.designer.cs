@@ -38,7 +38,7 @@
             this.radStatus = new System.Windows.Forms.RadioButton();
             this.radFID = new System.Windows.Forms.RadioButton();
             this.radLocation = new System.Windows.Forms.RadioButton();
-            this.radMS = new System.Windows.Forms.RadioButton();
+            this.radMS250 = new System.Windows.Forms.RadioButton();
             this.radFeature = new System.Windows.Forms.RadioButton();
             this.radName = new System.Windows.Forms.RadioButton();
             this.grpNameList = new System.Windows.Forms.GroupBox();
@@ -75,6 +75,7 @@
             this.cASUALTIESTableAdapter = new IndustryProject.TestDataSetTableAdapters.CASUALTIESTableAdapter();
             this.manitoba_MapperTableAdapter = new IndustryProject.dbIndigenousPlaceNamesDataSetTableAdapters.Manitoba_MapperTableAdapter();
             this.aliasedManitobaTableAdapter = new IndustryProject.dbIndigenousPlaceNamesDataSet1TableAdapters.AliasedManitobaTableAdapter();
+            this.radMS50 = new System.Windows.Forms.RadioButton();
             this.grpSearch.SuspendLayout();
             this.grpNameList.SuspendLayout();
             this.grpGroupName.SuspendLayout();
@@ -90,6 +91,7 @@
             // 
             // grpSearch
             // 
+            this.grpSearch.Controls.Add(this.radMS50);
             this.grpSearch.Controls.Add(this.btnSearch);
             this.grpSearch.Controls.Add(this.btnNewPlace);
             this.grpSearch.Controls.Add(this.txtSearch);
@@ -97,7 +99,7 @@
             this.grpSearch.Controls.Add(this.radStatus);
             this.grpSearch.Controls.Add(this.radFID);
             this.grpSearch.Controls.Add(this.radLocation);
-            this.grpSearch.Controls.Add(this.radMS);
+            this.grpSearch.Controls.Add(this.radMS250);
             this.grpSearch.Controls.Add(this.radFeature);
             this.grpSearch.Controls.Add(this.radName);
             this.grpSearch.Location = new System.Drawing.Point(77, 52);
@@ -152,7 +154,7 @@
             // radStatus
             // 
             this.radStatus.AutoSize = true;
-            this.radStatus.Location = new System.Drawing.Point(1149, 67);
+            this.radStatus.Location = new System.Drawing.Point(1129, 67);
             this.radStatus.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.radStatus.Name = "radStatus";
             this.radStatus.Size = new System.Drawing.Size(133, 36);
@@ -164,7 +166,7 @@
             // radFID
             // 
             this.radFID.AutoSize = true;
-            this.radFID.Location = new System.Drawing.Point(971, 67);
+            this.radFID.Location = new System.Drawing.Point(997, 67);
             this.radFID.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.radFID.Name = "radFID";
             this.radFID.Size = new System.Drawing.Size(96, 36);
@@ -176,7 +178,7 @@
             // radLocation
             // 
             this.radLocation.AutoSize = true;
-            this.radLocation.Location = new System.Drawing.Point(723, 67);
+            this.radLocation.Location = new System.Drawing.Point(800, 67);
             this.radLocation.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.radLocation.Name = "radLocation";
             this.radLocation.Size = new System.Drawing.Size(161, 36);
@@ -185,22 +187,22 @@
             this.radLocation.Text = "Location";
             this.radLocation.UseVisualStyleBackColor = true;
             // 
-            // radMS
+            // radMS250
             // 
-            this.radMS.AutoSize = true;
-            this.radMS.Location = new System.Drawing.Point(504, 67);
-            this.radMS.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.radMS.Name = "radMS";
-            this.radMS.Size = new System.Drawing.Size(125, 36);
-            this.radMS.TabIndex = 2;
-            this.radMS.TabStop = true;
-            this.radMS.Text = "M.S #";
-            this.radMS.UseVisualStyleBackColor = true;
+            this.radMS250.AutoSize = true;
+            this.radMS250.Location = new System.Drawing.Point(424, 67);
+            this.radMS250.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.radMS250.Name = "radMS250";
+            this.radMS250.Size = new System.Drawing.Size(165, 36);
+            this.radMS250.TabIndex = 2;
+            this.radMS250.TabStop = true;
+            this.radMS250.Text = "M.S. 250";
+            this.radMS250.UseVisualStyleBackColor = true;
             // 
             // radFeature
             // 
             this.radFeature.AutoSize = true;
-            this.radFeature.Location = new System.Drawing.Point(283, 67);
+            this.radFeature.Location = new System.Drawing.Point(238, 67);
             this.radFeature.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.radFeature.Name = "radFeature";
             this.radFeature.Size = new System.Drawing.Size(150, 36);
@@ -212,7 +214,7 @@
             // radName
             // 
             this.radName.AutoSize = true;
-            this.radName.Location = new System.Drawing.Point(77, 67);
+            this.radName.Location = new System.Drawing.Point(75, 67);
             this.radName.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.radName.Name = "radName";
             this.radName.Size = new System.Drawing.Size(127, 36);
@@ -529,6 +531,17 @@
             // 
             this.aliasedManitobaTableAdapter.ClearBeforeFill = true;
             // 
+            // radMS50
+            // 
+            this.radMS50.AutoSize = true;
+            this.radMS50.Location = new System.Drawing.Point(620, 67);
+            this.radMS50.Name = "radMS50";
+            this.radMS50.Size = new System.Drawing.Size(149, 36);
+            this.radMS50.TabIndex = 11;
+            this.radMS50.TabStop = true;
+            this.radMS50.Text = "M.S. 50";
+            this.radMS50.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -570,7 +583,7 @@
         private System.Windows.Forms.RadioButton radStatus;
         private System.Windows.Forms.RadioButton radFID;
         private System.Windows.Forms.RadioButton radLocation;
-        private System.Windows.Forms.RadioButton radMS;
+        private System.Windows.Forms.RadioButton radMS250;
         private System.Windows.Forms.RadioButton radFeature;
         private System.Windows.Forms.RadioButton radName;
         private System.Windows.Forms.GroupBox grpNameList;
@@ -607,6 +620,7 @@
         private dbIndigenousPlaceNamesDataSet1 dbIndigenousPlaceNamesDataSet1;
         private System.Windows.Forms.BindingSource aliasedManitobaBindingSource;
         private dbIndigenousPlaceNamesDataSet1TableAdapters.AliasedManitobaTableAdapter aliasedManitobaTableAdapter;
+        private System.Windows.Forms.RadioButton radMS50;
     }
 }
 
