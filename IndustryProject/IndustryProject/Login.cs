@@ -13,7 +13,7 @@ namespace IndustryProject
     public partial class Login : Form
     {
         string username = "admin";
-        string password = "GeoManitoba2017"; public Login()
+        string password = "123"; public Login()
         {
             InitializeComponent();            // Press enter to click button
             this.AcceptButton = this.btnLogin;

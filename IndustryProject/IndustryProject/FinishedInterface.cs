@@ -58,6 +58,7 @@ namespace IndustryProject
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            string enteredName = txtSearch.ToString();
             string basicQuery = @"SELECT NAMES.NAME_ACTUAL AS 'Geographical Name', 
                                 NAME_PLACES.FEATURE_ID AS 'Unique National Identifier', 
                                 PLACES.FEAT_CODE AS 'Feature Code', PLACES.MS250 AS 'NTS 250000 Map Sheet',
@@ -76,7 +77,10 @@ namespace IndustryProject
             
             if (radName.Checked && txtSearch.Text != null)
             {
-                //dgvSearch.DataSource = ConnectionClass.getSQLData(basicQuery."AND NAMES.NAME_ACTUAL" == txtSearch.Text).Tables[0];
+                if ("NAMES.NAME_ACTUAL FROM NAMES" == enteredName)
+                {
+                    dgvSearch.DataSource = ConnectionClass.getSQLData(basicQuery).Tables[0];
+                }
             }
         }
     }
