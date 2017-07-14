@@ -34,20 +34,25 @@ namespace IndustryProject
         {
             ConnectionClass.Initialize();
             // TODO: This line of code loads data into the 'dbIndigenousPlaceNamesDataSet1.AliasedManitoba' table. You can move, or remove it, as needed.
-            this.aliasedManitobaTableAdapter.Fill(this.dbIndigenousPlaceNamesDataSet1.AliasedManitoba);
+            //this.aliasedManitobaTableAdapter.Fill(this.dbIndigenousPlaceNamesDataSet1.AliasedManitoba);
             
             // TODO: This line of code loads data into the 'testDataSet.CASUALTIES' table. You can move, or remove it, as needed.
             this.cASUALTIESTableAdapter.Fill(this.testDataSet.CASUALTIES);
         }
 
         
-
+        /// <summary>
+        /// Enables grid view once search label is changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             if (txtSearch.ToString() != null)
             {
                 grpNameList.Enabled = true;
             }
+            
         }
 
         private void dgvSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -59,7 +64,7 @@ namespace IndustryProject
         private void btnSearch_Click(object sender, EventArgs e)
         {
             //dataGridView1.DataSource = ds.Tables[0];
-            dgvSearch.DataSource = ConnectionClass.getSQLData("SELECT * FROM NAMES JOIN NAME_PLACES ON NAMES.NAME_ID = NAME_PLACES.NAME_ID JOIN PLACES ON PLACES.PLACE_ID = NAME_PLACES.PLACE_ID LEFT JOIN CASUALTIES ON NAMES.CASUALTY_ID = CASUALTIES.CASUALTY_ID LEFT JOIN FEATURE_TYPES ON PLACES.FEAT_CODE = FEATURE_TYPES.FEAT_CODE").Tables[0];
+            dgvSearch.DataSource = ConnectionClass.getSQLData("SELECT NAME_ACTUAL FROM NAMES JOIN NAME_PLACES ON NAMES.NAME_ID = NAME_PLACES.NAME_ID JOIN PLACES ON PLACES.PLACE_ID = NAME_PLACES.PLACE_ID LEFT JOIN CASUALTIES ON NAMES.CASUALTY_ID = CASUALTIES.CASUALTY_ID LEFT JOIN FEATURE_TYPES ON PLACES.FEAT_CODE = FEATURE_TYPES.FEAT_CODE" ).Tables[0];
         }
     }
 }
