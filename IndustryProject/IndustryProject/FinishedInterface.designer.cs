@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.grpSearch = new System.Windows.Forms.GroupBox();
+            this.radMS50 = new System.Windows.Forms.RadioButton();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNewPlace = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -68,14 +69,8 @@
             this.dgvSearch = new System.Windows.Forms.DataGridView();
             this.aliasedManitobaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dbIndigenousPlaceNamesDataSet1 = new IndustryProject.dbIndigenousPlaceNamesDataSet1();
-            this.dbIndigenousPlaceNamesDataSet = new IndustryProject.dbIndigenousPlaceNamesDataSet();
-            this.testDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.testDataSet = new IndustryProject.TestDataSet();
-            this.cASUALTIESBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cASUALTIESTableAdapter = new IndustryProject.TestDataSetTableAdapters.CASUALTIESTableAdapter();
             this.manitoba_MapperTableAdapter = new IndustryProject.dbIndigenousPlaceNamesDataSetTableAdapters.Manitoba_MapperTableAdapter();
             this.aliasedManitobaTableAdapter = new IndustryProject.dbIndigenousPlaceNamesDataSet1TableAdapters.AliasedManitobaTableAdapter();
-            this.radMS50 = new System.Windows.Forms.RadioButton();
             this.grpSearch.SuspendLayout();
             this.grpNameList.SuspendLayout();
             this.grpGroupName.SuspendLayout();
@@ -83,10 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aliasedManitobaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbIndigenousPlaceNamesDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbIndigenousPlaceNamesDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cASUALTIESBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grpSearch
@@ -110,6 +101,17 @@
             this.grpSearch.TabIndex = 1;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search Box";
+            // 
+            // radMS50
+            // 
+            this.radMS50.AutoSize = true;
+            this.radMS50.Location = new System.Drawing.Point(620, 67);
+            this.radMS50.Name = "radMS50";
+            this.radMS50.Size = new System.Drawing.Size(149, 36);
+            this.radMS50.TabIndex = 11;
+            this.radMS50.TabStop = true;
+            this.radMS50.Text = "M.S. 50";
+            this.radMS50.UseVisualStyleBackColor = true;
             // 
             // btnSearch
             // 
@@ -499,30 +501,6 @@
             this.dbIndigenousPlaceNamesDataSet1.DataSetName = "dbIndigenousPlaceNamesDataSet1";
             this.dbIndigenousPlaceNamesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dbIndigenousPlaceNamesDataSet
-            // 
-            this.dbIndigenousPlaceNamesDataSet.DataSetName = "dbIndigenousPlaceNamesDataSet";
-            this.dbIndigenousPlaceNamesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // testDataSetBindingSource
-            // 
-            this.testDataSetBindingSource.DataSource = this.testDataSet;
-            this.testDataSetBindingSource.Position = 0;
-            // 
-            // testDataSet
-            // 
-            this.testDataSet.DataSetName = "TestDataSet";
-            this.testDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // cASUALTIESBindingSource
-            // 
-            this.cASUALTIESBindingSource.DataMember = "CASUALTIES";
-            this.cASUALTIESBindingSource.DataSource = this.testDataSet;
-            // 
-            // cASUALTIESTableAdapter
-            // 
-            this.cASUALTIESTableAdapter.ClearBeforeFill = true;
-            // 
             // manitoba_MapperTableAdapter
             // 
             this.manitoba_MapperTableAdapter.ClearBeforeFill = true;
@@ -530,17 +508,6 @@
             // aliasedManitobaTableAdapter
             // 
             this.aliasedManitobaTableAdapter.ClearBeforeFill = true;
-            // 
-            // radMS50
-            // 
-            this.radMS50.AutoSize = true;
-            this.radMS50.Location = new System.Drawing.Point(620, 67);
-            this.radMS50.Name = "radMS50";
-            this.radMS50.Size = new System.Drawing.Size(149, 36);
-            this.radMS50.TabIndex = 11;
-            this.radMS50.TabStop = true;
-            this.radMS50.Text = "M.S. 50";
-            this.radMS50.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -565,10 +532,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aliasedManitobaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dbIndigenousPlaceNamesDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbIndigenousPlaceNamesDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.testDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cASUALTIESBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -611,11 +574,6 @@
         private System.Windows.Forms.CheckBox chkCasualty;
         private System.Windows.Forms.Label lbltext;
         private System.Windows.Forms.DataGridView dgvSearch;
-        private TestDataSet testDataSet;
-        private System.Windows.Forms.BindingSource cASUALTIESBindingSource;
-        private TestDataSetTableAdapters.CASUALTIESTableAdapter cASUALTIESTableAdapter;
-        private System.Windows.Forms.BindingSource testDataSetBindingSource;
-        private dbIndigenousPlaceNamesDataSet dbIndigenousPlaceNamesDataSet;
         private dbIndigenousPlaceNamesDataSetTableAdapters.Manitoba_MapperTableAdapter manitoba_MapperTableAdapter;
         private dbIndigenousPlaceNamesDataSet1 dbIndigenousPlaceNamesDataSet1;
         private System.Windows.Forms.BindingSource aliasedManitobaBindingSource;
