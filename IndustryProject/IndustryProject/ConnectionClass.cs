@@ -33,7 +33,7 @@ namespace IndustryProject
             SqlCommand SQLQuery = new SqlCommand(SQLQueryText, con);
             SqlDataAdapter adapter = new SqlDataAdapter(SQLQuery);
             DataSet queryResult = new DataSet();
-            //adapter.Fill(queryResult);
+            adapter.Fill(queryResult);
 
             return queryResult;
         }

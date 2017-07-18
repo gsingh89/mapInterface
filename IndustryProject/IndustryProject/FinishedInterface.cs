@@ -63,8 +63,9 @@ namespace IndustryProject
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //dataGridView1.DataSource = ds.Tables[0];
-            dgvSearch.DataSource = ConnectionClass.getSQLData("SELECT * FROM NAMES JOIN NAME_PLACES ON NAMES.NAME_ID = NAME_PLACES.NAME_ID JOIN PLACES ON PLACES.PLACE_ID = NAME_PLACES.PLACE_ID LEFT JOIN CASUALTIES ON NAMES.CASUALTY_ID = CASUALTIES.CASUALTY_ID LEFT JOIN FEATURE_TYPES ON PLACES.FEAT_CODE = FEATURE_TYPES.FEAT_CODE").Tables[0];
+
+           string enteredName = txtSearch.Text;
+
         }
     }
 }
