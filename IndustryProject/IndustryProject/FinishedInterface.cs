@@ -105,12 +105,43 @@ namespace IndustryProject
                 basicQuery += " WHERE NAMES.NAME_ACTUAL = @name";
                 ConnectionClass.AddParam("name", enteredName);
             }
-            //else if ()
-            //{ 
-                //basicQuery += " WHERE NAMES.NAME_ACTUAL = @name";
-                //ConnectionClass.AddParam("name", enteredName);
+
+            else if (radFID.Checked && !String.IsNullOrWhiteSpace(enteredName))
+            {
+                basicQuery += " WHERE NAME_PLACES.FEATURE_ID = @ident";
+                ConnectionClass.AddParam("ident", enteredName);
+            }
+
+            else if (radFeature.Checked && !String.IsNullOrWhiteSpace(enteredName))
+            {
+                basicQuery += " WHERE FEATURE_TYPES.FEAT_TYPE = @feattype";
+                ConnectionClass.AddParam("feattype", enteredName);
+            }
+
+            else if (radMS250.Checked && !String.IsNullOrWhiteSpace(enteredName))
+            {
+                basicQuery += " WHERE PLACES.MS250 = @ms250";
+                ConnectionClass.AddParam("ms250", enteredName);
+            }
+
+            else if (radMS50.Checked && !String.IsNullOrWhiteSpace(enteredName))
+            {
+                basicQuery += " WHERE PLACES.MS50 = @ms50";
+                ConnectionClass.AddParam("ms50", enteredName);
+            }
+
+            //else if (radLocation.Checked && !String.IsNullOrWhiteSpace(enteredName))
+            //{
+            //    basicQuery += @" WHERE PLACES.LAT_DEG PLACES.LAT_MIN PLACES.LAT_SEC
+            //                  PLACES.LONG_DEG PLACES.LONG_MIN PLACES.LONG_SEC = @coordinates";
+            //    ConnectionClass.AddParam("coordinates", enteredName);
             //}
 
+            else if (radStatus.Checked && !String.IsNullOrWhiteSpace(enteredName))
+            {
+                basicQuery += " WHERE NAME_PLACES.STATUS_CODE = @statuscode";
+                ConnectionClass.AddParam("statuscode", enteredName);
+            }
             dgvSearch.DataSource = ConnectionClass.getSQLData(basicQuery).Tables[0];
         }
     }
