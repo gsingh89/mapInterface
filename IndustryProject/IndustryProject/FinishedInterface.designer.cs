@@ -269,74 +269,82 @@
             // lbl50
             // 
             this.lbl50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl50.Location = new System.Drawing.Point(584, 382);
+            this.lbl50.Location = new System.Drawing.Point(546, 382);
             this.lbl50.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lbl50.Name = "lbl50";
             this.lbl50.Size = new System.Drawing.Size(77, 50);
             this.lbl50.TabIndex = 26;
+            this.lbl50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl250
             // 
             this.lbl250.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl250.Location = new System.Drawing.Point(376, 382);
+            this.lbl250.Location = new System.Drawing.Point(358, 382);
             this.lbl250.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lbl250.Name = "lbl250";
             this.lbl250.Size = new System.Drawing.Size(77, 50);
             this.lbl250.TabIndex = 25;
+            this.lbl250.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLongitudeSecond
             // 
             this.lblLongitudeSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLongitudeSecond.Location = new System.Drawing.Point(424, 258);
+            this.lblLongitudeSecond.Location = new System.Drawing.Point(418, 258);
             this.lblLongitudeSecond.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblLongitudeSecond.Name = "lblLongitudeSecond";
-            this.lblLongitudeSecond.Size = new System.Drawing.Size(77, 50);
+            this.lblLongitudeSecond.Size = new System.Drawing.Size(117, 50);
             this.lblLongitudeSecond.TabIndex = 23;
+            this.lblLongitudeSecond.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLongitudeMinute
             // 
             this.lblLongitudeMinute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLongitudeMinute.Location = new System.Drawing.Point(328, 258);
+            this.lblLongitudeMinute.Location = new System.Drawing.Point(325, 258);
             this.lblLongitudeMinute.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblLongitudeMinute.Name = "lblLongitudeMinute";
             this.lblLongitudeMinute.Size = new System.Drawing.Size(77, 50);
             this.lblLongitudeMinute.TabIndex = 22;
+            this.lblLongitudeMinute.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLongitudeDegree
             // 
             this.lblLongitudeDegree.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLongitudeDegree.Location = new System.Drawing.Point(232, 258);
+            this.lblLongitudeDegree.Location = new System.Drawing.Point(219, 258);
             this.lblLongitudeDegree.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblLongitudeDegree.Name = "lblLongitudeDegree";
             this.lblLongitudeDegree.Size = new System.Drawing.Size(77, 50);
             this.lblLongitudeDegree.TabIndex = 21;
+            this.lblLongitudeDegree.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLatitudeSecond
             // 
             this.lblLatitudeSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLatitudeSecond.Location = new System.Drawing.Point(424, 162);
+            this.lblLatitudeSecond.Location = new System.Drawing.Point(418, 160);
             this.lblLatitudeSecond.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblLatitudeSecond.Name = "lblLatitudeSecond";
-            this.lblLatitudeSecond.Size = new System.Drawing.Size(77, 50);
+            this.lblLatitudeSecond.Size = new System.Drawing.Size(117, 50);
             this.lblLatitudeSecond.TabIndex = 20;
+            this.lblLatitudeSecond.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLatitudeMinute
             // 
             this.lblLatitudeMinute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLatitudeMinute.Location = new System.Drawing.Point(328, 162);
+            this.lblLatitudeMinute.Location = new System.Drawing.Point(325, 160);
             this.lblLatitudeMinute.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblLatitudeMinute.Name = "lblLatitudeMinute";
             this.lblLatitudeMinute.Size = new System.Drawing.Size(77, 50);
             this.lblLatitudeMinute.TabIndex = 19;
+            this.lblLatitudeMinute.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLatitudeDegree
             // 
             this.lblLatitudeDegree.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLatitudeDegree.Location = new System.Drawing.Point(232, 160);
+            this.lblLatitudeDegree.Location = new System.Drawing.Point(219, 160);
             this.lblLatitudeDegree.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblLatitudeDegree.Name = "lblLatitudeDegree";
             this.lblLatitudeDegree.Size = new System.Drawing.Size(77, 50);
             this.lblLatitudeDegree.TabIndex = 18;
+            this.lblLatitudeDegree.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnNameHistory
             // 
@@ -379,7 +387,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(80, 260);
+            this.label5.Location = new System.Drawing.Point(43, 258);
             this.label5.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(157, 32);
@@ -389,7 +397,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(80, 162);
+            this.label4.Location = new System.Drawing.Point(67, 160);
             this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 32);
@@ -438,8 +446,9 @@
             this.lblFID.Location = new System.Drawing.Point(99, 541);
             this.lblFID.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblFID.Name = "lblFID";
-            this.lblFID.Size = new System.Drawing.Size(127, 52);
+            this.lblFID.Size = new System.Drawing.Size(170, 52);
             this.lblFID.TabIndex = 17;
+            this.lblFID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cboStatus
             // 
@@ -487,9 +496,10 @@
             this.dgvSearch.Location = new System.Drawing.Point(16, 129);
             this.dgvSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.dgvSearch.Name = "dgvSearch";
+            this.dgvSearch.RowHeadersVisible = false;
             this.dgvSearch.Size = new System.Drawing.Size(701, 358);
             this.dgvSearch.TabIndex = 0;
-            this.dgvSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearch_CellContentClick);
+            this.dgvSearch.SelectionChanged += new System.EventHandler(this.dgvSearch_SelectionChanged);
             // 
             // aliasedManitobaBindingSource
             // 
@@ -514,7 +524,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1681, 1091);
+            this.ClientSize = new System.Drawing.Size(1681, 1167);
             this.Controls.Add(this.grpNameList);
             this.Controls.Add(this.grpSearch);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
