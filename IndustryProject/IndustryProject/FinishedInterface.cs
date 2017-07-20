@@ -13,8 +13,7 @@ namespace IndustryProject
 {
     public partial class Form1 : Form
     {
-        //ObjectQuery <dbIndigenousPlaceNamesDataSet1> basicQuery = new ObjectQuery <dbIndigenousPlaceNamesDataSet1>(basicQuery, Context);
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -35,8 +34,6 @@ namespace IndustryProject
         private void Form1_Load(object sender, EventArgs e)
         {
             ConnectionClass.Initialize();
-            // TODO: This line of code loads data into the 'dbIndigenousPlaceNamesDataSet1.AliasedManitoba' table. You can move, or remove it, as needed.
-            this.aliasedManitobaTableAdapter.Fill(this.dbIndigenousPlaceNamesDataSet1.AliasedManitoba);
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
