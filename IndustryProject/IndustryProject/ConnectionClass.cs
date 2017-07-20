@@ -30,7 +30,7 @@ namespace IndustryProject
             }
         }
 
-        public static void AddParam(string paramName, object paramValue)
+        public static void AddParam(string paramName, string paramValue)
         {
             SqlParameter newParameter = new SqlParameter(paramName, paramValue);
             parameters.Add(newParameter);
@@ -52,6 +52,7 @@ namespace IndustryProject
 
             SqlDataAdapter adapter = new SqlDataAdapter(SQLQuery);
             DataSet queryResult = new DataSet();
+            
             adapter.Fill(queryResult);
             ClearParameters();
 

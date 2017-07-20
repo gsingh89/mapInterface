@@ -47,18 +47,14 @@ namespace IndustryProject
             }
         }
 
-        private void dgvSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //dataGridView1.DataSource = ds.Tables[0];
-            //dgvSearch.DataSource = ConnectionClass.getSQLData("SELECT * FROM NAMES").Tables[0];
-        }
-
+        
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string enteredName = txtSearch.Text;
 
             string basicQuery = @"SELECT NAMES.NAME_ACTUAL AS 'Geographical Name', 
-                        NAME_PLACES.FEATURE_ID AS 'Unique National Identifier', 
+                        NAME_PLACES.FEATURE_ID AS 'Unique National Identifier',
+                        NAME_PLACES.STATUS_CODE AS 'Status', NAMES.CASUALTY AS 'Casualty',
                         PLACES.FEAT_CODE AS 'Feature Code', PLACES.MS250 AS 'NTS 250000 Map Sheet',
                         PLACES.MS50 AS 'NTS 50000 Submap Sheet', PLACES.LAT_DEG AS 'LATITUDE Degrees',
                         PLACES.LAT_MIN AS 'LATITUDE Minutes', PLACES.LAT_SEC AS 'LATITUDE Seconds',
@@ -75,7 +71,7 @@ namespace IndustryProject
 
             if (radName.Checked && !String.IsNullOrWhiteSpace(enteredName))
             {
-                basicQuery += " WHERE NAMES.NAME_ACTUAL = @name";
+                basicQuery += " WHERE NAMES.NAME_ACTUAL LIKE @name + '%'";
                 ConnectionClass.AddParam("name", enteredName);
             }
 
@@ -99,7 +95,7 @@ namespace IndustryProject
 
             else if (radMS50.Checked && !String.IsNullOrWhiteSpace(enteredName))
             {
-                basicQuery += " WHERE PLACES.MS50 = @ms50";
+                basicQuery += " WHERE PLACES.MS50 = @ms50 ";
                 ConnectionClass.AddParam("ms50", enteredName);
             }
 
@@ -116,6 +112,33 @@ namespace IndustryProject
                 ConnectionClass.AddParam("statuscode", enteredName);
             }
             dgvSearch.DataSource = ConnectionClass.getSQLData(basicQuery).Tables[0];
+
+            for (int i = 1; i < dgvSearch.ColumnCount; i++)
+            {
+                dgvSearch.Columns[i].Visible = false;
+            }
+
+            dgvSearch.Columns[0].Width = dgvSearch.Width;
+        }
+
+        private void dgvSearch_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (dgvSearch.CurrentRow.Cells["Status"].Value.ToString().Equals(1))
+            {
+                chkCasualty.Checked = true;
+            }
+
+            lblFID.Text = dgvSearch.CurrentRow.Cells["Unique National Identifier"].Value.ToString();
+            lblLatitudeDegree.Text = dgvSearch.CurrentRow.Cells["LATITUDE Degrees"].Value.ToString();
+            lblLatitudeMinute.Text = dgvSearch.CurrentRow.Cells["LATITUDE Minutes"].Value.ToString();
+            lblLatitudeSecond.Text = dgvSearch.CurrentRow.Cells["LATITUDE Seconds"].Value.ToString();
+            lblLongitudeDegree.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Degrees"].Value.ToString();
+            lblLongitudeMinute.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Minutes"].Value.ToString();
+            lblLongitudeSecond.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Seconds"].Value.ToString();
+            lbl250.Text = dgvSearch.CurrentRow.Cells["NTS 250000 Map Sheet"].Value.ToString();
+            lbl50.Text = dgvSearch.CurrentRow.Cells["NTS 50000 Submap Sheet"].Value.ToString();
+
         }
     }
 }
