@@ -48,7 +48,7 @@ namespace IndustryProject
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string enteredName = txtSearch.Text;
-            
+
             string basicQuery = @"SELECT NAMES.NAME_ACTUAL AS 'Geographical Name', 
                         NAME_PLACES.FEATURE_ID AS 'Unique National Identifier',
                         NAME_PLACES.STATUS_CODE AS 'Status', NAMES.CASUALTY AS 'Casualty',
