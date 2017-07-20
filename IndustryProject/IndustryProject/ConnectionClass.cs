@@ -12,9 +12,11 @@ namespace IndustryProject
     {
         static String conString;
         static SqlConnection con;
+        static List<SqlParameter> parameters;
 
         public static void Initialize()
         {
+            parameters = new List<SqlParameter>();
             conString = "Data Source=Localhost;Initial Catalog=dbIndigenousPlaceNames;Integrated Security=True";
             con = new SqlConnection(conString);
 
@@ -28,12 +30,31 @@ namespace IndustryProject
             }
         }
 
+        public static void AddParam(string paramName, string paramValue)
+        {
+            SqlParameter newParameter = new SqlParameter(paramName, paramValue);
+            parameters.Add(newParameter);
+        }
+
+        public static void ClearParameters()
+        {
+            parameters = new List<SqlParameter>();
+        }
+
         public static DataSet getSQLData(string SQLQueryText)
         {
             SqlCommand SQLQuery = new SqlCommand(SQLQueryText, con);
+
+            foreach (var param in parameters)
+            {
+                SQLQuery.Parameters.Add(param);
+            }
+
             SqlDataAdapter adapter = new SqlDataAdapter(SQLQuery);
             DataSet queryResult = new DataSet();
+            
             adapter.Fill(queryResult);
+            ClearParameters();
 
             return queryResult;
         }
