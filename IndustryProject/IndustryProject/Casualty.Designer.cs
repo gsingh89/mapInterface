@@ -280,7 +280,7 @@
             this.Controls.Add(this.grpCasualty);
             this.Name = "frmCasualty";
             this.Text = "Casualty";
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Load += new System.EventHandler(this.Casualty_Load);
             this.grpCasualty.ResumeLayout(false);
             this.grpDetails.ResumeLayout(false);
             this.grpDetails.PerformLayout();

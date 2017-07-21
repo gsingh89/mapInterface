@@ -17,7 +17,7 @@ namespace IndustryProject
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void Casualty_Load(object sender, EventArgs e)
         {
 
         }

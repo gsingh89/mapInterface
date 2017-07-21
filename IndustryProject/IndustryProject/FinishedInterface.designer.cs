@@ -67,11 +67,15 @@
             this.lbltext = new System.Windows.Forms.Label();
             this.dgvSearch = new System.Windows.Forms.DataGridView();
             this.manitoba_MapperTableAdapter = new IndustryProject.dbIndigenousPlaceNamesDataSetTableAdapters.Manitoba_MapperTableAdapter();
+            this.msMenuTool = new System.Windows.Forms.MenuStrip();
+            this.msFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.msExit = new System.Windows.Forms.ToolStripMenuItem();
             this.grpSearch.SuspendLayout();
             this.grpNameList.SuspendLayout();
             this.grpGroupName.SuspendLayout();
             this.grpSearchBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
+            this.msMenuTool.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpSearch
@@ -87,7 +91,7 @@
             this.grpSearch.Controls.Add(this.radMS250);
             this.grpSearch.Controls.Add(this.radFeature);
             this.grpSearch.Controls.Add(this.radName);
-            this.grpSearch.Location = new System.Drawing.Point(29, 22);
+            this.grpSearch.Location = new System.Drawing.Point(29, 27);
             this.grpSearch.Name = "grpSearch";
             this.grpSearch.Size = new System.Drawing.Size(539, 145);
             this.grpSearch.TabIndex = 1;
@@ -98,7 +102,7 @@
             // 
             this.radMS50.AutoSize = true;
             this.radMS50.Location = new System.Drawing.Point(232, 28);
-            this.radMS50.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.radMS50.Margin = new System.Windows.Forms.Padding(1);
             this.radMS50.Name = "radMS50";
             this.radMS50.Size = new System.Drawing.Size(62, 17);
             this.radMS50.TabIndex = 11;
@@ -460,15 +464,42 @@
             // 
             this.manitoba_MapperTableAdapter.ClearBeforeFill = true;
             // 
+            // msMenuTool
+            // 
+            this.msMenuTool.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msFile});
+            this.msMenuTool.Location = new System.Drawing.Point(0, 0);
+            this.msMenuTool.Name = "msMenuTool";
+            this.msMenuTool.Size = new System.Drawing.Size(626, 24);
+            this.msMenuTool.TabIndex = 3;
+            this.msMenuTool.Text = "menuStrip1";
+            // 
+            // msFile
+            // 
+            this.msFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.msExit});
+            this.msFile.Name = "msFile";
+            this.msFile.Size = new System.Drawing.Size(37, 20);
+            this.msFile.Text = "File";
+            // 
+            // msExit
+            // 
+            this.msExit.Name = "msExit";
+            this.msExit.Size = new System.Drawing.Size(152, 22);
+            this.msExit.Text = "Exit";
+            this.msExit.Click += new System.EventHandler(this.msExit_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(511, 311);
+            this.ClientSize = new System.Drawing.Size(626, 492);
             this.Controls.Add(this.grpNameList);
             this.Controls.Add(this.grpSearch);
+            this.Controls.Add(this.msMenuTool);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.msMenuTool;
             this.Name = "Form1";
             this.Text = "Indigenous Interface";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -480,7 +511,10 @@
             this.grpSearchBottom.ResumeLayout(false);
             this.grpSearchBottom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
+            this.msMenuTool.ResumeLayout(false);
+            this.msMenuTool.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -524,6 +558,9 @@
         private System.Windows.Forms.DataGridView dgvSearch;
         private dbIndigenousPlaceNamesDataSetTableAdapters.Manitoba_MapperTableAdapter manitoba_MapperTableAdapter;
         private System.Windows.Forms.RadioButton radMS50;
+        private System.Windows.Forms.MenuStrip msMenuTool;
+        private System.Windows.Forms.ToolStripMenuItem msFile;
+        private System.Windows.Forms.ToolStripMenuItem msExit;
     }
 }
 
