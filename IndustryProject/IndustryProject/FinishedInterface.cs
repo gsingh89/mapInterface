@@ -13,10 +13,12 @@ namespace IndustryProject
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(f_FormClosed);
+
         }
 
         private void f_FormClosed(object sender, FormClosingEventArgs e)
@@ -42,10 +44,10 @@ namespace IndustryProject
             }
         }
 
+        
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string enteredName = txtSearch.Text;
-            string sideQuery;
 
             string basicQuery = @"SELECT NAMES.NAME_ACTUAL AS 'Geographical Name', 
                         NAME_PLACES.FEATURE_ID AS 'Unique National Identifier',
@@ -64,26 +66,7 @@ namespace IndustryProject
                         ON PLACES.PLACE_ID = NAME_PLACES.PLACE_ID LEFT JOIN CASUALTIES ON NAMES.CASUALTY_ID = CASUALTIES.CASUALTY_ID
                         LEFT JOIN FEATURE_TYPES ON PLACES.FEAT_CODE = FEATURE_TYPES.FEAT_CODE ";
 
-            if (radMaps.Checked)
-            {
-                radMS250.Visible = true;
-                radMS50.Visible = true;
-
-                //if (radMS250.Checked && !String.IsNullOrWhiteSpace(enteredName))
-                //{
-                //    basicQuery += " WHERE PLACES.MS250 = @ms250 ";
-                //    sideQuery = basicQuery;
-                //    ConnectionClass.AddParam("ms250", enteredName);
-                //}
-
-                //if (radMS50.Checked && !String.IsNullOrWhiteSpace(enteredName))
-                //{
-                //    basicQuery += " WHERE PLACES.MS50 = @ms50 ";
-                //    ConnectionClass.AddParam("ms50", enteredName);
-                //}
-            }
-
-            else if (radName.Checked && !String.IsNullOrWhiteSpace(enteredName))
+            if (radName.Checked && !String.IsNullOrWhiteSpace(enteredName))
             {
                 basicQuery += " WHERE NAMES.NAME_ACTUAL LIKE @name + '%'";
                 ConnectionClass.AddParam("name", enteredName);
@@ -101,6 +84,17 @@ namespace IndustryProject
                 ConnectionClass.AddParam("feattype", enteredName);
             }
 
+            else if (radMS250.Checked && !String.IsNullOrWhiteSpace(enteredName))
+            {
+                basicQuery += " WHERE PLACES.MS250 = @ms250";
+                ConnectionClass.AddParam("ms250", enteredName);
+            }
+
+            else if (radMS50.Checked && !String.IsNullOrWhiteSpace(enteredName))
+            {
+                basicQuery += " WHERE PLACES.MS50 = @ms50 ";
+                ConnectionClass.AddParam("ms50", enteredName);
+            }
 
             //else if (radLocation.Checked && !String.IsNullOrWhiteSpace(enteredName))
             //{
@@ -114,7 +108,6 @@ namespace IndustryProject
                 basicQuery += " WHERE NAME_PLACES.STATUS_CODE = @statuscode";
                 ConnectionClass.AddParam("statuscode", enteredName);
             }
-
             dgvSearch.DataSource = ConnectionClass.getSQLData(basicQuery).Tables[0];
 
             for (int i = 1; i < dgvSearch.ColumnCount; i++)
@@ -127,7 +120,11 @@ namespace IndustryProject
 
         private void dgvSearch_SelectionChanged(object sender, EventArgs e)
         {
-            UpdateCasualtyCheckBox();
+
+            if (dgvSearch.CurrentRow.Cells["Status"].Value.ToString().Equals(1))
+            {
+                chkCasualty.Checked = true;
+            }
 
             lblFID.Text = dgvSearch.CurrentRow.Cells["Unique National Identifier"].Value.ToString();
             lblLatitudeDegree.Text = dgvSearch.CurrentRow.Cells["LATITUDE Degrees"].Value.ToString();
@@ -139,23 +136,6 @@ namespace IndustryProject
             lbl250.Text = dgvSearch.CurrentRow.Cells["NTS 250000 Map Sheet"].Value.ToString();
             lbl50.Text = dgvSearch.CurrentRow.Cells["NTS 50000 Submap Sheet"].Value.ToString();
 
-        }
-
-        private void UpdateCasualtyCheckBox()
-        {
-            if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Casualty Given Name"].Value.ToString()))
-            {
-                chkCasualty.Checked = false;
-            }
-            else
-            {
-                chkCasualty.Checked = true;
-            }
-        }
-
-        private void ChkCasualty_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateCasualtyCheckBox();
         }
     }
 }
