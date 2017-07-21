@@ -13,8 +13,7 @@ namespace IndustryProject
 {
     public partial class Form1 : Form
     {
-        //ObjectQuery <dbIndigenousPlaceNamesDataSet1> basicQuery = new ObjectQuery <dbIndigenousPlaceNamesDataSet1>(basicQuery, Context);
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -35,8 +34,7 @@ namespace IndustryProject
         private void Form1_Load(object sender, EventArgs e)
         {
             ConnectionClass.Initialize();
-            // TODO: This line of code loads data into the 'dbIndigenousPlaceNamesDataSet1.AliasedManitoba' table. You can move, or remove it, as needed.
-            this.aliasedManitobaTableAdapter.Fill(this.dbIndigenousPlaceNamesDataSet1.AliasedManitoba);
+            
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -81,10 +79,15 @@ namespace IndustryProject
                 ConnectionClass.AddParam("ident", enteredName);
             }
 
-            else if (radFeature.Checked && !String.IsNullOrWhiteSpace(enteredName))
+            else if (radFeature.Checked)
             {
-                basicQuery += " WHERE FEATURE_TYPES.FEAT_TYPE = @feattype";
-                ConnectionClass.AddParam("feattype", enteredName);
+                txtSearch.Visible = false;
+
+                //cboFeatureSearch.Visible = true;
+                //cboFeatureSearch.Focus();
+
+                //basicQuery += " WHERE FEATURE_TYPES.FEAT_TYPE = @feattype";
+                //ConnectionClass.AddParam("feattype", enteredName);
             }
 
             else if (radMS250.Checked && !String.IsNullOrWhiteSpace(enteredName))
@@ -139,6 +142,25 @@ namespace IndustryProject
             lbl250.Text = dgvSearch.CurrentRow.Cells["NTS 250000 Map Sheet"].Value.ToString();
             lbl50.Text = dgvSearch.CurrentRow.Cells["NTS 50000 Submap Sheet"].Value.ToString();
 
+        }
+
+        /// <summary>
+        /// Closes the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msExit_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Exit Application", "Are you sure?", MessageBoxButtons.YesNo);
+            if(dialogResult == DialogResult.Yes)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else if(dialogResult == DialogResult.No)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
         }
     }
 }
