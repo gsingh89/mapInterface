@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.grpSearch = new System.Windows.Forms.GroupBox();
-            this.radMS50 = new System.Windows.Forms.RadioButton();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNewPlace = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -39,7 +37,7 @@
             this.radStatus = new System.Windows.Forms.RadioButton();
             this.radFID = new System.Windows.Forms.RadioButton();
             this.radLocation = new System.Windows.Forms.RadioButton();
-            this.radMS250 = new System.Windows.Forms.RadioButton();
+            this.radMaps = new System.Windows.Forms.RadioButton();
             this.radFeature = new System.Windows.Forms.RadioButton();
             this.radName = new System.Windows.Forms.RadioButton();
             this.grpNameList = new System.Windows.Forms.GroupBox();
@@ -67,22 +65,20 @@
             this.chkCasualty = new System.Windows.Forms.CheckBox();
             this.lbltext = new System.Windows.Forms.Label();
             this.dgvSearch = new System.Windows.Forms.DataGridView();
-            this.aliasedManitobaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dbIndigenousPlaceNamesDataSet1 = new IndustryProject.dbIndigenousPlaceNamesDataSet1();
             this.manitoba_MapperTableAdapter = new IndustryProject.dbIndigenousPlaceNamesDataSetTableAdapters.Manitoba_MapperTableAdapter();
-            this.aliasedManitobaTableAdapter = new IndustryProject.dbIndigenousPlaceNamesDataSet1TableAdapters.AliasedManitobaTableAdapter();
+            this.radMS250 = new System.Windows.Forms.RadioButton();
+            this.radMS50 = new System.Windows.Forms.RadioButton();
             this.grpSearch.SuspendLayout();
             this.grpNameList.SuspendLayout();
             this.grpGroupName.SuspendLayout();
             this.grpSearchBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aliasedManitobaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbIndigenousPlaceNamesDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpSearch
             // 
             this.grpSearch.Controls.Add(this.radMS50);
+            this.grpSearch.Controls.Add(this.radMS250);
             this.grpSearch.Controls.Add(this.btnSearch);
             this.grpSearch.Controls.Add(this.btnNewPlace);
             this.grpSearch.Controls.Add(this.txtSearch);
@@ -90,7 +86,7 @@
             this.grpSearch.Controls.Add(this.radStatus);
             this.grpSearch.Controls.Add(this.radFID);
             this.grpSearch.Controls.Add(this.radLocation);
-            this.grpSearch.Controls.Add(this.radMS250);
+            this.grpSearch.Controls.Add(this.radMaps);
             this.grpSearch.Controls.Add(this.radFeature);
             this.grpSearch.Controls.Add(this.radName);
             this.grpSearch.Location = new System.Drawing.Point(77, 52);
@@ -102,20 +98,9 @@
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search Box";
             // 
-            // radMS50
-            // 
-            this.radMS50.AutoSize = true;
-            this.radMS50.Location = new System.Drawing.Point(620, 67);
-            this.radMS50.Name = "radMS50";
-            this.radMS50.Size = new System.Drawing.Size(149, 36);
-            this.radMS50.TabIndex = 11;
-            this.radMS50.TabStop = true;
-            this.radMS50.Text = "M.S. 50";
-            this.radMS50.UseVisualStyleBackColor = true;
-            // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(283, 243);
+            this.btnSearch.Location = new System.Drawing.Point(275, 261);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(200, 55);
@@ -126,7 +111,7 @@
             // 
             // btnNewPlace
             // 
-            this.btnNewPlace.Location = new System.Drawing.Point(1013, 246);
+            this.btnNewPlace.Location = new System.Drawing.Point(997, 261);
             this.btnNewPlace.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnNewPlace.Name = "btnNewPlace";
             this.btnNewPlace.Size = new System.Drawing.Size(200, 55);
@@ -136,7 +121,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(211, 155);
+            this.txtSearch.Location = new System.Drawing.Point(219, 207);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(1079, 38);
@@ -146,7 +131,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(69, 162);
+            this.label1.Location = new System.Drawing.Point(69, 210);
             this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 32);
@@ -156,7 +141,7 @@
             // radStatus
             // 
             this.radStatus.AutoSize = true;
-            this.radStatus.Location = new System.Drawing.Point(1129, 67);
+            this.radStatus.Location = new System.Drawing.Point(1165, 67);
             this.radStatus.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.radStatus.Name = "radStatus";
             this.radStatus.Size = new System.Drawing.Size(133, 36);
@@ -168,7 +153,7 @@
             // radFID
             // 
             this.radFID.AutoSize = true;
-            this.radFID.Location = new System.Drawing.Point(997, 67);
+            this.radFID.Location = new System.Drawing.Point(985, 67);
             this.radFID.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.radFID.Name = "radFID";
             this.radFID.Size = new System.Drawing.Size(96, 36);
@@ -180,7 +165,7 @@
             // radLocation
             // 
             this.radLocation.AutoSize = true;
-            this.radLocation.Location = new System.Drawing.Point(800, 67);
+            this.radLocation.Location = new System.Drawing.Point(764, 67);
             this.radLocation.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.radLocation.Name = "radLocation";
             this.radLocation.Size = new System.Drawing.Size(161, 36);
@@ -189,22 +174,22 @@
             this.radLocation.Text = "Location";
             this.radLocation.UseVisualStyleBackColor = true;
             // 
-            // radMS250
+            // radMaps
             // 
-            this.radMS250.AutoSize = true;
-            this.radMS250.Location = new System.Drawing.Point(424, 67);
-            this.radMS250.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.radMS250.Name = "radMS250";
-            this.radMS250.Size = new System.Drawing.Size(165, 36);
-            this.radMS250.TabIndex = 2;
-            this.radMS250.TabStop = true;
-            this.radMS250.Text = "M.S. 250";
-            this.radMS250.UseVisualStyleBackColor = true;
+            this.radMaps.AutoSize = true;
+            this.radMaps.Location = new System.Drawing.Point(524, 67);
+            this.radMaps.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.radMaps.Name = "radMaps";
+            this.radMaps.Size = new System.Drawing.Size(149, 36);
+            this.radMaps.TabIndex = 2;
+            this.radMaps.TabStop = true;
+            this.radMaps.Text = "M.S. ##";
+            this.radMaps.UseVisualStyleBackColor = true;
             // 
             // radFeature
             // 
             this.radFeature.AutoSize = true;
-            this.radFeature.Location = new System.Drawing.Point(238, 67);
+            this.radFeature.Location = new System.Drawing.Point(284, 67);
             this.radFeature.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.radFeature.Name = "radFeature";
             this.radFeature.Size = new System.Drawing.Size(150, 36);
@@ -471,6 +456,7 @@
             // 
             // chkCasualty
             // 
+            this.chkCasualty.AccessibleName = "3";
             this.chkCasualty.AutoSize = true;
             this.chkCasualty.Location = new System.Drawing.Point(384, 57);
             this.chkCasualty.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
@@ -479,6 +465,7 @@
             this.chkCasualty.TabIndex = 3;
             this.chkCasualty.Text = "Casualty";
             this.chkCasualty.UseVisualStyleBackColor = true;
+            this.chkCasualty.CheckedChanged += new System.EventHandler(this.ChkCasualty_CheckedChanged);
             // 
             // lbltext
             // 
@@ -501,23 +488,33 @@
             this.dgvSearch.TabIndex = 0;
             this.dgvSearch.SelectionChanged += new System.EventHandler(this.dgvSearch_SelectionChanged);
             // 
-            // aliasedManitobaBindingSource
-            // 
-            this.aliasedManitobaBindingSource.DataMember = "AliasedManitoba";
-            this.aliasedManitobaBindingSource.DataSource = this.dbIndigenousPlaceNamesDataSet1;
-            // 
-            // dbIndigenousPlaceNamesDataSet1
-            // 
-            this.dbIndigenousPlaceNamesDataSet1.DataSetName = "dbIndigenousPlaceNamesDataSet1";
-            this.dbIndigenousPlaceNamesDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // manitoba_MapperTableAdapter
             // 
             this.manitoba_MapperTableAdapter.ClearBeforeFill = true;
             // 
-            // aliasedManitobaTableAdapter
+            // radMS250
             // 
-            this.aliasedManitobaTableAdapter.ClearBeforeFill = true;
+            this.radMS250.AutoSize = true;
+            this.radMS250.Location = new System.Drawing.Point(424, 135);
+            this.radMS250.Name = "radMS250";
+            this.radMS250.Size = new System.Drawing.Size(165, 36);
+            this.radMS250.TabIndex = 11;
+            this.radMS250.TabStop = true;
+            this.radMS250.Text = "M.S. 250";
+            this.radMS250.UseVisualStyleBackColor = true;
+            this.radMS250.Visible = false;
+            // 
+            // radMS50
+            // 
+            this.radMS50.AutoSize = true;
+            this.radMS50.Location = new System.Drawing.Point(632, 135);
+            this.radMS50.Name = "radMS50";
+            this.radMS50.Size = new System.Drawing.Size(149, 36);
+            this.radMS50.TabIndex = 12;
+            this.radMS50.TabStop = true;
+            this.radMS50.Text = "M.S. 50";
+            this.radMS50.UseVisualStyleBackColor = true;
+            this.radMS50.Visible = false;
             // 
             // Form1
             // 
@@ -540,8 +537,6 @@
             this.grpSearchBottom.ResumeLayout(false);
             this.grpSearchBottom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.aliasedManitobaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dbIndigenousPlaceNamesDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -556,7 +551,7 @@
         private System.Windows.Forms.RadioButton radStatus;
         private System.Windows.Forms.RadioButton radFID;
         private System.Windows.Forms.RadioButton radLocation;
-        private System.Windows.Forms.RadioButton radMS250;
+        private System.Windows.Forms.RadioButton radMaps;
         private System.Windows.Forms.RadioButton radFeature;
         private System.Windows.Forms.RadioButton radName;
         private System.Windows.Forms.GroupBox grpNameList;
@@ -585,10 +580,8 @@
         private System.Windows.Forms.Label lbltext;
         private System.Windows.Forms.DataGridView dgvSearch;
         private dbIndigenousPlaceNamesDataSetTableAdapters.Manitoba_MapperTableAdapter manitoba_MapperTableAdapter;
-        private dbIndigenousPlaceNamesDataSet1 dbIndigenousPlaceNamesDataSet1;
-        private System.Windows.Forms.BindingSource aliasedManitobaBindingSource;
-        private dbIndigenousPlaceNamesDataSet1TableAdapters.AliasedManitobaTableAdapter aliasedManitobaTableAdapter;
         private System.Windows.Forms.RadioButton radMS50;
+        private System.Windows.Forms.RadioButton radMS250;
     }
 }
 
