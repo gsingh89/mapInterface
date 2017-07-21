@@ -67,21 +67,15 @@
             this.lbltext = new System.Windows.Forms.Label();
             this.dgvSearch = new System.Windows.Forms.DataGridView();
             this.manitoba_MapperTableAdapter = new IndustryProject.dbIndigenousPlaceNamesDataSetTableAdapters.Manitoba_MapperTableAdapter();
-            this.msMenu = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.msExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.cboFeatureSearch = new System.Windows.Forms.ComboBox();
             this.grpSearch.SuspendLayout();
             this.grpNameList.SuspendLayout();
             this.grpGroupName.SuspendLayout();
             this.grpSearchBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
-            this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpSearch
             // 
-            this.grpSearch.Controls.Add(this.cboFeatureSearch);
             this.grpSearch.Controls.Add(this.radMS50);
             this.grpSearch.Controls.Add(this.btnSearch);
             this.grpSearch.Controls.Add(this.btnNewPlace);
@@ -93,7 +87,7 @@
             this.grpSearch.Controls.Add(this.radMS250);
             this.grpSearch.Controls.Add(this.radFeature);
             this.grpSearch.Controls.Add(this.radName);
-            this.grpSearch.Location = new System.Drawing.Point(29, 27);
+            this.grpSearch.Location = new System.Drawing.Point(29, 22);
             this.grpSearch.Name = "grpSearch";
             this.grpSearch.Size = new System.Drawing.Size(539, 145);
             this.grpSearch.TabIndex = 1;
@@ -281,7 +275,7 @@
             // lblLongitudeMinute
             // 
             this.lblLongitudeMinute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLongitudeMinute.Location = new System.Drawing.Point(119, 108);
+            this.lblLongitudeMinute.Location = new System.Drawing.Point(122, 108);
             this.lblLongitudeMinute.Name = "lblLongitudeMinute";
             this.lblLongitudeMinute.Size = new System.Drawing.Size(30, 22);
             this.lblLongitudeMinute.TabIndex = 22;
@@ -308,7 +302,7 @@
             // lblLatitudeMinute
             // 
             this.lblLatitudeMinute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLatitudeMinute.Location = new System.Drawing.Point(119, 67);
+            this.lblLatitudeMinute.Location = new System.Drawing.Point(122, 67);
             this.lblLatitudeMinute.Name = "lblLatitudeMinute";
             this.lblLatitudeMinute.Size = new System.Drawing.Size(30, 22);
             this.lblLatitudeMinute.TabIndex = 19;
@@ -466,52 +460,15 @@
             // 
             this.manitoba_MapperTableAdapter.ClearBeforeFill = true;
             // 
-            // msMenu
-            // 
-            this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.msMenu.Location = new System.Drawing.Point(0, 0);
-            this.msMenu.Name = "msMenu";
-            this.msMenu.Size = new System.Drawing.Size(616, 24);
-            this.msMenu.TabIndex = 3;
-            this.msMenu.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.AutoSize = false;
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.msExit});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
-            // 
-            // msExit
-            // 
-            this.msExit.Name = "msExit";
-            this.msExit.Size = new System.Drawing.Size(152, 22);
-            this.msExit.Text = "Exit";
-            this.msExit.Click += new System.EventHandler(this.msExit_Click);
-            // 
-            // cboFeatureSearch
-            // 
-            this.cboFeatureSearch.FormattingEnabled = true;
-            this.cboFeatureSearch.Location = new System.Drawing.Point(215, 64);
-            this.cboFeatureSearch.Name = "cboFeatureSearch";
-            this.cboFeatureSearch.Size = new System.Drawing.Size(121, 21);
-            this.cboFeatureSearch.TabIndex = 12;
-            this.cboFeatureSearch.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(616, 502);
+            this.ClientSize = new System.Drawing.Size(511, 311);
             this.Controls.Add(this.grpNameList);
             this.Controls.Add(this.grpSearch);
-            this.Controls.Add(this.msMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.msMenu;
             this.Name = "Form1";
             this.Text = "Indigenous Interface";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -523,10 +480,7 @@
             this.grpSearchBottom.ResumeLayout(false);
             this.grpSearchBottom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
-            this.msMenu.ResumeLayout(false);
-            this.msMenu.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -570,10 +524,6 @@
         private System.Windows.Forms.DataGridView dgvSearch;
         private dbIndigenousPlaceNamesDataSetTableAdapters.Manitoba_MapperTableAdapter manitoba_MapperTableAdapter;
         private System.Windows.Forms.RadioButton radMS50;
-        private System.Windows.Forms.MenuStrip msMenu;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem msExit;
-        private System.Windows.Forms.ComboBox cboFeatureSearch;
     }
 }
 
