@@ -44,8 +44,6 @@
             this.radName = new System.Windows.Forms.RadioButton();
             this.grpNameList = new System.Windows.Forms.GroupBox();
             this.grpGroupName = new System.Windows.Forms.GroupBox();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.lbl50 = new System.Windows.Forms.Label();
             this.lbl250 = new System.Windows.Forms.Label();
             this.lblLongitudeSecond = new System.Windows.Forms.Label();
@@ -70,15 +68,16 @@
             this.lbltext = new System.Windows.Forms.Label();
             this.dgvSearch = new System.Windows.Forms.DataGridView();
             this.manitoba_MapperTableAdapter = new IndustryProject.dbIndigenousPlaceNamesDataSetTableAdapters.Manitoba_MapperTableAdapter();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.msFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.msExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCasualty = new System.Windows.Forms.Button();
+            this.lblActTo = new System.Windows.Forms.Label();
+            this.lblActFrom = new System.Windows.Forms.Label();
+            this.lblActFromBox = new System.Windows.Forms.Label();
+            this.lblActToBox = new System.Windows.Forms.Label();
             this.grpSearch.SuspendLayout();
             this.grpNameList.SuspendLayout();
             this.grpGroupName.SuspendLayout();
             this.grpSearchBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpSearch
@@ -244,8 +243,7 @@
             // 
             // grpGroupName
             // 
-            this.grpGroupName.Controls.Add(this.lblDate);
-            this.grpGroupName.Controls.Add(this.label9);
+            this.grpGroupName.Controls.Add(this.btnCasualty);
             this.grpGroupName.Controls.Add(this.lbl50);
             this.grpGroupName.Controls.Add(this.lbl250);
             this.grpGroupName.Controls.Add(this.lblLongitudeSecond);
@@ -269,28 +267,10 @@
             this.grpGroupName.TabStop = false;
             this.grpGroupName.Text = "Group Name";
             // 
-            // lblDate
-            // 
-            this.lblDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDate.Location = new System.Drawing.Point(108, 150);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(88, 22);
-            this.lblDate.TabIndex = 28;
-            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(25, 155);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 13);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Date Changed: ";
-            // 
             // lbl50
             // 
             this.lbl50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl50.Location = new System.Drawing.Point(205, 186);
+            this.lbl50.Location = new System.Drawing.Point(205, 160);
             this.lbl50.Name = "lbl50";
             this.lbl50.Size = new System.Drawing.Size(30, 22);
             this.lbl50.TabIndex = 26;
@@ -299,7 +279,7 @@
             // lbl250
             // 
             this.lbl250.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl250.Location = new System.Drawing.Point(133, 186);
+            this.lbl250.Location = new System.Drawing.Point(134, 160);
             this.lbl250.Name = "lbl250";
             this.lbl250.Size = new System.Drawing.Size(30, 22);
             this.lbl250.TabIndex = 25;
@@ -370,7 +350,7 @@
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(182, 191);
+            this.label8.Location = new System.Drawing.Point(182, 166);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 13);
             this.label8.TabIndex = 12;
@@ -378,7 +358,7 @@
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(105, 191);
+            this.label7.Location = new System.Drawing.Point(107, 166);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 11;
@@ -387,7 +367,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 191);
+            this.label6.Location = new System.Drawing.Point(30, 166);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 13);
             this.label6.TabIndex = 10;
@@ -493,7 +473,6 @@
             this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSearch.Location = new System.Drawing.Point(6, 54);
             this.dgvSearch.Name = "dgvSearch";
-            this.dgvSearch.ReadOnly = true;
             this.dgvSearch.RowHeadersVisible = false;
             this.dgvSearch.Size = new System.Drawing.Size(263, 150);
             this.dgvSearch.TabIndex = 0;
@@ -503,45 +482,62 @@
             // 
             this.manitoba_MapperTableAdapter.ClearBeforeFill = true;
             // 
-            // menuStrip1
+            // btnCasualty
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.msFile});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(627, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
+            this.btnCasualty.Location = new System.Drawing.Point(33, 204);
+            this.btnCasualty.Name = "btnCasualty";
+            this.btnCasualty.Size = new System.Drawing.Size(116, 23);
+            this.btnCasualty.TabIndex = 27;
+            this.btnCasualty.Text = "Casualty History";
+            this.btnCasualty.UseVisualStyleBackColor = true;
             // 
-            // msFile
+            // lblActTo
             // 
-            this.msFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.msExit});
-            this.msFile.Name = "msFile";
-            this.msFile.Overflow = System.Windows.Forms.ToolStripItemOverflow.AsNeeded;
-            this.msFile.Size = new System.Drawing.Size(37, 20);
-            this.msFile.Text = "File";
+            this.lblActTo.AutoSize = true;
+            this.lblActTo.Location = new System.Drawing.Point(78, 181);
+            this.lblActTo.Name = "lblActTo";
+            this.lblActTo.Size = new System.Drawing.Size(35, 13);
+            this.lblActTo.TabIndex = 3;
+            this.lblActTo.Text = "Act to";
             // 
-            // msExit
+            // lblActFrom
             // 
-            this.msExit.Name = "msExit";
-            this.msExit.Size = new System.Drawing.Size(152, 22);
-            this.msExit.Text = "Exit";
-            this.msExit.Click += new System.EventHandler(this.msExit_Click);
+            this.lblActFrom.AutoSize = true;
+            this.lblActFrom.Location = new System.Drawing.Point(341, 181);
+            this.lblActFrom.Name = "lblActFrom";
+            this.lblActFrom.Size = new System.Drawing.Size(49, 13);
+            this.lblActFrom.TabIndex = 4;
+            this.lblActFrom.Text = "Act From";
+            // 
+            // lblActFromBox
+            // 
+            this.lblActFromBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblActFromBox.Location = new System.Drawing.Point(391, 176);
+            this.lblActFromBox.Name = "lblActFromBox";
+            this.lblActFromBox.Size = new System.Drawing.Size(100, 23);
+            this.lblActFromBox.TabIndex = 5;
+            // 
+            // lblActToBox
+            // 
+            this.lblActToBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblActToBox.Location = new System.Drawing.Point(114, 176);
+            this.lblActToBox.Name = "lblActToBox";
+            this.lblActToBox.Size = new System.Drawing.Size(100, 23);
+            this.lblActToBox.TabIndex = 6;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(627, 498);
+            this.ClientSize = new System.Drawing.Size(616, 539);
+            this.Controls.Add(this.lblActToBox);
+            this.Controls.Add(this.lblActFromBox);
+            this.Controls.Add(this.lblActFrom);
+            this.Controls.Add(this.lblActTo);
             this.Controls.Add(this.grpNameList);
             this.Controls.Add(this.grpSearch);
-            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Indigenous Interface";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -553,8 +549,6 @@
             this.grpSearchBottom.ResumeLayout(false);
             this.grpSearchBottom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,11 +595,11 @@
         private dbIndigenousPlaceNamesDataSetTableAdapters.Manitoba_MapperTableAdapter manitoba_MapperTableAdapter;
         private System.Windows.Forms.RadioButton radMS50;
         private System.Windows.Forms.RadioButton radMaps;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem msFile;
-        private System.Windows.Forms.ToolStripMenuItem msExit;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Button btnCasualty;
+        private System.Windows.Forms.Label lblActTo;
+        private System.Windows.Forms.Label lblActFrom;
+        private System.Windows.Forms.Label lblActFromBox;
+        private System.Windows.Forms.Label lblActToBox;
     }
 }
 

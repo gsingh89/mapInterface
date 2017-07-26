@@ -19,7 +19,7 @@ namespace IndustryProject
 
         private void Casualty_Load(object sender, EventArgs e)
         {
-
+             
         }
     }
 }
