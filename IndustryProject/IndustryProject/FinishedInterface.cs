@@ -66,23 +66,42 @@ namespace IndustryProject
 
             if (radMaps.Checked)
             {
-                radMS250.Visible = true;
-                radMS50.Visible = true;
-
-                //if (radMS250.Checked && !String.IsNullOrWhiteSpace(enteredName))
-                //{
-                //    basicQuery += " WHERE PLACES.MS250 = @ms250 ";
-                //    sideQuery = basicQuery;
-                //    ConnectionClass.AddParam("ms250", enteredName);
-                //}
-
-                //if (radMS50.Checked && !String.IsNullOrWhiteSpace(enteredName))
-                //{
-                //    basicQuery += " WHERE PLACES.MS50 = @ms50 ";
-                //    ConnectionClass.AddParam("ms50", enteredName);
-                //}
+                MakeMSAvailable();
             }
 
+
+            if (radMS250.Checked && !String.IsNullOrWhiteSpace(enteredName))
+            {
+                basicQuery += " WHERE PLACES.MS250 = @ms250 ";
+                ConnectionClass.AddParam("ms250", enteredName);
+            }
+
+            else if (radMS50.Checked && !String.IsNullOrWhiteSpace(enteredName))
+            {
+                basicQuery += " WHERE PLACES.MS250 = @ms250";
+                basicQuery += " AND PLACES.MS50 = @ms50";
+                ConnectionClass.AddParam("ms250", enteredName);
+                ConnectionClass.AddParam("ms50", enteredName);
+            }
+
+            else if (radLocation.Checked && !String.IsNullOrWhiteSpace(txtLatDeg.Text) && !String.IsNullOrWhiteSpace(txtLatMin.Text) &&
+                !String.IsNullOrWhiteSpace(txtLatSec.Text) && !String.IsNullOrWhiteSpace(txtLongDeg.Text) &&
+                !String.IsNullOrWhiteSpace(txtLongMin.Text) && !String.IsNullOrWhiteSpace(txtLongSec.Text))
+            {
+                basicQuery += " WHERE PLACES.LAT_DEG = @LatDeg";
+                basicQuery += " AND PLACES.LAT_MIN = @LatMin";
+                basicQuery += " AND PLACES.LAT_SEC = @LatSec";
+                basicQuery += " AND PLACES.LONG_DEG = @LongDeg";
+                basicQuery += " AND PLACES.LONG_MIN = @LongMin";
+                basicQuery += " AND PLACES.LONG_SEC = @LongSec";
+
+                ConnectionClass.AddParam("LatDeg", txtLatDeg.Text);
+                ConnectionClass.AddParam("LatMin", txtLatMin.Text);
+                ConnectionClass.AddParam("LatSec", txtLatSec.Text);
+                ConnectionClass.AddParam("LongDeg", txtLongDeg.Text);
+                ConnectionClass.AddParam("LongMin", txtLongMin.Text);
+                ConnectionClass.AddParam("LongSec", txtLongSec.Text);
+            }
             else if (radName.Checked && !String.IsNullOrWhiteSpace(enteredName))
             {
                 basicQuery += " WHERE NAMES.NAME_ACTUAL LIKE @name + '%'";
@@ -100,14 +119,6 @@ namespace IndustryProject
                 basicQuery += " WHERE FEATURE_TYPES.FEAT_TYPE = @feattype";
                 ConnectionClass.AddParam("feattype", enteredName);
             }
-
-
-            //else if (radLocation.Checked && !String.IsNullOrWhiteSpace(enteredName))
-            //{
-            //    basicQuery += @" WHERE PLACES.LAT_DEG PLACES.LAT_MIN PLACES.LAT_SEC
-            //                  PLACES.LONG_DEG PLACES.LONG_MIN PLACES.LONG_SEC = @coordinates";
-            //    ConnectionClass.AddParam("coordinates", enteredName);
-            //}
 
             else if (radStatus.Checked && !String.IsNullOrWhiteSpace(enteredName))
             {
@@ -139,6 +150,17 @@ namespace IndustryProject
             lbl250.Text = dgvSearch.CurrentRow.Cells["NTS 250000 Map Sheet"].Value.ToString();
             lbl50.Text = dgvSearch.CurrentRow.Cells["NTS 50000 Submap Sheet"].Value.ToString();
 
+            // If there is not data available
+            if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Casualty Date of Death"].Value.ToString()))
+            {
+                lblDateChanged.Text = "No Data";
+            }
+
+            else
+            {
+                lblDateChanged.Text = dgvSearch.CurrentRow.Cells["Casualty Date of Death"].Value.ToString();
+            }
+
         }
 
         private void UpdateCasualtyCheckBox()
@@ -156,6 +178,62 @@ namespace IndustryProject
         private void ChkCasualty_CheckedChanged(object sender, EventArgs e)
         {
             UpdateCasualtyCheckBox();
+        }
+
+        private void MakeMSAvailable()
+        {
+            if (radMaps.Checked || radMS250.Checked | radMS50.Checked)
+            {
+                radMS250.Visible = true;
+                radMS50.Visible = true;
+            }
+
+            else
+            {
+                radMS250.Visible = false;
+                radMS50.Visible = false;
+            }
+        }
+
+        private void radMaps_CheckedChanged(object sender, EventArgs e)
+        {
+            MakeMSAvailable();
+        }
+
+        private void MakeCoordinatesAvailable()
+        {
+            if (radLocation.Checked)
+            {
+                gpoCoordinates.Visible = true;
+                label1.Visible = false;
+                txtSearch.Visible = false;
+            }
+            else
+            {
+                gpoCoordinates.Visible = false;
+                label1.Visible = true;
+                txtSearch.Visible = true;
+            }
+        }
+
+        private void radLocation_CheckedChanged(object sender, EventArgs e)
+        {
+            MakeCoordinatesAvailable();
+        }
+
+        /// Exits the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msExit_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure?", "Exit", MessageBoxButtons.YesNo);
+
+            if (dialogResult == DialogResult.Yes)
+
+            {
+                Application.Exit();
+            }
         }
     }
 }
