@@ -20,8 +20,8 @@ namespace IndustryProject
             InitializeComponent();            
             this.AcceptButton = this.btnLogin;
         }       
-        /// <summary>      
-            
+
+        /// <summary>                  
         /// Validation and opening main form
         /// </summary>
         /// <param name="sender"></param>

@@ -41,6 +41,11 @@ namespace IndustryProject
             parameters = new List<SqlParameter>();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="SQLQueryText"></param>
+        /// <returns></returns>
         public static DataSet getSQLData(string SQLQueryText)
         {
             SqlCommand SQLQuery = new SqlCommand(SQLQueryText, con);

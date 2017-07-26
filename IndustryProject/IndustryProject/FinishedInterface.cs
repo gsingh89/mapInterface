@@ -32,6 +32,8 @@ namespace IndustryProject
         private void Form1_Load(object sender, EventArgs e)
         {
             ConnectionClass.Initialize();
+            txtSearch.Focus();
+            //this.AcceptButton = this.btnSearch;
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -45,7 +47,7 @@ namespace IndustryProject
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string enteredName = txtSearch.Text;
-            string sideQuery;
+           // string sideQuery;
 
             string basicQuery = @"SELECT NAMES.NAME_ACTUAL AS 'Geographical Name', 
                         NAME_PLACES.FEATURE_ID AS 'Unique National Identifier',
@@ -59,7 +61,8 @@ namespace IndustryProject
                         CASUALTIES.SURNAME AS 'Casualty Surname', CASUALTIES.GIVNAME AS 'Casualty Given Name',
                         CASUALTIES.DATE_DECEASED AS 'Casualty Date of Death', CASUALTIES.SERVED AS 'Casualty Regiment',
                         CASUALTIES.BURIED AS 'Casualty Place of Burial', FEATURE_TYPES.FEAT_TYPE AS 'Feature Type',
-                        FEATURE_TYPES.DESCR AS 'Feature Type Description', PLACES.LONGITUDE, PLACES.LATITUDE
+                        FEATURE_TYPES.DESCR AS 'Feature Type Description', CASUALTIES.DATE_DECEASED AS 'Date Deceased',
+                        PLACES.LONGITUDE, PLACES.LATITUDE
                         FROM NAMES JOIN NAME_PLACES ON NAMES.NAME_ID = NAME_PLACES.NAME_ID JOIN PLACES
                         ON PLACES.PLACE_ID = NAME_PLACES.PLACE_ID LEFT JOIN CASUALTIES ON NAMES.CASUALTY_ID = CASUALTIES.CASUALTY_ID
                         LEFT JOIN FEATURE_TYPES ON PLACES.FEAT_CODE = FEATURE_TYPES.FEAT_CODE ";
@@ -101,7 +104,6 @@ namespace IndustryProject
                 ConnectionClass.AddParam("feattype", enteredName);
             }
 
-
             //else if (radLocation.Checked && !String.IsNullOrWhiteSpace(enteredName))
             //{
             //    basicQuery += @" WHERE PLACES.LAT_DEG PLACES.LAT_MIN PLACES.LAT_SEC
@@ -125,22 +127,61 @@ namespace IndustryProject
             dgvSearch.Columns[0].Width = dgvSearch.Width;
         }
 
+        /// <summary>
+        /// Populates labels at the bottom
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvSearch_SelectionChanged(object sender, EventArgs e)
         {
             UpdateCasualtyCheckBox();
+            UpdateStatusDropBox();
 
-            lblFID.Text = dgvSearch.CurrentRow.Cells["Unique National Identifier"].Value.ToString();
-            lblLatitudeDegree.Text = dgvSearch.CurrentRow.Cells["LATITUDE Degrees"].Value.ToString();
-            lblLatitudeMinute.Text = dgvSearch.CurrentRow.Cells["LATITUDE Minutes"].Value.ToString();
-            lblLatitudeSecond.Text = dgvSearch.CurrentRow.Cells["LATITUDE Seconds"].Value.ToString();
-            lblLongitudeDegree.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Degrees"].Value.ToString();
-            lblLongitudeMinute.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Minutes"].Value.ToString();
-            lblLongitudeSecond.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Seconds"].Value.ToString();
-            lbl250.Text = dgvSearch.CurrentRow.Cells["NTS 250000 Map Sheet"].Value.ToString();
-            lbl50.Text = dgvSearch.CurrentRow.Cells["NTS 50000 Submap Sheet"].Value.ToString();
+            if (dgvSearch.RowCount > 0 && dgvSearch.CurrentRow != null)
+            {
+                lblFID.Text = dgvSearch.CurrentRow.Cells["Unique National Identifier"].Value.ToString();
+                lblLatitudeDegree.Text = dgvSearch.CurrentRow.Cells["LATITUDE Degrees"].Value.ToString();
+                lblLatitudeMinute.Text = dgvSearch.CurrentRow.Cells["LATITUDE Minutes"].Value.ToString();
+                lblLatitudeSecond.Text = dgvSearch.CurrentRow.Cells["LATITUDE Seconds"].Value.ToString();
+                lblLongitudeDegree.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Degrees"].Value.ToString();
+                lblLongitudeMinute.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Minutes"].Value.ToString();
+                lblLongitudeSecond.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Seconds"].Value.ToString();
+                lbl250.Text = dgvSearch.CurrentRow.Cells["NTS 250000 Map Sheet"].Value.ToString();
+                lbl50.Text = dgvSearch.CurrentRow.Cells["NTS 50000 Submap Sheet"].Value.ToString();           
+            
+                // If there is not data available
+                if(String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Date Deceased"].Value.ToString()))
+                {
+                    lblDate.Text = "No Data";
+                }
+                else
+                {
+                    lblDate.Text = dgvSearch.CurrentRow.Cells["Date Deceased"].Value.ToString();
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Invalid Field.");
+            }
 
         }
-
+        
+        /// <summary>
+        /// According to the place selected,
+        /// displays if the name is approved or not
+        /// </summary>
+        private void UpdateStatusDropBox()
+        {
+            // cboStatus.Text = dgvSearch.CurrentRow.Cells["Status"].Value.ToString();
+            // cboStatus.DisplayMember = "Status";
+            // cboStatus.DataSource = ConnectionClass.getSQLData("SELECT STATUS_CODE FROM NAME_PLACES");
+            var status = new Dictionary<string, string>();
+            cboStatus.DataSource = new BindingSource();
+        }
+        /// <summary>
+        /// 
+        /// </summary>
         private void UpdateCasualtyCheckBox()
         {
             if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Casualty Given Name"].Value.ToString()))
@@ -151,11 +192,26 @@ namespace IndustryProject
             {
                 chkCasualty.Checked = true;
             }
+            
         }
 
         private void ChkCasualty_CheckedChanged(object sender, EventArgs e)
         {
             UpdateCasualtyCheckBox();
+        }
+
+        /// <summary>
+        /// Exits the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void msExit_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Are you sure?", "Exit", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

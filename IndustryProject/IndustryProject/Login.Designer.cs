@@ -88,6 +88,8 @@
             this.Controls.Add(this.btnPassword);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogin);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
