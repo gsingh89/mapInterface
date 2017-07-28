@@ -38,6 +38,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComboData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComboData.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ConnectionClass.cs" />
     <Compile Include="dbIndigenousPlaceNamesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -59,6 +65,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbIndigenousPlaceNamesDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbIndigenousPlaceNamesDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbIndigenousPlaceNamesDataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="FinishedInterface.cs">
       <SubType>Form</SubType>
@@ -90,6 +101,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TestDataSet.cs">
+      <DependentUpon>TestDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +123,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ComboData.xsc">
+      <DependentUpon>ComboData.xsd</DependentUpon>
+    </None>
+    <None Include="ComboData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ComboData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ComboData.xss">
+      <DependentUpon>ComboData.xsd</DependentUpon>
+    </None>
     <None Include="dbIndigenousPlaceNamesDataSet.xsc">
       <DependentUpon>dbIndigenousPlaceNamesDataSet.xsd</DependentUpon>
     </None>
@@ -130,6 +155,17 @@
     </None>
     <None Include="dbIndigenousPlaceNamesDataSet1.xss">
       <DependentUpon>dbIndigenousPlaceNamesDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbIndigenousPlaceNamesDataSet2.xsc">
+      <DependentUpon>dbIndigenousPlaceNamesDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="dbIndigenousPlaceNamesDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbIndigenousPlaceNamesDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbIndigenousPlaceNamesDataSet2.xss">
+      <DependentUpon>dbIndigenousPlaceNamesDataSet2.xsd</DependentUpon>
     </None>
     <None Include="LoginDataSet.xsc">
       <DependentUpon>LoginDataSet.xsd</DependentUpon>
