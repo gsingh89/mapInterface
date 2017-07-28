@@ -40,6 +40,8 @@ namespace IndustryProject
             this.nAME_PLACESTableAdapter.Fill(this.comboData.NAME_PLACES);
             // TODO: This line of code loads data into the 'comboData.FEATURE_TYPES' table. You can move, or remove it, as needed.
             this.fEATURE_TYPESTableAdapter.Fill(this.comboData.FEATURE_TYPES);
+
+            this.AcceptButton = this.btnSearch;
             ConnectionClass.Initialize();
         }
 
@@ -175,10 +177,12 @@ namespace IndustryProject
             if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Casualty Given Name"].Value.ToString()))
             {
                 chkCasualty.Checked = false;
+                btnCasualtyHistory.Enabled = false;
             }
             else
             {
                 chkCasualty.Checked = true;
+                btnCasualtyHistory.Enabled = true;
             }
         }
 
@@ -237,7 +241,6 @@ namespace IndustryProject
             DialogResult dialogResult = MessageBox.Show("Are you sure?", "Exit", MessageBoxButtons.YesNo);
 
             if (dialogResult == DialogResult.Yes)
-
             {
                 Application.Exit();
             }
@@ -381,9 +384,7 @@ namespace IndustryProject
         }
 
         private void grpSearchBottom_EnabledChanged(object sender, EventArgs e)
-        {
-           
-
+        {          
             //cboStatus.DisplayMember = "Status";
             //cboStatus.ValueMember = "STATUS_CODE";
         }
@@ -399,12 +400,34 @@ namespace IndustryProject
             cboStatus.DisplayMember =
             cboStatus.ValueMember = "STATUS_CODE";
 
-
         }
 
         private void dgvSearch_Click(object sender, EventArgs e)
         {
             //cboFear.SelectedIndex[dgvSearch.CurrentRow.Cells["FEAT_CODE"]];
+        }
+
+        /// <summary>
+        /// Opens a new form
+        /// Displays casualties
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnCasualtyHistory_Click(object sender, EventArgs e)
+        {
+            frmCasualty frmCasualty = new frmCasualty(dgvSearch);
+
+            frmCasualty.ShowDialog();
+        }
+
+        /// <summary>
+        /// Ends the application
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

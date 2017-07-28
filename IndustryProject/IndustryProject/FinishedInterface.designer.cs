@@ -71,7 +71,7 @@
             this.lblLatitudeSecond = new System.Windows.Forms.Label();
             this.lblLatitudeMinute = new System.Windows.Forms.Label();
             this.lblLatitudeDegree = new System.Windows.Forms.Label();
-            this.btnNameHistory = new System.Windows.Forms.Button();
+            this.btnCasualtyHistory = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -128,11 +128,9 @@
             this.grpSearch.Controls.Add(this.radMS250);
             this.grpSearch.Controls.Add(this.radFeature);
             this.grpSearch.Controls.Add(this.radName);
-            this.grpSearch.Location = new System.Drawing.Point(77, 52);
-            this.grpSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.grpSearch.Location = new System.Drawing.Point(29, 22);
             this.grpSearch.Name = "grpSearch";
-            this.grpSearch.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.grpSearch.Size = new System.Drawing.Size(1445, 432);
+            this.grpSearch.Size = new System.Drawing.Size(542, 181);
             this.grpSearch.TabIndex = 1;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search Box";
@@ -141,9 +139,10 @@
             // 
             this.cboFeature.DisplayMember = "FEAT_TYPE";
             this.cboFeature.FormattingEnabled = true;
-            this.cboFeature.Location = new System.Drawing.Point(187, 171);
+            this.cboFeature.Location = new System.Drawing.Point(70, 72);
+            this.cboFeature.Margin = new System.Windows.Forms.Padding(1);
             this.cboFeature.Name = "cboFeature";
-            this.cboFeature.Size = new System.Drawing.Size(1075, 39);
+            this.cboFeature.Size = new System.Drawing.Size(406, 21);
             this.cboFeature.TabIndex = 26;
             this.cboFeature.ValueMember = "FEAT_TYPE";
             this.cboFeature.Visible = false;
@@ -166,9 +165,11 @@
             this.gpCoordinates.Controls.Add(this.txtLatSec);
             this.gpCoordinates.Controls.Add(this.txtLatMin);
             this.gpCoordinates.Controls.Add(this.txtLatDeg);
-            this.gpCoordinates.Location = new System.Drawing.Point(56, 216);
+            this.gpCoordinates.Location = new System.Drawing.Point(21, 91);
+            this.gpCoordinates.Margin = new System.Windows.Forms.Padding(1);
             this.gpCoordinates.Name = "gpCoordinates";
-            this.gpCoordinates.Size = new System.Drawing.Size(1253, 131);
+            this.gpCoordinates.Padding = new System.Windows.Forms.Padding(1);
+            this.gpCoordinates.Size = new System.Drawing.Size(470, 55);
             this.gpCoordinates.TabIndex = 21;
             this.gpCoordinates.TabStop = false;
             this.gpCoordinates.Text = "Coordinates";
@@ -178,9 +179,10 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(1121, 39);
+            this.label17.Location = new System.Drawing.Point(420, 16);
+            this.label17.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(74, 20);
+            this.label17.Size = new System.Drawing.Size(33, 7);
             this.label17.TabIndex = 25;
             this.label17.Text = "Seconds";
             // 
@@ -188,9 +190,10 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(1015, 39);
+            this.label16.Location = new System.Drawing.Point(381, 16);
+            this.label16.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(68, 20);
+            this.label16.Size = new System.Drawing.Size(30, 7);
             this.label16.TabIndex = 22;
             this.label16.Text = "Minutes";
             // 
@@ -198,9 +201,10 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(905, 39);
+            this.label15.Location = new System.Drawing.Point(339, 16);
+            this.label15.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(73, 20);
+            this.label15.Size = new System.Drawing.Size(31, 7);
             this.label15.TabIndex = 24;
             this.label15.Text = "Degrees";
             // 
@@ -208,9 +212,10 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(407, 39);
+            this.label14.Location = new System.Drawing.Point(153, 16);
+            this.label14.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 20);
+            this.label14.Size = new System.Drawing.Size(33, 7);
             this.label14.TabIndex = 23;
             this.label14.Text = "Seconds";
             // 
@@ -218,9 +223,10 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(301, 39);
+            this.label13.Location = new System.Drawing.Point(113, 16);
+            this.label13.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(68, 20);
+            this.label13.Size = new System.Drawing.Size(30, 7);
             this.label13.TabIndex = 22;
             this.label13.Text = "Minutes";
             // 
@@ -228,85 +234,95 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(193, 39);
+            this.label12.Location = new System.Drawing.Point(72, 16);
+            this.label12.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(73, 20);
+            this.label12.Size = new System.Drawing.Size(31, 7);
             this.label12.TabIndex = 21;
             this.label12.Text = "Degrees";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(728, 81);
+            this.label10.Location = new System.Drawing.Point(273, 34);
+            this.label10.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(150, 32);
+            this.label10.Size = new System.Drawing.Size(57, 13);
             this.label10.TabIndex = 20;
             this.label10.Text = "Longitude:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(36, 81);
+            this.label9.Location = new System.Drawing.Point(14, 34);
+            this.label9.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(126, 32);
+            this.label9.Size = new System.Drawing.Size(48, 13);
             this.label9.TabIndex = 19;
             this.label9.Text = "Latitude:";
             // 
             // txtLongSec
             // 
-            this.txtLongSec.Location = new System.Drawing.Point(1106, 69);
+            this.txtLongSec.Location = new System.Drawing.Point(415, 29);
+            this.txtLongSec.Margin = new System.Windows.Forms.Padding(1);
             this.txtLongSec.Name = "txtLongSec";
-            this.txtLongSec.Size = new System.Drawing.Size(100, 38);
+            this.txtLongSec.Size = new System.Drawing.Size(40, 20);
             this.txtLongSec.TabIndex = 18;
             this.txtLongSec.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtLongMin
             // 
-            this.txtLongMin.Location = new System.Drawing.Point(995, 69);
+            this.txtLongMin.Location = new System.Drawing.Point(373, 29);
+            this.txtLongMin.Margin = new System.Windows.Forms.Padding(1);
             this.txtLongMin.Name = "txtLongMin";
-            this.txtLongMin.Size = new System.Drawing.Size(100, 38);
+            this.txtLongMin.Size = new System.Drawing.Size(40, 20);
             this.txtLongMin.TabIndex = 17;
             this.txtLongMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtLongDeg
             // 
-            this.txtLongDeg.Location = new System.Drawing.Point(884, 69);
+            this.txtLongDeg.Location = new System.Drawing.Point(332, 29);
+            this.txtLongDeg.Margin = new System.Windows.Forms.Padding(1);
             this.txtLongDeg.Name = "txtLongDeg";
-            this.txtLongDeg.Size = new System.Drawing.Size(100, 38);
+            this.txtLongDeg.Size = new System.Drawing.Size(40, 20);
             this.txtLongDeg.TabIndex = 16;
             this.txtLongDeg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtLatSec
             // 
-            this.txtLatSec.Location = new System.Drawing.Point(390, 69);
+            this.txtLatSec.Location = new System.Drawing.Point(146, 29);
+            this.txtLatSec.Margin = new System.Windows.Forms.Padding(1);
             this.txtLatSec.Name = "txtLatSec";
-            this.txtLatSec.Size = new System.Drawing.Size(100, 38);
+            this.txtLatSec.Size = new System.Drawing.Size(40, 20);
             this.txtLatSec.TabIndex = 15;
             this.txtLatSec.Text = " ";
             this.txtLatSec.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtLatMin
             // 
-            this.txtLatMin.Location = new System.Drawing.Point(279, 69);
+            this.txtLatMin.Location = new System.Drawing.Point(105, 29);
+            this.txtLatMin.Margin = new System.Windows.Forms.Padding(1);
             this.txtLatMin.Name = "txtLatMin";
-            this.txtLatMin.Size = new System.Drawing.Size(100, 38);
+            this.txtLatMin.Size = new System.Drawing.Size(40, 20);
             this.txtLatMin.TabIndex = 14;
             this.txtLatMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtLatDeg
             // 
-            this.txtLatDeg.Location = new System.Drawing.Point(168, 69);
+            this.txtLatDeg.Location = new System.Drawing.Point(63, 29);
+            this.txtLatDeg.Margin = new System.Windows.Forms.Padding(1);
             this.txtLatDeg.Name = "txtLatDeg";
-            this.txtLatDeg.Size = new System.Drawing.Size(100, 38);
+            this.txtLatDeg.Size = new System.Drawing.Size(40, 20);
             this.txtLatDeg.TabIndex = 13;
             this.txtLatDeg.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // radMaps
             // 
             this.radMaps.AutoSize = true;
-            this.radMaps.Location = new System.Drawing.Point(484, 67);
+            this.radMaps.Location = new System.Drawing.Point(182, 28);
+            this.radMaps.Margin = new System.Windows.Forms.Padding(1);
             this.radMaps.Name = "radMaps";
-            this.radMaps.Size = new System.Drawing.Size(186, 36);
+            this.radMaps.Size = new System.Drawing.Size(76, 17);
             this.radMaps.TabIndex = 12;
             this.radMaps.TabStop = true;
             this.radMaps.Text = "M.S. Maps";
@@ -317,10 +333,10 @@
             // radMS50
             // 
             this.radMS50.AutoSize = true;
-            this.radMS50.Location = new System.Drawing.Point(608, 131);
-            this.radMS50.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radMS50.Location = new System.Drawing.Point(196, 55);
+            this.radMS50.Margin = new System.Windows.Forms.Padding(1);
             this.radMS50.Name = "radMS50";
-            this.radMS50.Size = new System.Drawing.Size(149, 36);
+            this.radMS50.Size = new System.Drawing.Size(62, 17);
             this.radMS50.TabIndex = 11;
             this.radMS50.TabStop = true;
             this.radMS50.Text = "M.S. 50";
@@ -331,10 +347,9 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(253, 363);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnSearch.Location = new System.Drawing.Point(95, 152);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(200, 55);
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
@@ -342,40 +357,36 @@
             // 
             // btnNewPlace
             // 
-            this.btnNewPlace.Location = new System.Drawing.Point(918, 363);
-            this.btnNewPlace.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnNewPlace.Location = new System.Drawing.Point(344, 152);
             this.btnNewPlace.Name = "btnNewPlace";
-            this.btnNewPlace.Size = new System.Drawing.Size(200, 55);
+            this.btnNewPlace.Size = new System.Drawing.Size(75, 23);
             this.btnNewPlace.TabIndex = 9;
             this.btnNewPlace.Text = "New Place";
             this.btnNewPlace.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(186, 213);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.txtSearch.Location = new System.Drawing.Point(70, 89);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(1079, 38);
+            this.txtSearch.Size = new System.Drawing.Size(407, 20);
             this.txtSearch.TabIndex = 7;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(50, 216);
-            this.lblSearch.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblSearch.Location = new System.Drawing.Point(19, 91);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(120, 32);
+            this.lblSearch.Size = new System.Drawing.Size(47, 13);
             this.lblSearch.TabIndex = 6;
             this.lblSearch.Text = "Search: ";
             // 
             // radStatus
             // 
             this.radStatus.AutoSize = true;
-            this.radStatus.Location = new System.Drawing.Point(1128, 67);
-            this.radStatus.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.radStatus.Location = new System.Drawing.Point(423, 28);
             this.radStatus.Name = "radStatus";
-            this.radStatus.Size = new System.Drawing.Size(133, 36);
+            this.radStatus.Size = new System.Drawing.Size(55, 17);
             this.radStatus.TabIndex = 5;
             this.radStatus.TabStop = true;
             this.radStatus.Text = "Status";
@@ -385,10 +396,9 @@
             // radFID
             // 
             this.radFID.AutoSize = true;
-            this.radFID.Location = new System.Drawing.Point(997, 67);
-            this.radFID.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.radFID.Location = new System.Drawing.Point(374, 28);
             this.radFID.Name = "radFID";
-            this.radFID.Size = new System.Drawing.Size(96, 36);
+            this.radFID.Size = new System.Drawing.Size(42, 17);
             this.radFID.TabIndex = 4;
             this.radFID.TabStop = true;
             this.radFID.Text = "FID";
@@ -398,10 +408,9 @@
             // radLocation
             // 
             this.radLocation.AutoSize = true;
-            this.radLocation.Location = new System.Drawing.Point(800, 67);
-            this.radLocation.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.radLocation.Location = new System.Drawing.Point(300, 28);
             this.radLocation.Name = "radLocation";
-            this.radLocation.Size = new System.Drawing.Size(161, 36);
+            this.radLocation.Size = new System.Drawing.Size(66, 17);
             this.radLocation.TabIndex = 3;
             this.radLocation.TabStop = true;
             this.radLocation.Text = "Location";
@@ -412,10 +421,9 @@
             // radMS250
             // 
             this.radMS250.AutoSize = true;
-            this.radMS250.Location = new System.Drawing.Point(423, 131);
-            this.radMS250.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.radMS250.Location = new System.Drawing.Point(115, 55);
             this.radMS250.Name = "radMS250";
-            this.radMS250.Size = new System.Drawing.Size(165, 36);
+            this.radMS250.Size = new System.Drawing.Size(68, 17);
             this.radMS250.TabIndex = 2;
             this.radMS250.TabStop = true;
             this.radMS250.Text = "M.S. 250";
@@ -427,10 +435,9 @@
             // radFeature
             // 
             this.radFeature.AutoSize = true;
-            this.radFeature.Location = new System.Drawing.Point(237, 67);
-            this.radFeature.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.radFeature.Location = new System.Drawing.Point(89, 28);
             this.radFeature.Name = "radFeature";
-            this.radFeature.Size = new System.Drawing.Size(150, 36);
+            this.radFeature.Size = new System.Drawing.Size(61, 17);
             this.radFeature.TabIndex = 1;
             this.radFeature.TabStop = true;
             this.radFeature.Text = "Feature";
@@ -440,10 +447,9 @@
             // radName
             // 
             this.radName.AutoSize = true;
-            this.radName.Location = new System.Drawing.Point(75, 67);
-            this.radName.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.radName.Location = new System.Drawing.Point(28, 28);
             this.radName.Name = "radName";
-            this.radName.Size = new System.Drawing.Size(127, 36);
+            this.radName.Size = new System.Drawing.Size(53, 17);
             this.radName.TabIndex = 0;
             this.radName.TabStop = true;
             this.radName.Text = "Name";
@@ -455,11 +461,9 @@
             this.grpNameList.Controls.Add(this.grpGroupName);
             this.grpNameList.Controls.Add(this.grpSearchBottom);
             this.grpNameList.Enabled = false;
-            this.grpNameList.Location = new System.Drawing.Point(77, 482);
-            this.grpNameList.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.grpNameList.Location = new System.Drawing.Point(29, 202);
             this.grpNameList.Name = "grpNameList";
-            this.grpNameList.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.grpNameList.Size = new System.Drawing.Size(1560, 687);
+            this.grpNameList.Size = new System.Drawing.Size(585, 288);
             this.grpNameList.TabIndex = 2;
             this.grpNameList.TabStop = false;
             this.grpNameList.Text = "Name List";
@@ -476,7 +480,7 @@
             this.grpGroupName.Controls.Add(this.lblLatitudeSecond);
             this.grpGroupName.Controls.Add(this.lblLatitudeMinute);
             this.grpGroupName.Controls.Add(this.lblLatitudeDegree);
-            this.grpGroupName.Controls.Add(this.btnNameHistory);
+            this.grpGroupName.Controls.Add(this.btnCasualtyHistory);
             this.grpGroupName.Controls.Add(this.label8);
             this.grpGroupName.Controls.Add(this.label7);
             this.grpGroupName.Controls.Add(this.label6);
@@ -484,11 +488,9 @@
             this.grpGroupName.Controls.Add(this.label4);
             this.grpGroupName.Controls.Add(this.cboFear);
             this.grpGroupName.Controls.Add(this.label3);
-            this.grpGroupName.Location = new System.Drawing.Point(840, 45);
-            this.grpGroupName.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.grpGroupName.Location = new System.Drawing.Point(315, 19);
             this.grpGroupName.Name = "grpGroupName";
-            this.grpGroupName.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.grpGroupName.Size = new System.Drawing.Size(704, 639);
+            this.grpGroupName.Size = new System.Drawing.Size(264, 268);
             this.grpGroupName.TabIndex = 1;
             this.grpGroupName.TabStop = false;
             this.grpGroupName.Text = "Group Name";
@@ -496,157 +498,144 @@
             // lblDateChanged
             // 
             this.lblDateChanged.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDateChanged.Location = new System.Drawing.Point(288, 356);
-            this.lblDateChanged.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblDateChanged.Location = new System.Drawing.Point(108, 149);
             this.lblDateChanged.Name = "lblDateChanged";
-            this.lblDateChanged.Size = new System.Drawing.Size(248, 50);
+            this.lblDateChanged.Size = new System.Drawing.Size(94, 22);
             this.lblDateChanged.TabIndex = 28;
             this.lblDateChanged.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(43, 366);
+            this.label11.Location = new System.Drawing.Point(16, 153);
+            this.label11.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(218, 32);
+            this.label11.Size = new System.Drawing.Size(85, 13);
             this.label11.TabIndex = 27;
             this.label11.Text = "Date Deceased:";
             // 
             // lbl50
             // 
             this.lbl50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl50.Location = new System.Drawing.Point(555, 445);
-            this.lbl50.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lbl50.Location = new System.Drawing.Point(208, 187);
             this.lbl50.Name = "lbl50";
-            this.lbl50.Size = new System.Drawing.Size(77, 50);
+            this.lbl50.Size = new System.Drawing.Size(30, 22);
             this.lbl50.TabIndex = 26;
             this.lbl50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl250
             // 
             this.lbl250.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl250.Location = new System.Drawing.Point(356, 445);
-            this.lbl250.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lbl250.Location = new System.Drawing.Point(134, 187);
             this.lbl250.Name = "lbl250";
-            this.lbl250.Size = new System.Drawing.Size(77, 50);
+            this.lbl250.Size = new System.Drawing.Size(30, 22);
             this.lbl250.TabIndex = 25;
             this.lbl250.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLongitudeSecond
             // 
             this.lblLongitudeSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLongitudeSecond.Location = new System.Drawing.Point(419, 258);
-            this.lblLongitudeSecond.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblLongitudeSecond.Location = new System.Drawing.Point(157, 108);
             this.lblLongitudeSecond.Name = "lblLongitudeSecond";
-            this.lblLongitudeSecond.Size = new System.Drawing.Size(117, 50);
+            this.lblLongitudeSecond.Size = new System.Drawing.Size(45, 22);
             this.lblLongitudeSecond.TabIndex = 23;
             this.lblLongitudeSecond.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLongitudeMinute
             // 
             this.lblLongitudeMinute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLongitudeMinute.Location = new System.Drawing.Point(325, 258);
-            this.lblLongitudeMinute.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblLongitudeMinute.Location = new System.Drawing.Point(122, 108);
             this.lblLongitudeMinute.Name = "lblLongitudeMinute";
-            this.lblLongitudeMinute.Size = new System.Drawing.Size(77, 50);
+            this.lblLongitudeMinute.Size = new System.Drawing.Size(30, 22);
             this.lblLongitudeMinute.TabIndex = 22;
             this.lblLongitudeMinute.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLongitudeDegree
             // 
             this.lblLongitudeDegree.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLongitudeDegree.Location = new System.Drawing.Point(219, 258);
-            this.lblLongitudeDegree.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblLongitudeDegree.Location = new System.Drawing.Point(82, 108);
             this.lblLongitudeDegree.Name = "lblLongitudeDegree";
-            this.lblLongitudeDegree.Size = new System.Drawing.Size(77, 50);
+            this.lblLongitudeDegree.Size = new System.Drawing.Size(30, 22);
             this.lblLongitudeDegree.TabIndex = 21;
             this.lblLongitudeDegree.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLatitudeSecond
             // 
             this.lblLatitudeSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLatitudeSecond.Location = new System.Drawing.Point(419, 160);
-            this.lblLatitudeSecond.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblLatitudeSecond.Location = new System.Drawing.Point(157, 67);
             this.lblLatitudeSecond.Name = "lblLatitudeSecond";
-            this.lblLatitudeSecond.Size = new System.Drawing.Size(117, 50);
+            this.lblLatitudeSecond.Size = new System.Drawing.Size(45, 22);
             this.lblLatitudeSecond.TabIndex = 20;
             this.lblLatitudeSecond.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLatitudeMinute
             // 
             this.lblLatitudeMinute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLatitudeMinute.Location = new System.Drawing.Point(325, 160);
-            this.lblLatitudeMinute.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblLatitudeMinute.Location = new System.Drawing.Point(122, 67);
             this.lblLatitudeMinute.Name = "lblLatitudeMinute";
-            this.lblLatitudeMinute.Size = new System.Drawing.Size(77, 50);
+            this.lblLatitudeMinute.Size = new System.Drawing.Size(30, 22);
             this.lblLatitudeMinute.TabIndex = 19;
             this.lblLatitudeMinute.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblLatitudeDegree
             // 
             this.lblLatitudeDegree.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLatitudeDegree.Location = new System.Drawing.Point(219, 160);
-            this.lblLatitudeDegree.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblLatitudeDegree.Location = new System.Drawing.Point(82, 67);
             this.lblLatitudeDegree.Name = "lblLatitudeDegree";
-            this.lblLatitudeDegree.Size = new System.Drawing.Size(77, 50);
+            this.lblLatitudeDegree.Size = new System.Drawing.Size(30, 22);
             this.lblLatitudeDegree.TabIndex = 18;
             this.lblLatitudeDegree.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnNameHistory
+            // btnCasualtyHistory
             // 
-            this.btnNameHistory.Location = new System.Drawing.Point(88, 556);
-            this.btnNameHistory.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.btnNameHistory.Name = "btnNameHistory";
-            this.btnNameHistory.Size = new System.Drawing.Size(309, 55);
-            this.btnNameHistory.TabIndex = 16;
-            this.btnNameHistory.Text = "Name History";
-            this.btnNameHistory.UseVisualStyleBackColor = true;
+            this.btnCasualtyHistory.Location = new System.Drawing.Point(33, 233);
+            this.btnCasualtyHistory.Name = "btnCasualtyHistory";
+            this.btnCasualtyHistory.Size = new System.Drawing.Size(116, 23);
+            this.btnCasualtyHistory.TabIndex = 16;
+            this.btnCasualtyHistory.Text = "Casualty History";
+            this.btnCasualtyHistory.UseVisualStyleBackColor = true;
+            this.btnCasualtyHistory.Click += new System.EventHandler(this.btnCasualtyHistory_Click);
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(493, 455);
-            this.label8.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label8.Location = new System.Drawing.Point(185, 191);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 31);
+            this.label8.Size = new System.Drawing.Size(42, 13);
             this.label8.TabIndex = 12;
             this.label8.Text = "50: ";
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(282, 455);
-            this.label7.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label7.Location = new System.Drawing.Point(106, 191);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 31);
+            this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 11;
             this.label7.Text = "250: ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(67, 455);
-            this.label6.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label6.Location = new System.Drawing.Point(25, 191);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(181, 32);
+            this.label6.Size = new System.Drawing.Size(70, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Map Sheets: ";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(43, 258);
-            this.label5.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label5.Location = new System.Drawing.Point(16, 108);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(157, 32);
+            this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 3;
             this.label5.Text = "Longitude: ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 160);
-            this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label4.Location = new System.Drawing.Point(25, 67);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 32);
+            this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 2;
             this.label4.Text = "Latitude: ";
             // 
@@ -654,19 +643,17 @@
             // 
             this.cboFear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFear.FormattingEnabled = true;
-            this.cboFear.Location = new System.Drawing.Point(219, 48);
-            this.cboFear.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.cboFear.Location = new System.Drawing.Point(82, 20);
             this.cboFear.Name = "cboFear";
-            this.cboFear.Size = new System.Drawing.Size(316, 39);
+            this.cboFear.Size = new System.Drawing.Size(121, 21);
             this.cboFear.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 55);
-            this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label3.Location = new System.Drawing.Point(27, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 32);
+            this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Feature: ";
             // 
@@ -678,11 +665,9 @@
             this.grpSearchBottom.Controls.Add(this.chkCasualty);
             this.grpSearchBottom.Controls.Add(this.lbltext);
             this.grpSearchBottom.Controls.Add(this.dgvSearch);
-            this.grpSearchBottom.Location = new System.Drawing.Point(40, 45);
-            this.grpSearchBottom.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.grpSearchBottom.Location = new System.Drawing.Point(15, 19);
             this.grpSearchBottom.Name = "grpSearchBottom";
-            this.grpSearchBottom.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.grpSearchBottom.Size = new System.Drawing.Size(752, 639);
+            this.grpSearchBottom.Size = new System.Drawing.Size(282, 268);
             this.grpSearchBottom.TabIndex = 0;
             this.grpSearchBottom.TabStop = false;
             this.grpSearchBottom.Text = "Search";
@@ -691,10 +676,9 @@
             // lblFID
             // 
             this.lblFID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFID.Location = new System.Drawing.Point(99, 541);
-            this.lblFID.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblFID.Location = new System.Drawing.Point(37, 227);
             this.lblFID.Name = "lblFID";
-            this.lblFID.Size = new System.Drawing.Size(170, 52);
+            this.lblFID.Size = new System.Drawing.Size(65, 23);
             this.lblFID.TabIndex = 17;
             this.lblFID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -702,29 +686,27 @@
             // 
             this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStatus.FormattingEnabled = true;
-            this.cboStatus.Location = new System.Drawing.Point(160, 48);
-            this.cboStatus.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.cboStatus.Location = new System.Drawing.Point(60, 20);
             this.cboStatus.Name = "cboStatus";
-            this.cboStatus.Size = new System.Drawing.Size(145, 39);
+            this.cboStatus.Size = new System.Drawing.Size(57, 21);
             this.cboStatus.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 55);
-            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.label2.Location = new System.Drawing.Point(11, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 32);
+            this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Status: ";
             // 
             // chkCasualty
             // 
             this.chkCasualty.AutoSize = true;
-            this.chkCasualty.Location = new System.Drawing.Point(384, 53);
-            this.chkCasualty.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.chkCasualty.Enabled = false;
+            this.chkCasualty.Location = new System.Drawing.Point(144, 22);
             this.chkCasualty.Name = "chkCasualty";
-            this.chkCasualty.Size = new System.Drawing.Size(164, 36);
+            this.chkCasualty.Size = new System.Drawing.Size(66, 17);
             this.chkCasualty.TabIndex = 3;
             this.chkCasualty.Text = "Casualty";
             this.chkCasualty.UseVisualStyleBackColor = true;
@@ -732,21 +714,19 @@
             // lbltext
             // 
             this.lbltext.AutoSize = true;
-            this.lbltext.Location = new System.Drawing.Point(29, 548);
-            this.lbltext.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lbltext.Location = new System.Drawing.Point(11, 230);
             this.lbltext.Name = "lbltext";
-            this.lbltext.Size = new System.Drawing.Size(74, 32);
+            this.lbltext.Size = new System.Drawing.Size(30, 13);
             this.lbltext.TabIndex = 1;
             this.lbltext.Text = "FID: ";
             // 
             // dgvSearch
             // 
             this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSearch.Location = new System.Drawing.Point(16, 129);
-            this.dgvSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.dgvSearch.Location = new System.Drawing.Point(6, 54);
             this.dgvSearch.Name = "dgvSearch";
             this.dgvSearch.RowHeadersVisible = false;
-            this.dgvSearch.Size = new System.Drawing.Size(701, 358);
+            this.dgvSearch.Size = new System.Drawing.Size(263, 150);
             this.dgvSearch.TabIndex = 0;
             this.dgvSearch.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSearch_DataBindingComplete);
             this.dgvSearch.SelectionChanged += new System.EventHandler(this.dgvSearch_SelectionChanged);
@@ -763,7 +743,8 @@
             this.fileToolStripMenuItem});
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
-            this.msMenu.Size = new System.Drawing.Size(1679, 49);
+            this.msMenu.Padding = new System.Windows.Forms.Padding(2, 1, 0, 1);
+            this.msMenu.Size = new System.Drawing.Size(689, 24);
             this.msMenu.TabIndex = 3;
             this.msMenu.Text = "menuStrip1";
             // 
@@ -772,13 +753,13 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.msExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(75, 45);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 22);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // msExit
             // 
             this.msExit.Name = "msExit";
-            this.msExit.Size = new System.Drawing.Size(179, 46);
+            this.msExit.Size = new System.Drawing.Size(92, 22);
             this.msExit.Text = "Exit";
             this.msExit.Click += new System.EventHandler(this.msExit_Click);
             // 
@@ -824,18 +805,18 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1679, 1202);
+            this.ClientSize = new System.Drawing.Size(689, 536);
             this.Controls.Add(this.grpNameList);
             this.Controls.Add(this.grpSearch);
             this.Controls.Add(this.msMenu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMenu;
-            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "Form1";
             this.Text = "Indigenous Interface";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing_1);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grpSearch.ResumeLayout(false);
             this.grpSearch.PerformLayout();
@@ -882,7 +863,7 @@
         private System.Windows.Forms.Label lblLatitudeSecond;
         private System.Windows.Forms.Label lblLatitudeMinute;
         private System.Windows.Forms.Label lblLatitudeDegree;
-        private System.Windows.Forms.Button btnNameHistory;
+        private System.Windows.Forms.Button btnCasualtyHistory;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
