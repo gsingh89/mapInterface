@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Casualty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Casualty.Designer.cs">
+      <DependentUpon>Casualty.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComboData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,22 +72,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbIndigenousPlaceNamesDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="dbIndigenousPlaceNamesDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbIndigenousPlaceNamesDataSet2.xsd</DependentUpon>
-    </Compile>
     <Compile Include="FinishedInterface.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FinishedInterface.designer.cs">
       <DependentUpon>FinishedInterface.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Casualty.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Casualty.Designer.cs">
-      <DependentUpon>Casualty.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -107,19 +102,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="TestDataSet.cs">
-      <DependentUpon>TestDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="TestDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TestDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FinishedInterface.resx">
-      <DependentUpon>FinishedInterface.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Casualty.resx">
       <DependentUpon>Casualty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinishedInterface.resx">
+      <DependentUpon>FinishedInterface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -164,17 +156,6 @@
     </None>
     <None Include="dbIndigenousPlaceNamesDataSet1.xss">
       <DependentUpon>dbIndigenousPlaceNamesDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="dbIndigenousPlaceNamesDataSet2.xsc">
-      <DependentUpon>dbIndigenousPlaceNamesDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="dbIndigenousPlaceNamesDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dbIndigenousPlaceNamesDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="dbIndigenousPlaceNamesDataSet2.xss">
-      <DependentUpon>dbIndigenousPlaceNamesDataSet2.xsd</DependentUpon>
     </None>
     <None Include="LoginDataSet.xsc">
       <DependentUpon>LoginDataSet.xsd</DependentUpon>
