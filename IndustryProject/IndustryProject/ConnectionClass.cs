@@ -45,9 +45,12 @@ namespace IndustryProject
         {
             SqlCommand SQLQuery = new SqlCommand(SQLQueryText, con);
 
-            foreach (var param in parameters)
+            if (parameters.Count() != 0 || parameters != null)
             {
-                SQLQuery.Parameters.Add(param);
+                foreach (var param in parameters)
+                {
+                    SQLQuery.Parameters.Add(param);
+                } 
             }
 
             SqlDataAdapter adapter = new SqlDataAdapter(SQLQuery);

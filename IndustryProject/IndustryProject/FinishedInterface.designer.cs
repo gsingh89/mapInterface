@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.grpSearch = new System.Windows.Forms.GroupBox();
-            this.gpoCoordinates = new System.Windows.Forms.GroupBox();
+            this.cboFeature = new System.Windows.Forms.ComboBox();
+            this.gpCoordinates = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtLongSec = new System.Windows.Forms.TextBox();
@@ -44,7 +52,7 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNewPlace = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSearch = new System.Windows.Forms.Label();
             this.radStatus = new System.Windows.Forms.RadioButton();
             this.radFID = new System.Windows.Forms.RadioButton();
             this.radLocation = new System.Windows.Forms.RadioButton();
@@ -53,6 +61,8 @@
             this.radName = new System.Windows.Forms.RadioButton();
             this.grpNameList = new System.Windows.Forms.GroupBox();
             this.grpGroupName = new System.Windows.Forms.GroupBox();
+            this.lblDateChanged = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.lbl50 = new System.Windows.Forms.Label();
             this.lbl250 = new System.Windows.Forms.Label();
             this.lblLongitudeSecond = new System.Windows.Forms.Label();
@@ -67,7 +77,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cboFeature = new System.Windows.Forms.ComboBox();
+            this.cboFear = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.grpSearchBottom = new System.Windows.Forms.GroupBox();
             this.lblFID = new System.Windows.Forms.Label();
@@ -80,26 +90,38 @@
             this.msMenu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lblDateChanged = new System.Windows.Forms.Label();
+            this.tableAdapterManager1 = new IndustryProject.LoginDataSetTableAdapters.TableAdapterManager();
+            this.comboData = new IndustryProject.ComboData();
+            this.fEATURETYPESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fEATURE_TYPESTableAdapter = new IndustryProject.ComboDataTableAdapters.FEATURE_TYPESTableAdapter();
+            this.comboDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nAMEPLACESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nAME_PLACESTableAdapter = new IndustryProject.ComboDataTableAdapters.NAME_PLACESTableAdapter();
+            this.fEATURETYPESBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.grpSearch.SuspendLayout();
-            this.gpoCoordinates.SuspendLayout();
+            this.gpCoordinates.SuspendLayout();
             this.grpNameList.SuspendLayout();
             this.grpGroupName.SuspendLayout();
             this.grpSearchBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).BeginInit();
             this.msMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fEATURETYPESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboDataBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nAMEPLACESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fEATURETYPESBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpSearch
             // 
-            this.grpSearch.Controls.Add(this.gpoCoordinates);
+            this.grpSearch.Controls.Add(this.cboFeature);
+            this.grpSearch.Controls.Add(this.gpCoordinates);
             this.grpSearch.Controls.Add(this.radMaps);
             this.grpSearch.Controls.Add(this.radMS50);
             this.grpSearch.Controls.Add(this.btnSearch);
             this.grpSearch.Controls.Add(this.btnNewPlace);
             this.grpSearch.Controls.Add(this.txtSearch);
-            this.grpSearch.Controls.Add(this.label1);
+            this.grpSearch.Controls.Add(this.lblSearch);
             this.grpSearch.Controls.Add(this.radStatus);
             this.grpSearch.Controls.Add(this.radFID);
             this.grpSearch.Controls.Add(this.radLocation);
@@ -110,33 +132,112 @@
             this.grpSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.grpSearch.Name = "grpSearch";
             this.grpSearch.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.grpSearch.Size = new System.Drawing.Size(1445, 422);
+            this.grpSearch.Size = new System.Drawing.Size(1445, 432);
             this.grpSearch.TabIndex = 1;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search Box";
             // 
-            // gpoCoordinates
+            // cboFeature
             // 
-            this.gpoCoordinates.Controls.Add(this.label10);
-            this.gpoCoordinates.Controls.Add(this.label9);
-            this.gpoCoordinates.Controls.Add(this.txtLongSec);
-            this.gpoCoordinates.Controls.Add(this.txtLongMin);
-            this.gpoCoordinates.Controls.Add(this.txtLongDeg);
-            this.gpoCoordinates.Controls.Add(this.txtLatSec);
-            this.gpoCoordinates.Controls.Add(this.txtLatMin);
-            this.gpoCoordinates.Controls.Add(this.txtLatDeg);
-            this.gpoCoordinates.Location = new System.Drawing.Point(40, 180);
-            this.gpoCoordinates.Name = "gpoCoordinates";
-            this.gpoCoordinates.Size = new System.Drawing.Size(1253, 102);
-            this.gpoCoordinates.TabIndex = 21;
-            this.gpoCoordinates.TabStop = false;
-            this.gpoCoordinates.Text = "Coordinates";
-            this.gpoCoordinates.Visible = false;
+            this.cboFeature.DisplayMember = "FEAT_TYPE";
+            this.cboFeature.FormattingEnabled = true;
+            this.cboFeature.Location = new System.Drawing.Point(187, 171);
+            this.cboFeature.Name = "cboFeature";
+            this.cboFeature.Size = new System.Drawing.Size(1075, 39);
+            this.cboFeature.TabIndex = 26;
+            this.cboFeature.ValueMember = "FEAT_TYPE";
+            this.cboFeature.Visible = false;
+            this.cboFeature.SelectedIndexChanged += new System.EventHandler(this.cboFeature_SelectedIndexChanged);
+            this.cboFeature.SelectionChangeCommitted += new System.EventHandler(this.cboFeature_SelectionChangeCommitted);
+            // 
+            // gpCoordinates
+            // 
+            this.gpCoordinates.Controls.Add(this.label17);
+            this.gpCoordinates.Controls.Add(this.label16);
+            this.gpCoordinates.Controls.Add(this.label15);
+            this.gpCoordinates.Controls.Add(this.label14);
+            this.gpCoordinates.Controls.Add(this.label13);
+            this.gpCoordinates.Controls.Add(this.label12);
+            this.gpCoordinates.Controls.Add(this.label10);
+            this.gpCoordinates.Controls.Add(this.label9);
+            this.gpCoordinates.Controls.Add(this.txtLongSec);
+            this.gpCoordinates.Controls.Add(this.txtLongMin);
+            this.gpCoordinates.Controls.Add(this.txtLongDeg);
+            this.gpCoordinates.Controls.Add(this.txtLatSec);
+            this.gpCoordinates.Controls.Add(this.txtLatMin);
+            this.gpCoordinates.Controls.Add(this.txtLatDeg);
+            this.gpCoordinates.Location = new System.Drawing.Point(56, 216);
+            this.gpCoordinates.Name = "gpCoordinates";
+            this.gpCoordinates.Size = new System.Drawing.Size(1253, 131);
+            this.gpCoordinates.TabIndex = 21;
+            this.gpCoordinates.TabStop = false;
+            this.gpCoordinates.Text = "Coordinates";
+            this.gpCoordinates.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(1121, 39);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(74, 20);
+            this.label17.TabIndex = 25;
+            this.label17.Text = "Seconds";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(1015, 39);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(68, 20);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Minutes";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(905, 39);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(73, 20);
+            this.label15.TabIndex = 24;
+            this.label15.Text = "Degrees";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(407, 39);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(74, 20);
+            this.label14.TabIndex = 23;
+            this.label14.Text = "Seconds";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(301, 39);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(68, 20);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Minutes";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(193, 39);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(73, 20);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Degrees";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(728, 40);
+            this.label10.Location = new System.Drawing.Point(728, 81);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(150, 32);
             this.label10.TabIndex = 20;
@@ -145,7 +246,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 43);
+            this.label9.Location = new System.Drawing.Point(36, 81);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(126, 32);
             this.label9.TabIndex = 19;
@@ -153,7 +254,7 @@
             // 
             // txtLongSec
             // 
-            this.txtLongSec.Location = new System.Drawing.Point(1126, 37);
+            this.txtLongSec.Location = new System.Drawing.Point(1106, 69);
             this.txtLongSec.Name = "txtLongSec";
             this.txtLongSec.Size = new System.Drawing.Size(100, 38);
             this.txtLongSec.TabIndex = 18;
@@ -161,7 +262,7 @@
             // 
             // txtLongMin
             // 
-            this.txtLongMin.Location = new System.Drawing.Point(1015, 37);
+            this.txtLongMin.Location = new System.Drawing.Point(995, 69);
             this.txtLongMin.Name = "txtLongMin";
             this.txtLongMin.Size = new System.Drawing.Size(100, 38);
             this.txtLongMin.TabIndex = 17;
@@ -169,7 +270,7 @@
             // 
             // txtLongDeg
             // 
-            this.txtLongDeg.Location = new System.Drawing.Point(904, 37);
+            this.txtLongDeg.Location = new System.Drawing.Point(884, 69);
             this.txtLongDeg.Name = "txtLongDeg";
             this.txtLongDeg.Size = new System.Drawing.Size(100, 38);
             this.txtLongDeg.TabIndex = 16;
@@ -177,7 +278,7 @@
             // 
             // txtLatSec
             // 
-            this.txtLatSec.Location = new System.Drawing.Point(391, 37);
+            this.txtLatSec.Location = new System.Drawing.Point(390, 69);
             this.txtLatSec.Name = "txtLatSec";
             this.txtLatSec.Size = new System.Drawing.Size(100, 38);
             this.txtLatSec.TabIndex = 15;
@@ -186,7 +287,7 @@
             // 
             // txtLatMin
             // 
-            this.txtLatMin.Location = new System.Drawing.Point(280, 37);
+            this.txtLatMin.Location = new System.Drawing.Point(279, 69);
             this.txtLatMin.Name = "txtLatMin";
             this.txtLatMin.Size = new System.Drawing.Size(100, 38);
             this.txtLatMin.TabIndex = 14;
@@ -194,7 +295,7 @@
             // 
             // txtLatDeg
             // 
-            this.txtLatDeg.Location = new System.Drawing.Point(169, 37);
+            this.txtLatDeg.Location = new System.Drawing.Point(168, 69);
             this.txtLatDeg.Name = "txtLatDeg";
             this.txtLatDeg.Size = new System.Drawing.Size(100, 38);
             this.txtLatDeg.TabIndex = 13;
@@ -210,12 +311,13 @@
             this.radMaps.TabStop = true;
             this.radMaps.Text = "M.S. Maps";
             this.radMaps.UseVisualStyleBackColor = true;
-            this.radMaps.CheckedChanged += new System.EventHandler(this.radMaps_CheckedChanged);
+            this.radMaps.CheckedChanged += new System.EventHandler(this.MakeSpecificRadioAvailabel);
+            this.radMaps.Click += new System.EventHandler(this.MakeSpecificRadioAvailabel);
             // 
             // radMS50
             // 
             this.radMS50.AutoSize = true;
-            this.radMS50.Location = new System.Drawing.Point(617, 131);
+            this.radMS50.Location = new System.Drawing.Point(608, 131);
             this.radMS50.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radMS50.Name = "radMS50";
             this.radMS50.Size = new System.Drawing.Size(149, 36);
@@ -224,11 +326,12 @@
             this.radMS50.Text = "M.S. 50";
             this.radMS50.UseVisualStyleBackColor = true;
             this.radMS50.Visible = false;
-            this.radMS50.CheckedChanged += new System.EventHandler(this.radMaps_CheckedChanged);
+            this.radMS50.CheckedChanged += new System.EventHandler(this.MakeSpecificRadioAvailabel);
+            this.radMS50.Click += new System.EventHandler(this.MakeSpecificRadioAvailabel);
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(247, 333);
+            this.btnSearch.Location = new System.Drawing.Point(253, 363);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(200, 55);
@@ -239,7 +342,7 @@
             // 
             // btnNewPlace
             // 
-            this.btnNewPlace.Location = new System.Drawing.Point(918, 333);
+            this.btnNewPlace.Location = new System.Drawing.Point(918, 363);
             this.btnNewPlace.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnNewPlace.Name = "btnNewPlace";
             this.btnNewPlace.Size = new System.Drawing.Size(200, 55);
@@ -249,22 +352,22 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(194, 201);
+            this.txtSearch.Location = new System.Drawing.Point(186, 213);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(1079, 38);
             this.txtSearch.TabIndex = 7;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // label1
+            // lblSearch
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 204);
-            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 32);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Search: ";
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(50, 216);
+            this.lblSearch.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(120, 32);
+            this.lblSearch.TabIndex = 6;
+            this.lblSearch.Text = "Search: ";
             // 
             // radStatus
             // 
@@ -277,6 +380,7 @@
             this.radStatus.TabStop = true;
             this.radStatus.Text = "Status";
             this.radStatus.UseVisualStyleBackColor = true;
+            this.radStatus.Click += new System.EventHandler(this.MakeSpecificRadioAvailabel);
             // 
             // radFID
             // 
@@ -289,6 +393,7 @@
             this.radFID.TabStop = true;
             this.radFID.Text = "FID";
             this.radFID.UseVisualStyleBackColor = true;
+            this.radFID.Click += new System.EventHandler(this.MakeSpecificRadioAvailabel);
             // 
             // radLocation
             // 
@@ -301,7 +406,8 @@
             this.radLocation.TabStop = true;
             this.radLocation.Text = "Location";
             this.radLocation.UseVisualStyleBackColor = true;
-            this.radLocation.CheckedChanged += new System.EventHandler(this.radLocation_CheckedChanged);
+            this.radLocation.CheckedChanged += new System.EventHandler(this.MakeSpecificRadioAvailabel);
+            this.radLocation.Click += new System.EventHandler(this.MakeSpecificRadioAvailabel);
             // 
             // radMS250
             // 
@@ -315,7 +421,8 @@
             this.radMS250.Text = "M.S. 250";
             this.radMS250.UseVisualStyleBackColor = true;
             this.radMS250.Visible = false;
-            this.radMS250.CheckedChanged += new System.EventHandler(this.radMaps_CheckedChanged);
+            this.radMS250.CheckedChanged += new System.EventHandler(this.MakeSpecificRadioAvailabel);
+            this.radMS250.Click += new System.EventHandler(this.MakeSpecificRadioAvailabel);
             // 
             // radFeature
             // 
@@ -328,6 +435,7 @@
             this.radFeature.TabStop = true;
             this.radFeature.Text = "Feature";
             this.radFeature.UseVisualStyleBackColor = true;
+            this.radFeature.Click += new System.EventHandler(this.MakeSpecificRadioAvailabel);
             // 
             // radName
             // 
@@ -340,6 +448,7 @@
             this.radName.TabStop = true;
             this.radName.Text = "Name";
             this.radName.UseVisualStyleBackColor = true;
+            this.radName.Click += new System.EventHandler(this.MakeSpecificRadioAvailabel);
             // 
             // grpNameList
             // 
@@ -373,7 +482,7 @@
             this.grpGroupName.Controls.Add(this.label6);
             this.grpGroupName.Controls.Add(this.label5);
             this.grpGroupName.Controls.Add(this.label4);
-            this.grpGroupName.Controls.Add(this.cboFeature);
+            this.grpGroupName.Controls.Add(this.cboFear);
             this.grpGroupName.Controls.Add(this.label3);
             this.grpGroupName.Location = new System.Drawing.Point(840, 45);
             this.grpGroupName.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
@@ -383,6 +492,25 @@
             this.grpGroupName.TabIndex = 1;
             this.grpGroupName.TabStop = false;
             this.grpGroupName.Text = "Group Name";
+            // 
+            // lblDateChanged
+            // 
+            this.lblDateChanged.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblDateChanged.Location = new System.Drawing.Point(288, 356);
+            this.lblDateChanged.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
+            this.lblDateChanged.Name = "lblDateChanged";
+            this.lblDateChanged.Size = new System.Drawing.Size(248, 50);
+            this.lblDateChanged.TabIndex = 28;
+            this.lblDateChanged.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(43, 366);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(218, 32);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Date Deceased:";
             // 
             // lbl50
             // 
@@ -522,14 +650,15 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Latitude: ";
             // 
-            // cboFeature
+            // cboFear
             // 
-            this.cboFeature.FormattingEnabled = true;
-            this.cboFeature.Location = new System.Drawing.Point(219, 48);
-            this.cboFeature.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.cboFeature.Name = "cboFeature";
-            this.cboFeature.Size = new System.Drawing.Size(316, 39);
-            this.cboFeature.TabIndex = 1;
+            this.cboFear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboFear.FormattingEnabled = true;
+            this.cboFear.Location = new System.Drawing.Point(219, 48);
+            this.cboFear.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.cboFear.Name = "cboFear";
+            this.cboFear.Size = new System.Drawing.Size(316, 39);
+            this.cboFear.TabIndex = 1;
             // 
             // label3
             // 
@@ -557,6 +686,7 @@
             this.grpSearchBottom.TabIndex = 0;
             this.grpSearchBottom.TabStop = false;
             this.grpSearchBottom.Text = "Search";
+            this.grpSearchBottom.EnabledChanged += new System.EventHandler(this.grpSearchBottom_EnabledChanged);
             // 
             // lblFID
             // 
@@ -570,6 +700,7 @@
             // 
             // cboStatus
             // 
+            this.cboStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboStatus.FormattingEnabled = true;
             this.cboStatus.Location = new System.Drawing.Point(160, 48);
             this.cboStatus.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
@@ -590,7 +721,7 @@
             // chkCasualty
             // 
             this.chkCasualty.AutoSize = true;
-            this.chkCasualty.Location = new System.Drawing.Point(384, 57);
+            this.chkCasualty.Location = new System.Drawing.Point(384, 53);
             this.chkCasualty.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.chkCasualty.Name = "chkCasualty";
             this.chkCasualty.Size = new System.Drawing.Size(164, 36);
@@ -617,7 +748,9 @@
             this.dgvSearch.RowHeadersVisible = false;
             this.dgvSearch.Size = new System.Drawing.Size(701, 358);
             this.dgvSearch.TabIndex = 0;
+            this.dgvSearch.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSearch_DataBindingComplete);
             this.dgvSearch.SelectionChanged += new System.EventHandler(this.dgvSearch_SelectionChanged);
+            this.dgvSearch.Click += new System.EventHandler(this.dgvSearch_Click);
             // 
             // manitoba_MapperTableAdapter
             // 
@@ -645,28 +778,49 @@
             // msExit
             // 
             this.msExit.Name = "msExit";
-            this.msExit.Size = new System.Drawing.Size(327, 46);
+            this.msExit.Size = new System.Drawing.Size(179, 46);
             this.msExit.Text = "Exit";
             this.msExit.Click += new System.EventHandler(this.msExit_Click);
             // 
-            // label11
+            // tableAdapterManager1
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(88, 366);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(218, 32);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Date Deceased:";
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.Connection = null;
+            this.tableAdapterManager1.LoginTableAdapter = null;
+            this.tableAdapterManager1.UpdateOrder = IndustryProject.LoginDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // lblDateChanged
+            // comboData
             // 
-            this.lblDateChanged.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDateChanged.Location = new System.Drawing.Point(325, 356);
-            this.lblDateChanged.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.lblDateChanged.Name = "lblDateChanged";
-            this.lblDateChanged.Size = new System.Drawing.Size(210, 50);
-            this.lblDateChanged.TabIndex = 28;
-            this.lblDateChanged.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.comboData.DataSetName = "ComboData";
+            this.comboData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fEATURETYPESBindingSource
+            // 
+            this.fEATURETYPESBindingSource.DataMember = "FEATURE_TYPES";
+            this.fEATURETYPESBindingSource.DataSource = this.comboData;
+            // 
+            // fEATURE_TYPESTableAdapter
+            // 
+            this.fEATURE_TYPESTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboDataBindingSource
+            // 
+            this.comboDataBindingSource.DataSource = this.comboData;
+            this.comboDataBindingSource.Position = 0;
+            // 
+            // nAMEPLACESBindingSource
+            // 
+            this.nAMEPLACESBindingSource.DataMember = "NAME_PLACES";
+            this.nAMEPLACESBindingSource.DataSource = this.comboDataBindingSource;
+            // 
+            // nAME_PLACESTableAdapter
+            // 
+            this.nAME_PLACESTableAdapter.ClearBeforeFill = true;
+            // 
+            // fEATURETYPESBindingSource1
+            // 
+            this.fEATURETYPESBindingSource1.DataMember = "FEATURE_TYPES";
+            this.fEATURETYPESBindingSource1.DataSource = this.comboDataBindingSource;
             // 
             // Form1
             // 
@@ -685,8 +839,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grpSearch.ResumeLayout(false);
             this.grpSearch.PerformLayout();
-            this.gpoCoordinates.ResumeLayout(false);
-            this.gpoCoordinates.PerformLayout();
+            this.gpCoordinates.ResumeLayout(false);
+            this.gpCoordinates.PerformLayout();
             this.grpNameList.ResumeLayout(false);
             this.grpGroupName.ResumeLayout(false);
             this.grpGroupName.PerformLayout();
@@ -695,6 +849,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearch)).EndInit();
             this.msMenu.ResumeLayout(false);
             this.msMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fEATURETYPESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboDataBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nAMEPLACESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fEATURETYPESBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -706,7 +865,7 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnNewPlace;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.RadioButton radStatus;
         private System.Windows.Forms.RadioButton radFID;
         private System.Windows.Forms.RadioButton radLocation;
@@ -729,7 +888,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboFeature;
+        private System.Windows.Forms.ComboBox cboFear;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox grpSearchBottom;
         private System.Windows.Forms.Label lblFID;
@@ -741,7 +900,7 @@
         private dbIndigenousPlaceNamesDataSetTableAdapters.Manitoba_MapperTableAdapter manitoba_MapperTableAdapter;
         private System.Windows.Forms.RadioButton radMS50;
         private System.Windows.Forms.RadioButton radMaps;
-        private System.Windows.Forms.GroupBox gpoCoordinates;
+        private System.Windows.Forms.GroupBox gpCoordinates;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtLongSec;
@@ -755,6 +914,21 @@
         private System.Windows.Forms.ToolStripMenuItem msExit;
         private System.Windows.Forms.Label lblDateChanged;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cboFeature;
+        private LoginDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private ComboData comboData;
+        private System.Windows.Forms.BindingSource fEATURETYPESBindingSource;
+        private ComboDataTableAdapters.FEATURE_TYPESTableAdapter fEATURE_TYPESTableAdapter;
+        private System.Windows.Forms.BindingSource comboDataBindingSource;
+        private System.Windows.Forms.BindingSource nAMEPLACESBindingSource;
+        private ComboDataTableAdapters.NAME_PLACESTableAdapter nAME_PLACESTableAdapter;
+        private System.Windows.Forms.BindingSource fEATURETYPESBindingSource1;
     }
 }
 
