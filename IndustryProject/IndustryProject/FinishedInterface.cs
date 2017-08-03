@@ -191,47 +191,6 @@ namespace IndustryProject
             UpdateCasualtyCheckBox();
         }
 
-        //private void MakeMSAvailable()
-        //{
-        //    if (radMaps.Checked || radMS250.Checked | radMS50.Checked)
-        //    {
-        //        radMS250.Visible = true;
-        //        radMS50.Visible = true;
-        //    }
-
-        //    else
-        //    {
-        //        radMS250.Visible = false;
-        //        radMS50.Visible = false;
-        //    }
-        //}
-
-        //private void radMaps_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    MakeMSAvailable();
-        //}
-
-        //private void MakeCoordinatesAvailable()
-        //{
-        //    if (radLocation.Checked)
-        //    {
-        //        gpCoordinates.Visible = true;
-        //        lblSearch.Visible = false;
-        //        txtSearch.Visible = false;
-        //    }
-        //    else
-        //    {
-        //        gpCoordinates.Visible = false;
-        //        lblSearch.Visible = true;
-        //        txtSearch.Visible = true;
-        //    }
-        //}
-
-        //private void radLocation_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    MakeCoordinatesAvailable();
-        //}
-
         /// Exits the application
         /// </summary>
         /// <param name="sender"></param>
