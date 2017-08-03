@@ -388,5 +388,23 @@ namespace IndustryProject
         {
             Application.Exit();
         }
+
+        //private void btnCasualty_Click(object sender, EventArgs e)
+        //{
+        //    frmCasualty frm = new frmCasualty();
+        //    frm.Show();
+        //}
+
+        private void btnNewPlace_Click(object sender, EventArgs e)
+        {
+            newplace frm2 = new newplace();
+            frm2.Show();
+        }
+
+        private void btnNewPlace_Click_1(object sender, EventArgs e)
+        {
+            newplace place = new newplace();
+            place.Show();
+        }
     }
 }

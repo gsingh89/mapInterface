@@ -359,6 +359,7 @@
             this.btnNewPlace.TabIndex = 9;
             this.btnNewPlace.Text = "New Place";
             this.btnNewPlace.UseVisualStyleBackColor = true;
+            this.btnNewPlace.Click += new System.EventHandler(this.btnNewPlace_Click_1);
             // 
             // txtSearch
             // 
