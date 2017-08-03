@@ -132,7 +132,7 @@
             this.grpSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.grpSearch.Name = "grpSearch";
             this.grpSearch.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.grpSearch.Size = new System.Drawing.Size(1445, 432);
+            this.grpSearch.Size = new System.Drawing.Size(1445, 390);
             this.grpSearch.TabIndex = 1;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search Box";
@@ -167,7 +167,7 @@
             this.gpCoordinates.Controls.Add(this.txtLatSec);
             this.gpCoordinates.Controls.Add(this.txtLatMin);
             this.gpCoordinates.Controls.Add(this.txtLatDeg);
-            this.gpCoordinates.Location = new System.Drawing.Point(56, 217);
+            this.gpCoordinates.Location = new System.Drawing.Point(40, 129);
             this.gpCoordinates.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gpCoordinates.Name = "gpCoordinates";
             this.gpCoordinates.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -313,7 +313,8 @@
             // radMaps
             // 
             this.radMaps.AutoSize = true;
-            this.radMaps.Location = new System.Drawing.Point(485, 67);
+            this.radMaps.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radMaps.Location = new System.Drawing.Point(511, 67);
             this.radMaps.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radMaps.Name = "radMaps";
             this.radMaps.Size = new System.Drawing.Size(186, 36);
@@ -327,7 +328,7 @@
             // radMS50
             // 
             this.radMS50.AutoSize = true;
-            this.radMS50.Location = new System.Drawing.Point(523, 131);
+            this.radMS50.Location = new System.Drawing.Point(608, 112);
             this.radMS50.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radMS50.Name = "radMS50";
             this.radMS50.Size = new System.Drawing.Size(149, 36);
@@ -341,7 +342,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(253, 362);
+            this.btnSearch.Location = new System.Drawing.Point(200, 294);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(200, 55);
@@ -352,7 +353,7 @@
             // 
             // btnNewPlace
             // 
-            this.btnNewPlace.Location = new System.Drawing.Point(917, 362);
+            this.btnNewPlace.Location = new System.Drawing.Point(901, 294);
             this.btnNewPlace.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnNewPlace.Name = "btnNewPlace";
             this.btnNewPlace.Size = new System.Drawing.Size(200, 55);
@@ -363,7 +364,7 @@
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(187, 212);
+            this.txtSearch.Location = new System.Drawing.Point(187, 172);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(1079, 38);
@@ -373,7 +374,7 @@
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(51, 217);
+            this.lblSearch.Location = new System.Drawing.Point(51, 175);
             this.lblSearch.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(120, 32);
@@ -423,7 +424,7 @@
             // radMS250
             // 
             this.radMS250.AutoSize = true;
-            this.radMS250.Location = new System.Drawing.Point(307, 131);
+            this.radMS250.Location = new System.Drawing.Point(395, 112);
             this.radMS250.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.radMS250.Name = "radMS250";
             this.radMS250.Size = new System.Drawing.Size(165, 36);
@@ -466,11 +467,11 @@
             this.grpNameList.Controls.Add(this.grpGroupName);
             this.grpNameList.Controls.Add(this.grpSearchBottom);
             this.grpNameList.Enabled = false;
-            this.grpNameList.Location = new System.Drawing.Point(77, 482);
+            this.grpNameList.Location = new System.Drawing.Point(77, 470);
             this.grpNameList.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.grpNameList.Name = "grpNameList";
             this.grpNameList.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.grpNameList.Size = new System.Drawing.Size(1560, 687);
+            this.grpNameList.Size = new System.Drawing.Size(1560, 699);
             this.grpNameList.TabIndex = 2;
             this.grpNameList.TabStop = false;
             this.grpNameList.Text = "Name List";
@@ -513,6 +514,7 @@
             this.lblDateChanged.Size = new System.Drawing.Size(247, 50);
             this.lblDateChanged.TabIndex = 28;
             this.lblDateChanged.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDateChanged.UseCompatibleTextRendering = true;
             // 
             // label11
             // 
@@ -759,6 +761,7 @@
             this.dgvSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.dgvSearch.Name = "dgvSearch";
             this.dgvSearch.RowHeadersVisible = false;
+            this.dgvSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSearch.Size = new System.Drawing.Size(701, 358);
             this.dgvSearch.TabIndex = 0;
             this.dgvSearch.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSearch_DataBindingComplete);
@@ -777,7 +780,7 @@
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.msMenu.Size = new System.Drawing.Size(1837, 49);
+            this.msMenu.Size = new System.Drawing.Size(1837, 52);
             this.msMenu.TabIndex = 3;
             this.msMenu.Text = "menuStrip1";
             // 
@@ -786,13 +789,14 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.msExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(75, 45);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(75, 48);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // msExit
             // 
+            this.msExit.Image = global::IndustryProject.Properties.Resources.exit;
             this.msExit.Name = "msExit";
-            this.msExit.Size = new System.Drawing.Size(179, 46);
+            this.msExit.Size = new System.Drawing.Size(327, 46);
             this.msExit.Text = "Exit";
             this.msExit.Click += new System.EventHandler(this.msExit_Click);
             // 

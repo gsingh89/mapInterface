@@ -86,11 +86,10 @@ namespace IndustryProject
             }
 
             else if (radMS50.Checked && !String.IsNullOrWhiteSpace(enteredName))
-            {
-                basicQuery += " WHERE PLACES.MS250 = @ms250";
-                basicQuery += " AND PLACES.MS50 = @ms50";
-                ConnectionClass.AddParam("ms250", enteredName);
-                ConnectionClass.AddParam("ms50", enteredName);
+            { 
+                basicQuery += " WHERE PLACES.MS250 = @ms250" + " AND PLACES.MS50 = @ms50";
+                ConnectionClass.AddParam("ms250".ToString(), enteredName.ToString());
+                ConnectionClass.AddParam("ms50".ToString(), enteredName.ToString());
             }
 
             else if (radLocation.Checked && !String.IsNullOrWhiteSpace(txtLatDeg.Text) && !String.IsNullOrWhiteSpace(txtLatMin.Text) &&
@@ -147,29 +146,33 @@ namespace IndustryProject
 
         private void dgvSearch_SelectionChanged(object sender, EventArgs e)
         {
-            UpdateCasualtyCheckBox();
-
-            lblFID.Text = dgvSearch.CurrentRow.Cells["Unique National Identifier"].Value.ToString();
-            lblLatitudeDegree.Text = dgvSearch.CurrentRow.Cells["LATITUDE Degrees"].Value.ToString();
-            lblLatitudeMinute.Text = dgvSearch.CurrentRow.Cells["LATITUDE Minutes"].Value.ToString();
-            lblLatitudeSecond.Text = dgvSearch.CurrentRow.Cells["LATITUDE Seconds"].Value.ToString();
-            lblLongitudeDegree.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Degrees"].Value.ToString();
-            lblLongitudeMinute.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Minutes"].Value.ToString();
-            lblLongitudeSecond.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Seconds"].Value.ToString();
-            lbl250.Text = dgvSearch.CurrentRow.Cells["NTS 250000 Map Sheet"].Value.ToString();
-            lbl50.Text = dgvSearch.CurrentRow.Cells["NTS 50000 Submap Sheet"].Value.ToString();
-
-            // If there is not data available
-            if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Casualty Date of Death"].Value.ToString()))
+            if (dgvSearch.SelectedRows.Count > 0)
             {
-                lblDateChanged.Text = "No Data";
-            }
+                UpdateCasualtyCheckBox();
 
-            else
-            {
-                lblDateChanged.Text = dgvSearch.CurrentRow.Cells["Casualty Date of Death"].Value.ToString();
-            }
+                lblFID.Text = dgvSearch.CurrentRow.Cells["Unique National Identifier"].Value.ToString();
+                lblLatitudeDegree.Text = dgvSearch.CurrentRow.Cells["LATITUDE Degrees"].Value.ToString();
+                lblLatitudeMinute.Text = dgvSearch.CurrentRow.Cells["LATITUDE Minutes"].Value.ToString();
+                lblLatitudeSecond.Text = dgvSearch.CurrentRow.Cells["LATITUDE Seconds"].Value.ToString();
+                lblLongitudeDegree.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Degrees"].Value.ToString();
+                lblLongitudeMinute.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Minutes"].Value.ToString();
+                lblLongitudeSecond.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Seconds"].Value.ToString();
+                lbl250.Text = dgvSearch.CurrentRow.Cells["NTS 250000 Map Sheet"].Value.ToString();
+                lbl50.Text = dgvSearch.CurrentRow.Cells["NTS 50000 Submap Sheet"].Value.ToString();
 
+                // If there is not data available
+                if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Casualty Date of Death"].Value.ToString()))
+                {
+                    lblDateChanged.Text = "No Data";
+                }
+
+                else
+                {
+                    string mess = DateTime.Parse(dgvSearch.CurrentRow.Cells["Casualty Date of Death"].Value.ToString()).ToShortDateString();
+                    lblDateChanged.Text = mess;
+                    //lblDateChanged.TextAlign = ContentAlignment.BottomCenter;
+                }
+            }
         }
 
         private void UpdateCasualtyCheckBox()
@@ -190,47 +193,6 @@ namespace IndustryProject
         {
             UpdateCasualtyCheckBox();
         }
-
-        //private void MakeMSAvailable()
-        //{
-        //    if (radMaps.Checked || radMS250.Checked | radMS50.Checked)
-        //    {
-        //        radMS250.Visible = true;
-        //        radMS50.Visible = true;
-        //    }
-
-        //    else
-        //    {
-        //        radMS250.Visible = false;
-        //        radMS50.Visible = false;
-        //    }
-        //}
-
-        //private void radMaps_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    MakeMSAvailable();
-        //}
-
-        //private void MakeCoordinatesAvailable()
-        //{
-        //    if (radLocation.Checked)
-        //    {
-        //        gpCoordinates.Visible = true;
-        //        lblSearch.Visible = false;
-        //        txtSearch.Visible = false;
-        //    }
-        //    else
-        //    {
-        //        gpCoordinates.Visible = false;
-        //        lblSearch.Visible = true;
-        //        txtSearch.Visible = true;
-        //    }
-        //}
-
-        //private void radLocation_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    MakeCoordinatesAvailable();
-        //}
 
         /// Exits the application
         /// </summary>

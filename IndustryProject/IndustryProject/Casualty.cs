@@ -45,6 +45,10 @@ namespace IndustryProject
             lblBuriedBox.Text = dgvSearch.CurrentRow.Cells["Casualty Place of Burial"].Value.ToString();
             lblServedBox.Text = dgvSearch.CurrentRow.Cells["Casualty Regiment"].Value.ToString();
             //lblNextOfKinNameBox.Text = dgvSearch.CurrentRow.Cells[""].Value.ToString();
+
+            grpCasualty.Text = dgvSearch.CurrentRow.Cells["Casualty Given Name"].Value.ToString() +
+
+                              ", " + dgvSearch.CurrentRow.Cells["Casualty Surname"].Value.ToString();
         }
     }
 }
