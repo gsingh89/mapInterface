@@ -61,6 +61,10 @@
             this.radName = new System.Windows.Forms.RadioButton();
             this.grpNameList = new System.Windows.Forms.GroupBox();
             this.grpGroupName = new System.Windows.Forms.GroupBox();
+            this.lblTo = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lblFrom = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblDateChanged = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lbl50 = new System.Windows.Forms.Label();
@@ -98,10 +102,6 @@
             this.nAMEPLACESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nAME_PLACESTableAdapter = new IndustryProject.ComboDataTableAdapters.NAME_PLACESTableAdapter();
             this.fEATURETYPESBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblFrom = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.lblTo = new System.Windows.Forms.Label();
             this.grpSearch.SuspendLayout();
             this.gpCoordinates.SuspendLayout();
             this.grpNameList.SuspendLayout();
@@ -513,6 +513,44 @@
             this.grpGroupName.TabStop = false;
             this.grpGroupName.Text = "Group Name";
             // 
+            // lblTo
+            // 
+            this.lblTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTo.Location = new System.Drawing.Point(377, 179);
+            this.lblTo.Name = "lblTo";
+            this.lblTo.Size = new System.Drawing.Size(262, 56);
+            this.lblTo.TabIndex = 32;
+            this.lblTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTo.UseCompatibleTextRendering = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(43, 192);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(104, 32);
+            this.label18.TabIndex = 31;
+            this.label18.Text = "Act To:";
+            // 
+            // lblFrom
+            // 
+            this.lblFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFrom.Location = new System.Drawing.Point(377, 108);
+            this.lblFrom.Name = "lblFrom";
+            this.lblFrom.Size = new System.Drawing.Size(262, 55);
+            this.lblFrom.TabIndex = 30;
+            this.lblFrom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFrom.UseCompatibleTextRendering = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 32);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Act From:";
+            // 
             // lblDateChanged
             // 
             this.lblDateChanged.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -529,9 +567,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(43, 413);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(218, 32);
+            this.label11.Size = new System.Drawing.Size(206, 32);
             this.label11.TabIndex = 27;
-            this.label11.Text = "Date Deceased:";
+            this.label11.Text = "Date Changed:";
             // 
             // lbl50
             // 
@@ -676,7 +714,7 @@
             // 
             this.cboFear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFear.FormattingEnabled = true;
-            this.cboFear.Location = new System.Drawing.Point(324, 52);
+            this.cboFear.Location = new System.Drawing.Point(324, 44);
             this.cboFear.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cboFear.Name = "cboFear";
             this.cboFear.Size = new System.Drawing.Size(316, 39);
@@ -685,7 +723,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 51);
+            this.label3.Location = new System.Drawing.Point(43, 47);
             this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 32);
@@ -847,44 +885,6 @@
             // 
             this.fEATURETYPESBindingSource1.DataMember = "FEATURE_TYPES";
             this.fEATURETYPESBindingSource1.DataSource = this.comboDataBindingSource;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 120);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 32);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Act From:";
-            // 
-            // lblFrom
-            // 
-            this.lblFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblFrom.Location = new System.Drawing.Point(378, 112);
-            this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(262, 47);
-            this.lblFrom.TabIndex = 30;
-            this.lblFrom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblFrom.UseCompatibleTextRendering = true;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(43, 188);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(104, 32);
-            this.label18.TabIndex = 31;
-            this.label18.Text = "Act To:";
-            // 
-            // lblTo
-            // 
-            this.lblTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblTo.Location = new System.Drawing.Point(377, 179);
-            this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(262, 48);
-            this.lblTo.TabIndex = 32;
-            this.lblTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTo.UseCompatibleTextRendering = true;
             // 
             // Form1
             // 
