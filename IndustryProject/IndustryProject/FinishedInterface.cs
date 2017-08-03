@@ -62,8 +62,9 @@ namespace IndustryProject
             txtSearch.Focus();
 
             string basicQuery = @"SELECT NAMES.NAME_ACTUAL AS 'Geographical Name', 
-                        NAME_PLACES.FEATURE_ID AS 'Unique National Identifier',
+                        NAME_PLACES.FEATURE_ID AS 'Unique National Identifier', NAME_PLACES.DATE_CH AS 'Date Changed',
                         NAME_PLACES.STATUS_CODE AS 'Status', NAMES.CASUALTY AS 'Casualty',
+                        NAME_PLACES.ACT_FROM AS 'Act From', NAME_PLACES.ACT_TO AS 'Act To',
                         PLACES.FEAT_CODE AS 'Feature Code', PLACES.MS250 AS 'NTS 250000 Map Sheet',
                         PLACES.MS50 AS 'NTS 50000 Submap Sheet', PLACES.LAT_DEG AS 'LATITUDE Degrees',
                         PLACES.LAT_MIN AS 'LATITUDE Minutes', PLACES.LAT_SEC AS 'LATITUDE Seconds',
@@ -155,6 +156,29 @@ namespace IndustryProject
                 UpdateCasualtyCheckBox();
 
                 lblFID.Text = dgvSearch.CurrentRow.Cells["Unique National Identifier"].Value.ToString();
+
+                //Act From
+                if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Act From"].Value.ToString()))
+                {
+                    lblFrom.Text = "No Data";
+                }
+
+                else
+                {
+                    lblFrom.Text = DateTime.Parse(dgvSearch.CurrentRow.Cells["Act From"].Value.ToString()).ToShortDateString(); 
+                }
+
+                //Act To
+                if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Act To"].Value.ToString()))
+                {
+                    lblTo.Text = "No Data";
+                }
+
+                else
+                {
+                    lblTo.Text = DateTime.Parse(dgvSearch.CurrentRow.Cells["Act To"].Value.ToString()).ToShortDateString();  
+                }
+
                 lblLatitudeDegree.Text = dgvSearch.CurrentRow.Cells["LATITUDE Degrees"].Value.ToString();
                 lblLatitudeMinute.Text = dgvSearch.CurrentRow.Cells["LATITUDE Minutes"].Value.ToString();
                 lblLatitudeSecond.Text = dgvSearch.CurrentRow.Cells["LATITUDE Seconds"].Value.ToString();
@@ -165,14 +189,14 @@ namespace IndustryProject
                 lbl50.Text = dgvSearch.CurrentRow.Cells["NTS 50000 Submap Sheet"].Value.ToString();
 
                 // If there is not data available
-                if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Casualty Date of Death"].Value.ToString()))
+                if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Date Changed"].Value.ToString()))
                 {
                     lblDateChanged.Text = "No Data";
                 }
 
                 else
                 {
-                    string mess = DateTime.Parse(dgvSearch.CurrentRow.Cells["Casualty Date of Death"].Value.ToString()).ToShortDateString();
+                    string mess = DateTime.Parse(dgvSearch.CurrentRow.Cells["Date Changed"].Value.ToString()).ToShortDateString();
                     lblDateChanged.Text = mess;
                     //lblDateChanged.TextAlign = ContentAlignment.BottomCenter;
                 }
@@ -216,8 +240,9 @@ namespace IndustryProject
         { 
            
             string basicQuery = @"SELECT NAMES.NAME_ACTUAL AS 'Geographical Name', 
-                        NAME_PLACES.FEATURE_ID AS 'Unique National Identifier',
+                        NAME_PLACES.FEATURE_ID AS 'Unique National Identifier', NAME_PLACES.DATE_CH AS 'Date Changed',
                         NAME_PLACES.STATUS_CODE AS 'Status', NAMES.CASUALTY AS 'Casualty',
+                        NAME_PLACES.ACT_FROM AS 'Act From', NAME_PLACES.ACT_TO AS 'Act To',
                         PLACES.FEAT_CODE AS 'Feature Code', PLACES.MS250 AS 'NTS 250000 Map Sheet',
                         PLACES.MS50 AS 'NTS 50000 Submap Sheet', PLACES.LAT_DEG AS 'LATITUDE Degrees',
                         PLACES.LAT_MIN AS 'LATITUDE Minutes', PLACES.LAT_SEC AS 'LATITUDE Seconds',

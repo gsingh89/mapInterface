@@ -61,6 +61,10 @@
             this.radName = new System.Windows.Forms.RadioButton();
             this.grpNameList = new System.Windows.Forms.GroupBox();
             this.grpGroupName = new System.Windows.Forms.GroupBox();
+            this.lblTo = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lblFrom = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblDateChanged = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.lbl50 = new System.Windows.Forms.Label();
@@ -478,6 +482,10 @@
             // 
             // grpGroupName
             // 
+            this.grpGroupName.Controls.Add(this.lblTo);
+            this.grpGroupName.Controls.Add(this.label18);
+            this.grpGroupName.Controls.Add(this.lblFrom);
+            this.grpGroupName.Controls.Add(this.label1);
             this.grpGroupName.Controls.Add(this.lblDateChanged);
             this.grpGroupName.Controls.Add(this.label11);
             this.grpGroupName.Controls.Add(this.lbl50);
@@ -505,10 +513,48 @@
             this.grpGroupName.TabStop = false;
             this.grpGroupName.Text = "Group Name";
             // 
+            // lblTo
+            // 
+            this.lblTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblTo.Location = new System.Drawing.Point(377, 179);
+            this.lblTo.Name = "lblTo";
+            this.lblTo.Size = new System.Drawing.Size(262, 56);
+            this.lblTo.TabIndex = 32;
+            this.lblTo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTo.UseCompatibleTextRendering = true;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(43, 192);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(104, 32);
+            this.label18.TabIndex = 31;
+            this.label18.Text = "Act To:";
+            // 
+            // lblFrom
+            // 
+            this.lblFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblFrom.Location = new System.Drawing.Point(377, 108);
+            this.lblFrom.Name = "lblFrom";
+            this.lblFrom.Size = new System.Drawing.Size(262, 55);
+            this.lblFrom.TabIndex = 30;
+            this.lblFrom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblFrom.UseCompatibleTextRendering = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 120);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(136, 32);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Act From:";
+            // 
             // lblDateChanged
             // 
             this.lblDateChanged.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDateChanged.Location = new System.Drawing.Point(288, 355);
+            this.lblDateChanged.Location = new System.Drawing.Point(392, 403);
             this.lblDateChanged.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblDateChanged.Name = "lblDateChanged";
             this.lblDateChanged.Size = new System.Drawing.Size(247, 50);
@@ -519,16 +565,16 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(43, 365);
+            this.label11.Location = new System.Drawing.Point(43, 413);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(218, 32);
+            this.label11.Size = new System.Drawing.Size(206, 32);
             this.label11.TabIndex = 27;
-            this.label11.Text = "Date Deceased:";
+            this.label11.Text = "Date Changed:";
             // 
             // lbl50
             // 
             this.lbl50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl50.Location = new System.Drawing.Point(555, 446);
+            this.lbl50.Location = new System.Drawing.Point(562, 479);
             this.lbl50.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lbl50.Name = "lbl50";
             this.lbl50.Size = new System.Drawing.Size(77, 50);
@@ -538,7 +584,7 @@
             // lbl250
             // 
             this.lbl250.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lbl250.Location = new System.Drawing.Point(357, 446);
+            this.lbl250.Location = new System.Drawing.Point(353, 479);
             this.lbl250.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lbl250.Name = "lbl250";
             this.lbl250.Size = new System.Drawing.Size(77, 50);
@@ -548,7 +594,7 @@
             // lblLongitudeSecond
             // 
             this.lblLongitudeSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLongitudeSecond.Location = new System.Drawing.Point(419, 258);
+            this.lblLongitudeSecond.Location = new System.Drawing.Point(522, 330);
             this.lblLongitudeSecond.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblLongitudeSecond.Name = "lblLongitudeSecond";
             this.lblLongitudeSecond.Size = new System.Drawing.Size(117, 50);
@@ -558,7 +604,7 @@
             // lblLongitudeMinute
             // 
             this.lblLongitudeMinute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLongitudeMinute.Location = new System.Drawing.Point(325, 258);
+            this.lblLongitudeMinute.Location = new System.Drawing.Point(392, 330);
             this.lblLongitudeMinute.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblLongitudeMinute.Name = "lblLongitudeMinute";
             this.lblLongitudeMinute.Size = new System.Drawing.Size(77, 50);
@@ -568,7 +614,7 @@
             // lblLongitudeDegree
             // 
             this.lblLongitudeDegree.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLongitudeDegree.Location = new System.Drawing.Point(219, 258);
+            this.lblLongitudeDegree.Location = new System.Drawing.Point(271, 330);
             this.lblLongitudeDegree.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblLongitudeDegree.Name = "lblLongitudeDegree";
             this.lblLongitudeDegree.Size = new System.Drawing.Size(77, 50);
@@ -578,7 +624,7 @@
             // lblLatitudeSecond
             // 
             this.lblLatitudeSecond.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLatitudeSecond.Location = new System.Drawing.Point(419, 160);
+            this.lblLatitudeSecond.Location = new System.Drawing.Point(523, 258);
             this.lblLatitudeSecond.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblLatitudeSecond.Name = "lblLatitudeSecond";
             this.lblLatitudeSecond.Size = new System.Drawing.Size(117, 50);
@@ -588,7 +634,7 @@
             // lblLatitudeMinute
             // 
             this.lblLatitudeMinute.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLatitudeMinute.Location = new System.Drawing.Point(325, 160);
+            this.lblLatitudeMinute.Location = new System.Drawing.Point(392, 258);
             this.lblLatitudeMinute.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblLatitudeMinute.Name = "lblLatitudeMinute";
             this.lblLatitudeMinute.Size = new System.Drawing.Size(77, 50);
@@ -598,7 +644,7 @@
             // lblLatitudeDegree
             // 
             this.lblLatitudeDegree.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLatitudeDegree.Location = new System.Drawing.Point(219, 160);
+            this.lblLatitudeDegree.Location = new System.Drawing.Point(271, 258);
             this.lblLatitudeDegree.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblLatitudeDegree.Name = "lblLatitudeDegree";
             this.lblLatitudeDegree.Size = new System.Drawing.Size(77, 50);
@@ -618,26 +664,26 @@
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(493, 455);
+            this.label8.Location = new System.Drawing.Point(482, 489);
             this.label8.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 31);
+            this.label8.Size = new System.Drawing.Size(64, 31);
             this.label8.TabIndex = 12;
             this.label8.Text = "50: ";
             // 
             // label7
             // 
-            this.label7.Location = new System.Drawing.Point(283, 455);
+            this.label7.Location = new System.Drawing.Point(259, 489);
             this.label7.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 31);
+            this.label7.Size = new System.Drawing.Size(78, 32);
             this.label7.TabIndex = 11;
             this.label7.Text = "250: ";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(67, 455);
+            this.label6.Location = new System.Drawing.Point(43, 489);
             this.label6.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(181, 32);
@@ -647,7 +693,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(43, 258);
+            this.label5.Location = new System.Drawing.Point(43, 340);
             this.label5.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(157, 32);
@@ -657,7 +703,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(67, 160);
+            this.label4.Location = new System.Drawing.Point(43, 268);
             this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 32);
@@ -668,7 +714,7 @@
             // 
             this.cboFear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboFear.FormattingEnabled = true;
-            this.cboFear.Location = new System.Drawing.Point(219, 48);
+            this.cboFear.Location = new System.Drawing.Point(324, 44);
             this.cboFear.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.cboFear.Name = "cboFear";
             this.cboFear.Size = new System.Drawing.Size(316, 39);
@@ -677,7 +723,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 55);
+            this.label3.Location = new System.Drawing.Point(43, 47);
             this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 32);
@@ -780,7 +826,7 @@
             this.msMenu.Location = new System.Drawing.Point(0, 0);
             this.msMenu.Name = "msMenu";
             this.msMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.msMenu.Size = new System.Drawing.Size(1837, 52);
+            this.msMenu.Size = new System.Drawing.Size(1837, 49);
             this.msMenu.TabIndex = 3;
             this.msMenu.Text = "menuStrip1";
             // 
@@ -789,14 +835,14 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.msExit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(75, 48);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(75, 45);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // msExit
             // 
             this.msExit.Image = global::IndustryProject.Properties.Resources.exit;
             this.msExit.Name = "msExit";
-            this.msExit.Size = new System.Drawing.Size(327, 46);
+            this.msExit.Size = new System.Drawing.Size(179, 46);
             this.msExit.Text = "Exit";
             this.msExit.Click += new System.EventHandler(this.msExit_Click);
             // 
@@ -948,6 +994,10 @@
         private System.Windows.Forms.BindingSource nAMEPLACESBindingSource;
         private ComboDataTableAdapters.NAME_PLACESTableAdapter nAME_PLACESTableAdapter;
         private System.Windows.Forms.BindingSource fEATURETYPESBindingSource1;
+        private System.Windows.Forms.Label lblTo;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblFrom;
+        private System.Windows.Forms.Label label1;
     }
 }
 

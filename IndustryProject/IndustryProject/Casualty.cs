@@ -36,14 +36,27 @@ namespace IndustryProject
         {
             lblsurnamebox.Text = dgvSearch.CurrentRow.Cells["Casualty Surname"].Value.ToString();
             lblGsurnamebox.Text = dgvSearch.CurrentRow.Cells["Casualty Given Name"].Value.ToString();
+
             //lblDivisionBox.Text = dgvSearch.CurrentRow.Cells[].Value.ToString();
+
             lBLCommunityBox.Text = dgvSearch.CurrentRow.Cells["Casualty Hometown"].Value.ToString();
             lblRegNoBox.Text = dgvSearch.CurrentRow.Cells["Casualty Regimental Number"].Value.ToString();
             lblRankBox.Text = dgvSearch.CurrentRow.Cells["Casualty Rank"].Value.ToString();
-            lblDateOfDeathBox.Text = dgvSearch.CurrentRow.Cells["Casualty Date of Death"].Value.ToString();
+
+            //Date of Death
+            if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Casualty Date of Death"].Value.ToString()))
+            {
+                lblDateOfDeathBox.Text = "No Data";
+            }
+
+            else
+            {
+                lblDateOfDeathBox.Text = DateTime.Parse(dgvSearch.CurrentRow.Cells["Casualty Date of Death"].Value.ToString()).ToShortDateString();
+            }
 
             lblBuriedBox.Text = dgvSearch.CurrentRow.Cells["Casualty Place of Burial"].Value.ToString();
             lblServedBox.Text = dgvSearch.CurrentRow.Cells["Casualty Regiment"].Value.ToString();
+            
             //lblNextOfKinNameBox.Text = dgvSearch.CurrentRow.Cells[""].Value.ToString();
 
             grpCasualty.Text = dgvSearch.CurrentRow.Cells["Casualty Given Name"].Value.ToString() +

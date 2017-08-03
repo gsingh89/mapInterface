@@ -114,6 +114,7 @@
             this.lblNextOfKinNameBox.Name = "lblNextOfKinNameBox";
             this.lblNextOfKinNameBox.Size = new System.Drawing.Size(391, 52);
             this.lblNextOfKinNameBox.TabIndex = 19;
+            this.lblNextOfKinNameBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblServedBox
             // 
@@ -123,6 +124,7 @@
             this.lblServedBox.Name = "lblServedBox";
             this.lblServedBox.Size = new System.Drawing.Size(418, 52);
             this.lblServedBox.TabIndex = 18;
+            this.lblServedBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblBuriedBox
             // 
@@ -132,6 +134,7 @@
             this.lblBuriedBox.Name = "lblBuriedBox";
             this.lblBuriedBox.Size = new System.Drawing.Size(418, 52);
             this.lblBuriedBox.TabIndex = 17;
+            this.lblBuriedBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblNextKin
             // 
@@ -171,6 +174,8 @@
             this.lblDateOfDeathBox.Name = "lblDateOfDeathBox";
             this.lblDateOfDeathBox.Size = new System.Drawing.Size(263, 52);
             this.lblDateOfDeathBox.TabIndex = 13;
+            this.lblDateOfDeathBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDateOfDeathBox.UseCompatibleTextRendering = true;
             // 
             // lblRankBox
             // 
@@ -180,6 +185,7 @@
             this.lblRankBox.Name = "lblRankBox";
             this.lblRankBox.Size = new System.Drawing.Size(263, 52);
             this.lblRankBox.TabIndex = 12;
+            this.lblRankBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblRegNoBox
             // 
@@ -189,6 +195,7 @@
             this.lblRegNoBox.Name = "lblRegNoBox";
             this.lblRegNoBox.Size = new System.Drawing.Size(263, 52);
             this.lblRegNoBox.TabIndex = 11;
+            this.lblRegNoBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lBLCommunityBox
             // 
@@ -198,6 +205,7 @@
             this.lBLCommunityBox.Name = "lBLCommunityBox";
             this.lBLCommunityBox.Size = new System.Drawing.Size(263, 52);
             this.lBLCommunityBox.TabIndex = 10;
+            this.lBLCommunityBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDivisionBox
             // 
@@ -207,6 +215,7 @@
             this.lblDivisionBox.Name = "lblDivisionBox";
             this.lblDivisionBox.Size = new System.Drawing.Size(263, 52);
             this.lblDivisionBox.TabIndex = 9;
+            this.lblDivisionBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDateofDeath
             // 
@@ -276,6 +285,7 @@
             this.lblGsurnamebox.Name = "lblGsurnamebox";
             this.lblGsurnamebox.Size = new System.Drawing.Size(263, 52);
             this.lblGsurnamebox.TabIndex = 2;
+            this.lblGsurnamebox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblsurnamebox
             // 
@@ -285,6 +295,7 @@
             this.lblsurnamebox.Name = "lblsurnamebox";
             this.lblsurnamebox.Size = new System.Drawing.Size(263, 52);
             this.lblsurnamebox.TabIndex = 1;
+            this.lblsurnamebox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSurname
             // 
