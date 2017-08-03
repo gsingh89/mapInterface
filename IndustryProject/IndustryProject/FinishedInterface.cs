@@ -397,7 +397,6 @@ namespace IndustryProject
         //    frmCasualty frm = new frmCasualty();
         //    frm.Show();
         //}
-
         private void btnNewPlace_Click(object sender, EventArgs e)
         {
             newplace frm2 = new newplace();
