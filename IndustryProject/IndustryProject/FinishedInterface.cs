@@ -208,11 +208,13 @@ namespace IndustryProject
             if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Casualty Given Name"].Value.ToString()))
             {
                 chkCasualty.Checked = false;
+                chkCasualty.BackColor = Color.LightGray;
                 btnCasualtyHistory.Enabled = false;
             }
             else
             {
                 chkCasualty.Checked = true;
+                chkCasualty.BackColor = Color.Red;
                 btnCasualtyHistory.Enabled = true;
             }
         }
