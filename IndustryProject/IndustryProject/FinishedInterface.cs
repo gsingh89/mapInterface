@@ -42,6 +42,7 @@ namespace IndustryProject
             this.fEATURE_TYPESTableAdapter.Fill(this.comboData.FEATURE_TYPES);
 
             this.AcceptButton = this.btnSearch;
+            txtSearch.Focus();
             ConnectionClass.Initialize();
         }
 
@@ -56,6 +57,9 @@ namespace IndustryProject
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string enteredName = txtSearch.Text;
+
+            txtSearch.SelectAll();
+            txtSearch.Focus();
 
             string basicQuery = @"SELECT NAMES.NAME_ACTUAL AS 'Geographical Name', 
                         NAME_PLACES.FEATURE_ID AS 'Unique National Identifier',
@@ -406,7 +410,7 @@ namespace IndustryProject
         private void btnNewPlace_Click_1(object sender, EventArgs e)
         {
             newplace place = new newplace();
-            place.Show();
+            place.Show();            
         }
     }
 }
