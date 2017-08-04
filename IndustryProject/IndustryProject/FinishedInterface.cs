@@ -207,6 +207,7 @@ namespace IndustryProject
         {
             if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Casualty Given Name"].Value.ToString()))
             {
+                //ihugaurigflufk
                 chkCasualty.Checked = false;
                 chkCasualty.BackColor = Color.LightGray;
                 btnCasualtyHistory.Enabled = false;
