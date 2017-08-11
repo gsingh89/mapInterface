@@ -90,7 +90,7 @@ namespace IndustryProject
 
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
-                    basicQuery +=  " WHERE NAME_PLACES.ACT_TO != '12/31/2200' ";
+                    basicQuery += " WHERE NAME_PLACES.ACT_TO != '12/31/2200' ";
 
                 }
                 else
@@ -179,69 +179,69 @@ namespace IndustryProject
 
             dgvSearch.Columns[0].Width = dgvSearch.Width;
         }
-   
-    private void dgvSearch_SelectionChanged(object sender, EventArgs e)
-    {
-        if (dgvSearch.SelectedRows.Count > 0)
+
+        private void dgvSearch_SelectionChanged(object sender, EventArgs e)
         {
-            UpdateCasualtyCheckBox();
-
-            lblFID.Text = dgvSearch.CurrentRow.Cells["Unique National Identifier"].Value.ToString();
-
-            //Act From
-            if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Act From"].Value.ToString()))
+            if (dgvSearch.SelectedRows.Count > 0)
             {
-                lblFrom.Text = "No Data";
-            }
+                UpdateCasualtyCheckBox();
 
-            else
-            {
-                String From = DateTime.Parse(dgvSearch.CurrentRow.Cells["Act From"].Value.ToString()).ToShortDateString();
-                lblFrom.Text = From;
-            }
+                lblFID.Text = dgvSearch.CurrentRow.Cells["Unique National Identifier"].Value.ToString();
 
-            //Act To
-            if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Act To"].Value.ToString()))
-            {
-                lblTo.Text = "No Data";
-            }
-
-            else
-            {
-                String To = DateTime.Parse(dgvSearch.CurrentRow.Cells["Act To"].Value.ToString()).ToShortDateString();
-                lblTo.Text = To;
-                if (To != "12/31/2200")
+                //Act From
+                if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Act From"].Value.ToString()))
                 {
-                    chkInactive.Checked = true;
+                    lblFrom.Text = "No Data";
                 }
-                else if (To == "12/31/2200")
+
+                else
                 {
-                    chkInactive.Checked = false;
+                    String From = DateTime.Parse(dgvSearch.CurrentRow.Cells["Act From"].Value.ToString()).ToShortDateString();
+                    lblFrom.Text = From;
+                }
+
+                //Act To
+                if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Act To"].Value.ToString()))
+                {
+                    lblTo.Text = "No Data";
+                }
+
+                else
+                {
+                    String To = DateTime.Parse(dgvSearch.CurrentRow.Cells["Act To"].Value.ToString()).ToShortDateString();
+                    lblTo.Text = To;
+                    if (To != "12/31/2200")
+                    {
+                        chkInactive.Checked = true;
+                    }
+                    else if (To == "12/31/2200")
+                    {
+                        chkInactive.Checked = false;
+                    }
+                }
+
+                lblLatitudeDegree.Text = dgvSearch.CurrentRow.Cells["LATITUDE Degrees"].Value.ToString();
+                lblLatitudeMinute.Text = dgvSearch.CurrentRow.Cells["LATITUDE Minutes"].Value.ToString();
+                lblLatitudeSecond.Text = dgvSearch.CurrentRow.Cells["LATITUDE Seconds"].Value.ToString();
+                lblLongitudeDegree.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Degrees"].Value.ToString();
+                lblLongitudeMinute.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Minutes"].Value.ToString();
+                lblLongitudeSecond.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Seconds"].Value.ToString();
+                lbl250.Text = dgvSearch.CurrentRow.Cells["NTS 250000 Map Sheet"].Value.ToString();
+                lbl50.Text = dgvSearch.CurrentRow.Cells["NTS 50000 Submap Sheet"].Value.ToString();
+
+                // If there is not data available
+                if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Date Changed"].Value.ToString()))
+                {
+                    lblDateChanged.Text = "No Data";
+                }
+
+                else
+                {
+                    string mess = DateTime.Parse(dgvSearch.CurrentRow.Cells["Date Changed"].Value.ToString()).ToShortDateString();
+                    lblDateChanged.Text = mess;
+                    //lblDateChanged.TextAlign = ContentAlignment.BottomCenter;
                 }
             }
-
-            lblLatitudeDegree.Text = dgvSearch.CurrentRow.Cells["LATITUDE Degrees"].Value.ToString();
-            lblLatitudeMinute.Text = dgvSearch.CurrentRow.Cells["LATITUDE Minutes"].Value.ToString();
-            lblLatitudeSecond.Text = dgvSearch.CurrentRow.Cells["LATITUDE Seconds"].Value.ToString();
-            lblLongitudeDegree.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Degrees"].Value.ToString();
-            lblLongitudeMinute.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Minutes"].Value.ToString();
-            lblLongitudeSecond.Text = dgvSearch.CurrentRow.Cells["LONGITUDE Seconds"].Value.ToString();
-            lbl250.Text = dgvSearch.CurrentRow.Cells["NTS 250000 Map Sheet"].Value.ToString();
-            lbl50.Text = dgvSearch.CurrentRow.Cells["NTS 50000 Submap Sheet"].Value.ToString();
-
-            // If there is not data available
-            if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Date Changed"].Value.ToString()))
-            {
-                lblDateChanged.Text = "No Data";
-            }
-
-            else
-            {
-                string mess = DateTime.Parse(dgvSearch.CurrentRow.Cells["Date Changed"].Value.ToString()).ToShortDateString();
-                lblDateChanged.Text = mess;
-                //lblDateChanged.TextAlign = ContentAlignment.BottomCenter;
-            }
-        }
         }
 
         private void UpdateCasualtyCheckBox()
@@ -332,10 +332,10 @@ namespace IndustryProject
                 ConnectionClass.AddParam("feattype", cboFeature.SelectedValue.ToString());
             }
 
-                //dgvSearch.DataSource = ConnectionClass.getSQLData(basicQuery).Tables[0];
+            //dgvSearch.DataSource = ConnectionClass.getSQLData(basicQuery).Tables[0];
 
-                bds = ConnectionClass.getSQLData(basicQuery).Tables[0];
-                dgvSearch.DataSource = bds;
+            bds = ConnectionClass.getSQLData(basicQuery).Tables[0];
+            dgvSearch.DataSource = bds;
 
             for (int i = 1; i < dgvSearch.ColumnCount; i++)
             {
@@ -461,16 +461,16 @@ namespace IndustryProject
         }
 
         private void grpSearchBottom_EnabledChanged(object sender, EventArgs e)
-        {          
+        {
             //cboStatus.DisplayMember = "Status";
             //cboStatus.ValueMember = "STATUS_CODE";
         }
 
         private void dgvSearch_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-      
+
             cboFear.DataSource = ConnectionClass.getSQLData("SELECT DISTINCT * FROM FEATURE_TYPES ORDER BY FEAT_TYPE ASC").Tables[0];
-            cboFear.DisplayMember=
+            cboFear.DisplayMember =
             cboFear.ValueMember = "FEAT_TYPE";
 
             cboStatus.DataSource = ConnectionClass.getSQLData("SELECT DISTINCT STATUS_CODE FROM NAME_PLACES ORDER BY STATUS_CODE ASC").Tables[0];
@@ -521,7 +521,7 @@ namespace IndustryProject
         private void btnNewPlace_Click_1(object sender, EventArgs e)
         {
             newplace place = new newplace();
-            place.Show();            
+            place.Show();
         }
     }
 }
