@@ -102,6 +102,7 @@
             this.nAMEPLACESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nAME_PLACESTableAdapter = new IndustryProject.ComboDataTableAdapters.NAME_PLACESTableAdapter();
             this.fEATURETYPESBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.chkInactive = new System.Windows.Forms.CheckBox();
             this.grpSearch.SuspendLayout();
             this.gpCoordinates.SuspendLayout();
             this.grpNameList.SuspendLayout();
@@ -118,6 +119,7 @@
             // 
             // grpSearch
             // 
+            this.grpSearch.Controls.Add(this.chkInactive);
             this.grpSearch.Controls.Add(this.cboFeature);
             this.grpSearch.Controls.Add(this.gpCoordinates);
             this.grpSearch.Controls.Add(this.radMaps);
@@ -332,7 +334,7 @@
             // radMS50
             // 
             this.radMS50.AutoSize = true;
-            this.radMS50.Location = new System.Drawing.Point(608, 112);
+            this.radMS50.Location = new System.Drawing.Point(626, 67);
             this.radMS50.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radMS50.Name = "radMS50";
             this.radMS50.Size = new System.Drawing.Size(149, 36);
@@ -346,7 +348,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(200, 294);
+            this.btnSearch.Location = new System.Drawing.Point(388, 294);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(200, 55);
@@ -357,7 +359,7 @@
             // 
             // btnNewPlace
             // 
-            this.btnNewPlace.Location = new System.Drawing.Point(901, 294);
+            this.btnNewPlace.Location = new System.Drawing.Point(840, 294);
             this.btnNewPlace.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnNewPlace.Name = "btnNewPlace";
             this.btnNewPlace.Size = new System.Drawing.Size(200, 55);
@@ -428,7 +430,7 @@
             // radMS250
             // 
             this.radMS250.AutoSize = true;
-            this.radMS250.Location = new System.Drawing.Point(395, 112);
+            this.radMS250.Location = new System.Drawing.Point(423, 67);
             this.radMS250.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.radMS250.Name = "radMS250";
             this.radMS250.Size = new System.Drawing.Size(165, 36);
@@ -842,7 +844,7 @@
             // 
             this.msExit.Image = global::IndustryProject.Properties.Resources.exit;
             this.msExit.Name = "msExit";
-            this.msExit.Size = new System.Drawing.Size(179, 46);
+            this.msExit.Size = new System.Drawing.Size(178, 46);
             this.msExit.Text = "Exit";
             this.msExit.Click += new System.EventHandler(this.msExit_Click);
             // 
@@ -885,6 +887,16 @@
             // 
             this.fEATURETYPESBindingSource1.DataMember = "FEATURE_TYPES";
             this.fEATURETYPESBindingSource1.DataSource = this.comboDataBindingSource;
+            // 
+            // chkInactive
+            // 
+            this.chkInactive.AutoSize = true;
+            this.chkInactive.Location = new System.Drawing.Point(57, 294);
+            this.chkInactive.Name = "chkInactive";
+            this.chkInactive.Size = new System.Drawing.Size(247, 36);
+            this.chkInactive.TabIndex = 27;
+            this.chkInactive.Text = "Inactive Names";
+            this.chkInactive.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -998,6 +1010,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label lblFrom;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chkInactive;
     }
 }
 
