@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.grpSearch = new System.Windows.Forms.GroupBox();
+            this.chkInactive = new System.Windows.Forms.CheckBox();
             this.cboFeature = new System.Windows.Forms.ComboBox();
             this.gpCoordinates = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -118,6 +119,7 @@
             // 
             // grpSearch
             // 
+            this.grpSearch.Controls.Add(this.chkInactive);
             this.grpSearch.Controls.Add(this.cboFeature);
             this.grpSearch.Controls.Add(this.gpCoordinates);
             this.grpSearch.Controls.Add(this.radMaps);
@@ -140,6 +142,16 @@
             this.grpSearch.TabIndex = 1;
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "Search Box";
+            // 
+            // chkInactive
+            // 
+            this.chkInactive.AutoSize = true;
+            this.chkInactive.Location = new System.Drawing.Point(56, 294);
+            this.chkInactive.Name = "chkInactive";
+            this.chkInactive.Size = new System.Drawing.Size(151, 36);
+            this.chkInactive.TabIndex = 27;
+            this.chkInactive.Text = "Inactive";
+            this.chkInactive.UseVisualStyleBackColor = true;
             // 
             // cboFeature
             // 
@@ -332,7 +344,7 @@
             // radMS50
             // 
             this.radMS50.AutoSize = true;
-            this.radMS50.Location = new System.Drawing.Point(608, 112);
+            this.radMS50.Location = new System.Drawing.Point(608, 67);
             this.radMS50.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radMS50.Name = "radMS50";
             this.radMS50.Size = new System.Drawing.Size(149, 36);
@@ -346,7 +358,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(200, 294);
+            this.btnSearch.Location = new System.Drawing.Point(369, 294);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(200, 55);
@@ -428,7 +440,7 @@
             // radMS250
             // 
             this.radMS250.AutoSize = true;
-            this.radMS250.Location = new System.Drawing.Point(395, 112);
+            this.radMS250.Location = new System.Drawing.Point(423, 67);
             this.radMS250.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.radMS250.Name = "radMS250";
             this.radMS250.Size = new System.Drawing.Size(165, 36);
@@ -842,7 +854,7 @@
             // 
             this.msExit.Image = global::IndustryProject.Properties.Resources.exit;
             this.msExit.Name = "msExit";
-            this.msExit.Size = new System.Drawing.Size(179, 46);
+            this.msExit.Size = new System.Drawing.Size(178, 46);
             this.msExit.Text = "Exit";
             this.msExit.Click += new System.EventHandler(this.msExit_Click);
             // 
@@ -901,6 +913,7 @@
             this.Name = "Form1";
             this.Text = "Indigenous Interface";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing_1);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grpSearch.ResumeLayout(false);
             this.grpSearch.PerformLayout();
@@ -998,6 +1011,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label lblFrom;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chkInactive;
     }
 }
 
