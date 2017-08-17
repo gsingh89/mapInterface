@@ -1,0 +1,321 @@
+-- Use the Schema
+USE MASTER  
+--Go will make sure it goes step by step
+GO  
+
+--Use Database with this particular name. Frist time drop statememnts will fail as it does not exist yet.
+USE dbIndigenousPlaceNames
+DROP TABLE NAME_PLACES
+DROP TABLE MULTIMEDIA_ASSETS
+DROP TABLE NAMES
+DROP TABLE PLACES
+DROP TABLE LANGUAGES
+DROP TABLE FEATURE_TYPES
+DROP TABLE CASUALTIES
+GO
+
+-- Create DB, not necessary.
+--CREATE DATABASE dbIndigenousPlaceNames
+--GO
+
+-- Use that DB in Schema
+USE dbIndigenousPlaceNames
+GO
+
+-- Create Children Tables
+CREATE TABLE CASUALTIES (
+CASUALTY_ID NUMERIC (4),
+COMMUNITY VARCHAR (50),
+REG_NO NVARCHAR (15),
+RANK_CASUALTY NVARCHAR (50),
+SURNAME NVARCHAR (50) NOT NULL,
+GIVNAME NVARCHAR (50) NOT NULL,
+DATE_DECEASED DATE, 
+SERVED NVARCHAR (50),
+BURIED NVARCHAR (50),
+NEXT_KIN VARCHAR (50),
+NK_ADD_1 VARCHAR (50),
+NK_ADD_2 VARCHAR (50),
+ADDIT_INFO VARCHAR (50),
+CONSTRAINT PK_casualty 
+PRIMARY KEY (CASUALTY_ID)
+);
+GO
+
+CREATE TABLE FEATURE_TYPES (
+FEAT_CODE NUMERIC (4),
+FEAT_TYPE NVARCHAR (50) NOT NULL,
+DESCR NVARCHAR (500) NOT NULL,
+CONSTRAINT PK_convfeat 
+PRIMARY KEY (FEAT_CODE)
+);
+GO
+
+CREATE TABLE LANGUAGES (
+LANGUAGE_ID NUMERIC (3),
+LANG_NAME VARCHAR (50) NOT NULL,
+CONSTRAINT PK_languages 
+PRIMARY KEY (LANGUAGE_ID)
+);
+GO
+
+CREATE TABLE PLACES (
+PLACE_ID NUMERIC (5),
+LONGITUDE NUMERIC (11,7),
+LATITUDE NUMERIC (9,7),
+LONG_DEG NUMERIC (3) NOT NULL,
+LONG_MIN NUMERIC (2) NOT NULL,
+LONG_SEC NUMERIC (5,3) NOT NULL,
+LAT_DEG NUMERIC (2) NOT NULL,
+LAT_MIN NUMERIC (2) NOT NULL,
+LAT_SEC NUMERIC (5,3) NOT NULL,
+MS250 CHAR (3),
+MS50 NUMERIC (2),
+PLACE_HISTORY VARCHAR (2000),
+FEAT_CODE NUMERIC (4),
+CONSTRAINT PK_place 
+PRIMARY KEY (PLACE_ID)
+);
+GO
+
+-- Create Parent/Children Table
+CREATE TABLE NAMES (
+NAME_ID NUMERIC (5),
+NAME_ACTUAL NVARCHAR (50)  NOT NULL,
+CASUALTY BIT NOT NULL DEFAULT 0,
+NAME_HISTORY VARCHAR (2000),
+LANGUAGE_ID NUMERIC (3),
+CASUALTY_ID NUMERIC (4),
+CONSTRAINT PK_name 
+PRIMARY KEY (NAME_ID) 
+);
+GO
+
+CREATE TABLE MULTIMEDIA_ASSETS (
+ASSET_ID NUMERIC (2),
+ASSET_TYPE VARCHAR (50) NOT NULL,
+CONTENT VARBINARY (MAX),
+PLACE_ID NUMERIC (5),
+CONSTRAINT PK_assets 
+PRIMARY KEY (ASSET_ID) 
+);
+GO
+
+-- Create Parent Table
+CREATE TABLE NAME_PLACES (
+NAME_PLACE_ID NUMERIC (5),
+FEATURE_ID CHAR (5),
+STATUS_CODE CHAR(2)  NOT NULL,
+ACT_FROM DATE  NOT NULL,
+ACT_TO DATE  NOT NULL,
+DATE_CH DATE,
+TIME_CH TIME,
+NAME_ID NUMERIC (5),
+PLACE_ID NUMERIC (5),
+CONSTRAINT PK_name_places 
+PRIMARY KEY (NAME_PLACE_ID) 
+);
+GO
+
+
+-- Insert actual data from Database (Exported_casualty_rrc.csv) into CASULTIES
+INSERT INTO [dbIndigenousPlaceNames].[dbo].[CASUALTIES](
+            [CASUALTY_ID]
+           ,[COMMUNITY]
+           ,[REG_NO]
+           ,[RANK_CASUALTY]
+           ,[SURNAME]
+           ,[GIVNAME]
+           ,[DATE_DECEASED]
+           ,[SERVED]
+           ,[BURIED]
+           ,[NEXT_KIN]
+           ,[NK_ADD_1]
+           ,[NK_ADD_2]
+           ,[ADDIT_INFO])
+     SELECT CAST([CID] AS NUMERIC (4))
+           ,CAST([COMMUNITY] AS VARCHAR (50))
+           ,CAST([REG_NO] AS NVARCHAR (15))
+           ,CAST([RANK_CASUALTY] AS NVARCHAR(50))
+           ,CAST([SURNAME] AS NVARCHAR(50))
+           ,CAST([GIVNAME] AS NVARCHAR(50))
+           ,CAST([DYMOYR] AS DATE)
+           ,CAST([SERVED] AS NVARCHAR (50))
+           ,CAST([BURIED] AS NVARCHAR (50))
+           ,CAST([NEXT_KIN] AS VARCHAR (50))
+           ,CAST([NK_ADD_1] AS VARCHAR (50))
+           ,CAST([NK_ADD_2] AS VARCHAR (50))
+           ,CAST([ADDIT_INFO] AS VARCHAR (50))
+     FROM [dbIndigenousPlaceNames].[dbo].[Database]
+
+-- Insert actual data from Database (convfeat_rrc.xls) into FEATURE_TYPES
+INSERT INTO [dbIndigenousPlaceNames].[dbo].[FEATURE_TYPES](
+            [FEAT_CODE]
+           ,[FEAT_TYPE]
+           ,[DESCR])
+     SELECT CAST([FEAT_CODE] AS NUMERIC (4))
+           ,CAST([FEAT_TYPE] AS NVARCHAR (50))
+           ,CAST([DESC] AS NVARCHAR (500))
+     FROM [dbIndigenousPlaceNames].[dbo].[convfeat$]
+
+ 
+-- Update and insert actual data from dec_place_rrc.xls file, "0" means, nullable should not be the case!
+UPDATE [dbIndigenousPlaceNames].[dbo].[Sheet1$] SET LONG_DEG = 0 WHERE LONG_DEG IS NULL
+UPDATE [dbIndigenousPlaceNames].[dbo].[Sheet1$] SET LONG_MIN = 0 WHERE LONG_MIN IS NULL
+UPDATE [dbIndigenousPlaceNames].[dbo].[Sheet1$] SET LONG_SEC = 0 WHERE LONG_SEC IS NULL
+
+UPDATE [dbIndigenousPlaceNames].[dbo].[Sheet1$] SET LAT_DEG= 0 WHERE LAT_DEG IS NULL
+UPDATE [dbIndigenousPlaceNames].[dbo].[Sheet1$] SET LAT_MIN= 0 WHERE LAT_MIN IS NULL
+UPDATE [dbIndigenousPlaceNames].[dbo].[Sheet1$] SET LAT_SEC= 0 WHERE LAT_SEC IS NULL
+
+-- Insert actual data from Database (dec_place_rrc$.xls) into PLACES
+INSERT INTO [dbIndigenousPlaceNames].[dbo].[PLACES] (
+            [PLACE_ID]
+		   ,[LONGITUDE]
+		   ,[LATITUDE]
+           ,[LONG_DEG]
+		   ,[LONG_MIN]
+		   ,[LONG_SEC]
+           ,[LAT_DEG]
+		   ,[LAT_MIN]
+		   ,[LAT_SEC]
+           ,[MS250]
+           ,[MS50]
+           ,[PLACE_HISTORY]
+           ,[FEAT_CODE])
+     SELECT CAST([PLACE_ID] AS NUMERIC (5))
+		   ,CAST([LONGITUDE] AS NUMERIC (11,7))
+		   ,CAST([LATITUDE] AS NUMERIC (9,7))
+           ,CAST([LONG_DEG] AS NUMERIC (3))
+		   ,CAST([LONG_MIN] AS NUMERIC (2))
+		   ,CAST([LONG_SEC] AS NUMERIC (5,3))
+           ,CAST([LAT_DEG] AS NUMERIC (2))
+		   ,CAST([LAT_MIN] AS NUMERIC (2))
+		   ,CAST([LAT_SEC] AS NUMERIC (5,3))
+           ,CAST([MS250] AS CHAR (3))
+           ,CAST([MS50] AS NUMERIC (2))
+           ,CAST([HISTORY] AS VARCHAR (2000))
+           ,CAST([FEAT_CODE] AS NUMERIC (4))
+    FROM [dbIndigenousPlaceNames].[dbo].[Sheet1$]
+
+-- Update and insert actual data from name_rrc.xls file, "0" means, nullable should not be the case!
+UPDATE [dbIndigenousPlaceNames].[dbo].[name$] SET CID = NULL WHERE CID = 0
+
+-- Insert actual data from Database (name_rrc$.xls) into NAMES
+INSERT INTO [dbIndigenousPlaceNames].[dbo].[NAMES] (
+            [NAME_ID]
+           ,[NAME_ACTUAL]
+           ,[CASUALTY] 
+           ,[NAME_HISTORY]
+           ,[CASUALTY_ID])
+    SELECT CAST([NAME_ID] AS NUMERIC (5))
+          ,CAST([NAME] AS NVARCHAR (50))
+          ,CAST([CASUALTY] AS BIT)
+          ,CAST([HISTORY] AS VARCHAR (2000))
+          ,CAST([CID] AS NUMERIC (4))
+    FROM [dbIndigenousPlaceNames].[dbo].[name$] 
+
+-- Update an actual data from name_rrc.xls file, 4 CASUALTY_ID's are not present in NAMES table, while they exist in CASUALTIES table.
+UPDATE [dbIndigenousPlaceNames].[dbo].[NAMES] SET CASUALTY_ID = NULL WHERE CASUALTY_ID IN (3715, 1209, 3849, 3984)
+GO
+
+-- Insert actual data from Database (name_rrc$.xls) into NAME_PLACES
+INSERT INTO [dbIndigenousPlaceNames].[dbo].[NAME_PLACES] (
+            [NAME_PLACE_ID]
+           ,[FEATURE_ID]
+           ,[STATUS_CODE]
+           ,[ACT_FROM]
+           ,[ACT_TO]
+           ,[DATE_CH]
+           ,[TIME_CH]
+           ,[NAME_ID]
+           ,[PLACE_ID])
+    SELECT CAST([NAME_PLACE_ID] AS NUMERIC (5))
+          ,CAST([FID] AS CHAR (5))
+          ,CAST([STATUS] AS CHAR (2))
+          ,CAST([ACT_FROM] AS DATE)
+          ,CAST([ACT_TO] AS DATE)
+          ,CAST([DATE_CH] AS DATE)
+          ,CAST([TIME_CH] AS TIME (7))
+          ,CAST([NAME_ID] AS NUMERIC (5))
+          ,CAST([PLACE_ID] AS NUMERIC (5))
+    FROM [dbIndigenousPlaceNames].[dbo].[name$] 
+
+--Foreign Keys
+ALTER TABLE NAMES
+ADD CONSTRAINT FK_name_0 
+FOREIGN KEY (LANGUAGE_ID) 
+REFERENCES LANGUAGES (LANGUAGE_ID);
+
+ALTER TABLE NAMES
+ADD CONSTRAINT FK_name_1 
+FOREIGN KEY (CASUALTY_ID) 
+REFERENCES CASUALTIES (CASUALTY_ID);
+
+ALTER TABLE PLACES
+ADD CONSTRAINT FK_place_0 
+FOREIGN KEY (FEAT_CODE) 
+REFERENCES FEATURE_TYPES (FEAT_CODE);
+
+ALTER TABLE NAME_PLACES
+ADD CONSTRAINT FK_nameplace_0 
+FOREIGN KEY (NAME_ID) 
+REFERENCES NAMES (NAME_ID);
+
+ALTER TABLE NAME_PLACES
+ADD CONSTRAINT FK_nameplace_1
+FOREIGN KEY (PLACE_ID) 
+REFERENCES PLACES (PLACE_ID);
+
+ALTER TABLE MULTIMEDIA_ASSETS
+ADD CONSTRAINT FK_assets_0 
+FOREIGN KEY (PLACE_ID) 
+REFERENCES PLACES (PLACE_ID);
+
+USE [dbIndigenousPlaceNames]
+GO
+
+--Setting up Longitude Decimal for to be used in ESRI.
+ALTER TABLE [dbo].[PLACES] DROP COLUMN LONGITUDE;  
+GO  
+
+ALTER TABLE [dbo].[PLACES] ADD LONGITUDE AS (([LONG_DEG]+[LONG_MIN]*(-0.01666667))+[LONG_SEC]*(-0.000277778)) PERSISTED;
+GO
+
+--Setting up Latitude Deecimal for to be used in ESRI Software
+ALTER TABLE [dbo].[PLACES] DROP COLUMN LATITUDE;  
+GO  
+
+ALTER TABLE [dbo].[PLACES] ADD LATITUDE AS (([LAT_DEG]+[LAT_MIN]*(0.01666667))+[LAT_SEC]*(0.000277778)) PERSISTED;
+GO
+
+
+
+--View is necessary for getting the data to ESRI
+DROP VIEW Manitoba_Mapper;
+GO
+
+
+CREATE VIEW Manitoba_Mapper ("Geographical Name", "Unique National Identifier", "Feature Code", "NTS 250000 Map Sheet", 
+							"NTS 50000 Submap Sheet", "LATITUDE Degrees", "LATITUDE Minutes", "LATITUDE Seconds", "LONGITUDE Degrees", 
+							"LONGITUDE Minutes", "LONGITUDE Seconds", "Casualty Hometown", "Casualty Regimental Number",
+							"Casualty Rank", "Casualty Surname", "Casualty Given Name(s)", "Casualty Date of Death", "Casualty Regiment",
+							"Casualty Place of Burial", "Feature Type", "Feature Type Description", "Longitude Decimal", "Latitude Decimal") AS
+
+SELECT  NAMES.NAME_ACTUAL, NAME_PLACES.FEATURE_ID, PLACES.FEAT_CODE, PLACES.MS250, PLACES.MS50, PLACES.LAT_DEG, PLACES.LAT_MIN,
+		PLACES.LAT_SEC, PLACES.LONG_DEG, PLACES.LONG_MIN, PLACES.LONG_SEC, CASUALTIES.COMMUNITY, CASUALTIES.REG_NO,
+		CASUALTIES.RANK_CASUALTY, CASUALTIES.SURNAME, CASUALTIES.GIVNAME, CASUALTIES.DATE_DECEASED, CASUALTIES.SERVED, 
+		CASUALTIES.BURIED, FEATURE_TYPES.FEAT_TYPE, FEATURE_TYPES.DESCR, PLACES.LONGITUDE, PLACES.LATITUDE 
+
+FROM NAMES JOIN NAME_PLACES ON NAMES.NAME_ID = NAME_PLACES.NAME_ID 
+		   
+    	   JOIN PLACES ON PLACES.PLACE_ID =  NAME_PLACES.PLACE_ID
+	       
+	   LEFT JOIN CASUALTIES ON NAMES.CASUALTY_ID = CASUALTIES.CASUALTY_ID
+	       
+	   LEFT JOIN FEATURE_TYPES ON PLACES.FEAT_CODE = FEATURE_TYPES.FEAT_CODE;
+
+--This Statement was necessary to find out what names were after casualty, but didn't exist in Casualty table (4)
+--select * from Names where Names.Casualty_ID in (select distinct NAMES.CASUALTY_ID from NAMES left join CASUALTIES on 
+--CASUALTIES.CASUALTY_ID = NAMES.CASUALTY_ID where CASUALTIES.CASUALTY_ID is null);
+--go
