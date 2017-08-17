@@ -49,7 +49,6 @@
             this.txtLatMin = new System.Windows.Forms.TextBox();
             this.txtLatDeg = new System.Windows.Forms.TextBox();
             this.radMaps = new System.Windows.Forms.RadioButton();
-            this.radMS50 = new System.Windows.Forms.RadioButton();
             this.btnSearch = new System.Windows.Forms.Button();
             this.btnNewPlace = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -57,7 +56,6 @@
             this.radStatus = new System.Windows.Forms.RadioButton();
             this.radFID = new System.Windows.Forms.RadioButton();
             this.radLocation = new System.Windows.Forms.RadioButton();
-            this.radMS250 = new System.Windows.Forms.RadioButton();
             this.radFeature = new System.Windows.Forms.RadioButton();
             this.radName = new System.Windows.Forms.RadioButton();
             this.grpNameList = new System.Windows.Forms.GroupBox();
@@ -123,7 +121,6 @@
             this.grpSearch.Controls.Add(this.cboFeature);
             this.grpSearch.Controls.Add(this.gpCoordinates);
             this.grpSearch.Controls.Add(this.radMaps);
-            this.grpSearch.Controls.Add(this.radMS50);
             this.grpSearch.Controls.Add(this.btnSearch);
             this.grpSearch.Controls.Add(this.btnNewPlace);
             this.grpSearch.Controls.Add(this.txtSearch);
@@ -131,7 +128,6 @@
             this.grpSearch.Controls.Add(this.radStatus);
             this.grpSearch.Controls.Add(this.radFID);
             this.grpSearch.Controls.Add(this.radLocation);
-            this.grpSearch.Controls.Add(this.radMS250);
             this.grpSearch.Controls.Add(this.radFeature);
             this.grpSearch.Controls.Add(this.radName);
             this.grpSearch.Location = new System.Drawing.Point(77, 52);
@@ -146,11 +142,11 @@
             // chkInactive
             // 
             this.chkInactive.AutoSize = true;
-            this.chkInactive.Location = new System.Drawing.Point(56, 294);
+            this.chkInactive.Location = new System.Drawing.Point(57, 294);
             this.chkInactive.Name = "chkInactive";
-            this.chkInactive.Size = new System.Drawing.Size(151, 36);
+            this.chkInactive.Size = new System.Drawing.Size(247, 36);
             this.chkInactive.TabIndex = 27;
-            this.chkInactive.Text = "Inactive";
+            this.chkInactive.Text = "Inactive Names";
             this.chkInactive.UseVisualStyleBackColor = true;
             // 
             // cboFeature
@@ -329,7 +325,7 @@
             // radMaps
             // 
             this.radMaps.AutoSize = true;
-            this.radMaps.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radMaps.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radMaps.Location = new System.Drawing.Point(511, 67);
             this.radMaps.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radMaps.Name = "radMaps";
@@ -341,24 +337,9 @@
             this.radMaps.CheckedChanged += new System.EventHandler(this.MakeSpecificRadioAvailabel);
             this.radMaps.Click += new System.EventHandler(this.MakeSpecificRadioAvailabel);
             // 
-            // radMS50
-            // 
-            this.radMS50.AutoSize = true;
-            this.radMS50.Location = new System.Drawing.Point(608, 67);
-            this.radMS50.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radMS50.Name = "radMS50";
-            this.radMS50.Size = new System.Drawing.Size(149, 36);
-            this.radMS50.TabIndex = 11;
-            this.radMS50.TabStop = true;
-            this.radMS50.Text = "M.S. 50";
-            this.radMS50.UseVisualStyleBackColor = true;
-            this.radMS50.Visible = false;
-            this.radMS50.CheckedChanged += new System.EventHandler(this.MakeSpecificRadioAvailabel);
-            this.radMS50.Click += new System.EventHandler(this.MakeSpecificRadioAvailabel);
-            // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(369, 294);
+            this.btnSearch.Location = new System.Drawing.Point(388, 294);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(200, 55);
@@ -369,7 +350,7 @@
             // 
             // btnNewPlace
             // 
-            this.btnNewPlace.Location = new System.Drawing.Point(901, 294);
+            this.btnNewPlace.Location = new System.Drawing.Point(840, 294);
             this.btnNewPlace.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.btnNewPlace.Name = "btnNewPlace";
             this.btnNewPlace.Size = new System.Drawing.Size(200, 55);
@@ -436,21 +417,6 @@
             this.radLocation.UseVisualStyleBackColor = true;
             this.radLocation.CheckedChanged += new System.EventHandler(this.MakeSpecificRadioAvailabel);
             this.radLocation.Click += new System.EventHandler(this.MakeSpecificRadioAvailabel);
-            // 
-            // radMS250
-            // 
-            this.radMS250.AutoSize = true;
-            this.radMS250.Location = new System.Drawing.Point(423, 67);
-            this.radMS250.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.radMS250.Name = "radMS250";
-            this.radMS250.Size = new System.Drawing.Size(165, 36);
-            this.radMS250.TabIndex = 2;
-            this.radMS250.TabStop = true;
-            this.radMS250.Text = "M.S. 250";
-            this.radMS250.UseVisualStyleBackColor = true;
-            this.radMS250.Visible = false;
-            this.radMS250.CheckedChanged += new System.EventHandler(this.MakeSpecificRadioAvailabel);
-            this.radMS250.Click += new System.EventHandler(this.MakeSpecificRadioAvailabel);
             // 
             // radFeature
             // 
@@ -758,7 +724,6 @@
             this.grpSearchBottom.TabIndex = 0;
             this.grpSearchBottom.TabStop = false;
             this.grpSearchBottom.Text = "Search";
-            this.grpSearchBottom.EnabledChanged += new System.EventHandler(this.grpSearchBottom_EnabledChanged);
             // 
             // lblFID
             // 
@@ -814,17 +779,19 @@
             // 
             // dgvSearch
             // 
+            this.dgvSearch.AllowUserToAddRows = false;
+            this.dgvSearch.AllowUserToDeleteRows = false;
             this.dgvSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSearch.Location = new System.Drawing.Point(16, 129);
             this.dgvSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.dgvSearch.Name = "dgvSearch";
+            this.dgvSearch.ReadOnly = true;
             this.dgvSearch.RowHeadersVisible = false;
             this.dgvSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSearch.Size = new System.Drawing.Size(701, 358);
             this.dgvSearch.TabIndex = 0;
             this.dgvSearch.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvSearch_DataBindingComplete);
             this.dgvSearch.SelectionChanged += new System.EventHandler(this.dgvSearch_SelectionChanged);
-            this.dgvSearch.Click += new System.EventHandler(this.dgvSearch_Click);
             // 
             // manitoba_MapperTableAdapter
             // 
@@ -910,10 +877,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.msMenu;
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Indigenous Interface";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing_1);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.grpSearch.ResumeLayout(false);
             this.grpSearch.PerformLayout();
@@ -947,7 +914,6 @@
         private System.Windows.Forms.RadioButton radStatus;
         private System.Windows.Forms.RadioButton radFID;
         private System.Windows.Forms.RadioButton radLocation;
-        private System.Windows.Forms.RadioButton radMS250;
         private System.Windows.Forms.RadioButton radFeature;
         private System.Windows.Forms.RadioButton radName;
         private System.Windows.Forms.GroupBox grpNameList;
@@ -976,7 +942,6 @@
         private System.Windows.Forms.Label lbltext;
         private System.Windows.Forms.DataGridView dgvSearch;
         private dbIndigenousPlaceNamesDataSetTableAdapters.Manitoba_MapperTableAdapter manitoba_MapperTableAdapter;
-        private System.Windows.Forms.RadioButton radMS50;
         private System.Windows.Forms.RadioButton radMaps;
         private System.Windows.Forms.GroupBox gpCoordinates;
         private System.Windows.Forms.Label label10;

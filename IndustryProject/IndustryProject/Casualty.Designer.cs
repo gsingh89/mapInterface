@@ -312,11 +312,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1520, 963);
+            this.ClientSize = new System.Drawing.Size(1504, 959);
             this.Controls.Add(this.grpDetails);
             this.Controls.Add(this.grpCasualty);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.MaximizeBox = false;
             this.Name = "frmCasualty";
             this.Text = "Casualty";
             this.Load += new System.EventHandler(this.Casualty_Load);

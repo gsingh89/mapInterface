@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
 namespace IndustryProject
 {
+    /// <summary>
+    /// Form class.
+    /// </summary>
     public partial class Login : Form
     {
         string username = "admin";
-        string password = "123";
+        string password = "GeoManitoba2017";
         public Login()
         {
             // Press enter to click button
