@@ -63,7 +63,7 @@
             this.grpCasualty.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.grpCasualty.Name = "grpCasualty";
             this.grpCasualty.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.grpCasualty.Size = new System.Drawing.Size(765, 906);
+            this.grpCasualty.Size = new System.Drawing.Size(371, 906);
             this.grpCasualty.TabIndex = 0;
             this.grpCasualty.TabStop = false;
             this.grpCasualty.Text = "Casualties";
@@ -97,11 +97,11 @@
             this.grpDetails.Controls.Add(this.lblGsurnamebox);
             this.grpDetails.Controls.Add(this.lblsurnamebox);
             this.grpDetails.Controls.Add(this.lblSurname);
-            this.grpDetails.Location = new System.Drawing.Point(813, 29);
+            this.grpDetails.Location = new System.Drawing.Point(419, 29);
             this.grpDetails.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.grpDetails.Name = "grpDetails";
             this.grpDetails.Padding = new System.Windows.Forms.Padding(8, 7, 8, 7);
-            this.grpDetails.Size = new System.Drawing.Size(675, 906);
+            this.grpDetails.Size = new System.Drawing.Size(1069, 906);
             this.grpDetails.TabIndex = 1;
             this.grpDetails.TabStop = false;
             this.grpDetails.Text = "Details";
@@ -109,70 +109,70 @@
             // lblNextOfKinNameBox
             // 
             this.lblNextOfKinNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblNextOfKinNameBox.Location = new System.Drawing.Point(264, 837);
+            this.lblNextOfKinNameBox.Location = new System.Drawing.Point(291, 842);
             this.lblNextOfKinNameBox.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblNextOfKinNameBox.Name = "lblNextOfKinNameBox";
-            this.lblNextOfKinNameBox.Size = new System.Drawing.Size(391, 52);
+            this.lblNextOfKinNameBox.Size = new System.Drawing.Size(762, 52);
             this.lblNextOfKinNameBox.TabIndex = 19;
             this.lblNextOfKinNameBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblServedBox
             // 
             this.lblServedBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblServedBox.Location = new System.Drawing.Point(237, 770);
+            this.lblServedBox.Location = new System.Drawing.Point(291, 762);
             this.lblServedBox.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblServedBox.Name = "lblServedBox";
-            this.lblServedBox.Size = new System.Drawing.Size(418, 52);
+            this.lblServedBox.Size = new System.Drawing.Size(762, 52);
             this.lblServedBox.TabIndex = 18;
             this.lblServedBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblBuriedBox
             // 
             this.lblBuriedBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblBuriedBox.Location = new System.Drawing.Point(237, 696);
+            this.lblBuriedBox.Location = new System.Drawing.Point(291, 685);
             this.lblBuriedBox.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblBuriedBox.Name = "lblBuriedBox";
-            this.lblBuriedBox.Size = new System.Drawing.Size(418, 52);
+            this.lblBuriedBox.Size = new System.Drawing.Size(762, 52);
             this.lblBuriedBox.TabIndex = 17;
             this.lblBuriedBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblNextKin
             // 
             this.lblNextKin.AutoSize = true;
-            this.lblNextKin.Location = new System.Drawing.Point(11, 844);
+            this.lblNextKin.Location = new System.Drawing.Point(16, 853);
             this.lblNextKin.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblNextKin.Name = "lblNextKin";
-            this.lblNextKin.Size = new System.Drawing.Size(237, 32);
+            this.lblNextKin.Size = new System.Drawing.Size(245, 32);
             this.lblNextKin.TabIndex = 16;
-            this.lblNextKin.Text = "Next of Kin-Name";
+            this.lblNextKin.Text = "Next of Kin-Name:";
             // 
             // lblServed
             // 
             this.lblServed.AutoSize = true;
-            this.lblServed.Location = new System.Drawing.Point(11, 782);
+            this.lblServed.Location = new System.Drawing.Point(16, 773);
             this.lblServed.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblServed.Name = "lblServed";
-            this.lblServed.Size = new System.Drawing.Size(169, 32);
+            this.lblServed.Size = new System.Drawing.Size(177, 32);
             this.lblServed.TabIndex = 15;
-            this.lblServed.Text = "Served With";
+            this.lblServed.Text = "Served With:";
             // 
             // lblBuried
             // 
             this.lblBuried.AutoSize = true;
-            this.lblBuried.Location = new System.Drawing.Point(16, 720);
+            this.lblBuried.Location = new System.Drawing.Point(16, 696);
             this.lblBuried.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblBuried.Name = "lblBuried";
-            this.lblBuried.Size = new System.Drawing.Size(98, 32);
+            this.lblBuried.Size = new System.Drawing.Size(106, 32);
             this.lblBuried.TabIndex = 14;
-            this.lblBuried.Text = "Buried";
+            this.lblBuried.Text = "Buried:";
             // 
             // lblDateOfDeathBox
             // 
             this.lblDateOfDeathBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDateOfDeathBox.Location = new System.Drawing.Point(240, 546);
+            this.lblDateOfDeathBox.Location = new System.Drawing.Point(291, 548);
             this.lblDateOfDeathBox.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblDateOfDeathBox.Name = "lblDateOfDeathBox";
-            this.lblDateOfDeathBox.Size = new System.Drawing.Size(263, 52);
+            this.lblDateOfDeathBox.Size = new System.Drawing.Size(502, 52);
             this.lblDateOfDeathBox.TabIndex = 13;
             this.lblDateOfDeathBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblDateOfDeathBox.UseCompatibleTextRendering = true;
@@ -180,52 +180,52 @@
             // lblRankBox
             // 
             this.lblRankBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblRankBox.Location = new System.Drawing.Point(237, 475);
+            this.lblRankBox.Location = new System.Drawing.Point(291, 475);
             this.lblRankBox.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblRankBox.Name = "lblRankBox";
-            this.lblRankBox.Size = new System.Drawing.Size(263, 52);
+            this.lblRankBox.Size = new System.Drawing.Size(502, 52);
             this.lblRankBox.TabIndex = 12;
             this.lblRankBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblRegNoBox
             // 
             this.lblRegNoBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblRegNoBox.Location = new System.Drawing.Point(237, 398);
+            this.lblRegNoBox.Location = new System.Drawing.Point(291, 397);
             this.lblRegNoBox.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblRegNoBox.Name = "lblRegNoBox";
-            this.lblRegNoBox.Size = new System.Drawing.Size(263, 52);
+            this.lblRegNoBox.Size = new System.Drawing.Size(502, 52);
             this.lblRegNoBox.TabIndex = 11;
             this.lblRegNoBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lBLCommunityBox
             // 
             this.lBLCommunityBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lBLCommunityBox.Location = new System.Drawing.Point(237, 320);
+            this.lBLCommunityBox.Location = new System.Drawing.Point(291, 320);
             this.lBLCommunityBox.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lBLCommunityBox.Name = "lBLCommunityBox";
-            this.lBLCommunityBox.Size = new System.Drawing.Size(263, 52);
+            this.lBLCommunityBox.Size = new System.Drawing.Size(505, 52);
             this.lBLCommunityBox.TabIndex = 10;
             this.lBLCommunityBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDivisionBox
             // 
             this.lblDivisionBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDivisionBox.Location = new System.Drawing.Point(237, 238);
+            this.lblDivisionBox.Location = new System.Drawing.Point(291, 237);
             this.lblDivisionBox.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblDivisionBox.Name = "lblDivisionBox";
-            this.lblDivisionBox.Size = new System.Drawing.Size(263, 52);
+            this.lblDivisionBox.Size = new System.Drawing.Size(505, 52);
             this.lblDivisionBox.TabIndex = 9;
             this.lblDivisionBox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDateofDeath
             // 
             this.lblDateofDeath.AutoSize = true;
-            this.lblDateofDeath.Location = new System.Drawing.Point(16, 548);
+            this.lblDateofDeath.Location = new System.Drawing.Point(16, 559);
             this.lblDateofDeath.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblDateofDeath.Name = "lblDateofDeath";
-            this.lblDateofDeath.Size = new System.Drawing.Size(189, 32);
+            this.lblDateofDeath.Size = new System.Drawing.Size(197, 32);
             this.lblDateofDeath.TabIndex = 8;
-            this.lblDateofDeath.Text = "Date of Death";
+            this.lblDateofDeath.Text = "Date of Death:";
             // 
             // lblRank
             // 
@@ -233,9 +233,9 @@
             this.lblRank.Location = new System.Drawing.Point(16, 486);
             this.lblRank.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblRank.Name = "lblRank";
-            this.lblRank.Size = new System.Drawing.Size(81, 32);
+            this.lblRank.Size = new System.Drawing.Size(89, 32);
             this.lblRank.TabIndex = 7;
-            this.lblRank.Text = "Rank";
+            this.lblRank.Text = "Rank:";
             // 
             // lblRegNo
             // 
@@ -243,9 +243,9 @@
             this.lblRegNo.Location = new System.Drawing.Point(16, 408);
             this.lblRegNo.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblRegNo.Name = "lblRegNo";
-            this.lblRegNo.Size = new System.Drawing.Size(126, 32);
+            this.lblRegNo.Size = new System.Drawing.Size(134, 32);
             this.lblRegNo.TabIndex = 6;
-            this.lblRegNo.Text = "Reg. No.";
+            this.lblRegNo.Text = "Reg. No.:";
             // 
             // lblCommunity
             // 
@@ -253,9 +253,9 @@
             this.lblCommunity.Location = new System.Drawing.Point(16, 331);
             this.lblCommunity.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblCommunity.Name = "lblCommunity";
-            this.lblCommunity.Size = new System.Drawing.Size(158, 32);
+            this.lblCommunity.Size = new System.Drawing.Size(166, 32);
             this.lblCommunity.TabIndex = 5;
-            this.lblCommunity.Text = "Community";
+            this.lblCommunity.Text = "Community:";
             // 
             // lblDivision
             // 
@@ -263,9 +263,9 @@
             this.lblDivision.Location = new System.Drawing.Point(16, 248);
             this.lblDivision.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblDivision.Name = "lblDivision";
-            this.lblDivision.Size = new System.Drawing.Size(116, 32);
+            this.lblDivision.Size = new System.Drawing.Size(124, 32);
             this.lblDivision.TabIndex = 4;
-            this.lblDivision.Text = "Division";
+            this.lblDivision.Text = "Division:";
             // 
             // lblGSurname
             // 
@@ -273,27 +273,27 @@
             this.lblGSurname.Location = new System.Drawing.Point(16, 160);
             this.lblGSurname.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblGSurname.Name = "lblGSurname";
-            this.lblGSurname.Size = new System.Drawing.Size(212, 32);
+            this.lblGSurname.Size = new System.Drawing.Size(220, 32);
             this.lblGSurname.TabIndex = 3;
-            this.lblGSurname.Text = "Given Surname";
+            this.lblGSurname.Text = "Given Surname:";
             // 
             // lblGsurnamebox
             // 
             this.lblGsurnamebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblGsurnamebox.Location = new System.Drawing.Point(240, 150);
+            this.lblGsurnamebox.Location = new System.Drawing.Point(291, 149);
             this.lblGsurnamebox.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblGsurnamebox.Name = "lblGsurnamebox";
-            this.lblGsurnamebox.Size = new System.Drawing.Size(263, 52);
+            this.lblGsurnamebox.Size = new System.Drawing.Size(502, 52);
             this.lblGsurnamebox.TabIndex = 2;
             this.lblGsurnamebox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblsurnamebox
             // 
             this.lblsurnamebox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblsurnamebox.Location = new System.Drawing.Point(237, 76);
+            this.lblsurnamebox.Location = new System.Drawing.Point(291, 75);
             this.lblsurnamebox.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblsurnamebox.Name = "lblsurnamebox";
-            this.lblsurnamebox.Size = new System.Drawing.Size(263, 52);
+            this.lblsurnamebox.Size = new System.Drawing.Size(505, 52);
             this.lblsurnamebox.TabIndex = 1;
             this.lblsurnamebox.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -303,20 +303,21 @@
             this.lblSurname.Location = new System.Drawing.Point(16, 86);
             this.lblSurname.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblSurname.Name = "lblSurname";
-            this.lblSurname.Size = new System.Drawing.Size(130, 32);
+            this.lblSurname.Size = new System.Drawing.Size(138, 32);
             this.lblSurname.TabIndex = 0;
-            this.lblSurname.Text = "Surname";
+            this.lblSurname.Text = "Surname:";
             // 
             // frmCasualty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1520, 963);
+            this.ClientSize = new System.Drawing.Size(1504, 959);
             this.Controls.Add(this.grpDetails);
             this.Controls.Add(this.grpCasualty);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.MaximizeBox = false;
             this.Name = "frmCasualty";
             this.Text = "Casualty";
             this.Load += new System.EventHandler(this.Casualty_Load);

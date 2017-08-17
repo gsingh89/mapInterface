@@ -14,26 +14,28 @@ using System.Data.Linq;
 
 namespace IndustryProject
 {
+    /// <summary>
+    /// Finished Interface forms, where everything happens.
+    /// </summary>
     public partial class Form1 : Form
     {
+        //Instance of a compound data table from IndigenousPlaceNames.
         private DataTable bds = new DataTable();
 
+        /// <summary>
+        /// Form to initialize and a method, as when it closes.
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(f_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(Form1_FormClosing);
         }
 
-        private void f_FormClosed(object sender, FormClosingEventArgs e)
-        {
-            ConnectionClass.myClose();
-        }
-
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
-
+        /// <summary>
+        /// Method to use 2 different adapters, general and features adapter, as features are in combobox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'comboData.NAME_PLACES' table. You can move, or remove it, as needed.
@@ -45,7 +47,22 @@ namespace IndustryProject
             txtSearch.Focus();
             ConnectionClass.Initialize();
         }
+        /// <summary>
+        /// To close connection to database and exit from application.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ConnectionClass.myClose();
+            Application.Exit();
+        }
 
+        /// <summary>
+        /// Method to activate lower group box.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             if (txtSearch.ToString() != null)
@@ -54,12 +71,19 @@ namespace IndustryProject
             }
         }
 
+        /// <summary>
+        /// Method to handle the "Search" button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string enteredName = txtSearch.Text;
 
             txtSearch.SelectAll();
             txtSearch.Focus();
+
+            //A block to build a virtual combotable to be used by labels and gridview.
             string basicQuery = @"SELECT NAMES.NAME_ACTUAL AS 'Geographical Name', 
                                 NAME_PLACES.FEATURE_ID AS 'Unique National Identifier', NAME_PLACES.DATE_CH AS 'Date Changed',
                                 NAME_PLACES.STATUS_CODE AS 'Status', NAMES.CASUALTY AS 'Casualty',
@@ -78,6 +102,7 @@ namespace IndustryProject
                                 ON PLACES.PLACE_ID = NAME_PLACES.PLACE_ID LEFT JOIN CASUALTIES ON NAMES.CASUALTY_ID = CASUALTIES.CASUALTY_ID
                                 LEFT JOIN FEATURE_TYPES ON PLACES.FEAT_CODE = FEATURE_TYPES.FEAT_CODE";
 
+            //Message box brought about and alternative SELECT run.
             if (chkInactive.Checked)
             {
                 string message = "Are you sure you want to see INACTIVE NAMES";
@@ -91,12 +116,10 @@ namespace IndustryProject
                 if (result == System.Windows.Forms.DialogResult.OK)
                 {
                     basicQuery += " WHERE NAME_PLACES.ACT_TO != '12/31/2200' ";
-
                 }
                 else
                 {
                     basicQuery += " WHERE NAME_PLACES.ACT_TO = '12/31/2200' ";
-
                 }
             }
             else
@@ -104,27 +127,29 @@ namespace IndustryProject
                 basicQuery += " WHERE NAME_PLACES.ACT_TO = '12/31/2200' ";
             }
 
-            if (radMaps.Checked)
+            //Radiobutton Maps is checked.
+            if (radMaps.Checked == true && !String.IsNullOrWhiteSpace(enteredName))
             {
-                MakeSpecificRadioAvailabel(sender, e);
-                dgvSearch_SelectionChanged(sender, e);
-            }
-
-            if (radMS250.Checked && !String.IsNullOrWhiteSpace(enteredName))
-            {
+                
+                string m250 = enteredName.Substring(0, 3);
+       
                 basicQuery += " AND PLACES.MS250 = @ms250";
-                ConnectionClass.AddParam("ms250", enteredName);
+                ConnectionClass.AddParam("ms250", m250);
                 dgvSearch_SelectionChanged(sender, e);
             }
 
-            if (radMS50.Checked)
+            //Radiobutton Maps is checked and more than 3 characters entered.
+            if (radMaps.Checked == true && !String.IsNullOrWhiteSpace(enteredName.Substring(3)))
             {
-                basicQuery += " AND PLACES.MS50 = @ms50";
-                int marioPapito = int.Parse(txtSearch.Text);
-                ConnectionClass.AddParam("ms50", marioPapito.ToString());
-                dgvSearch_SelectionChanged(sender, e);
+                string m50 = enteredName.Substring(3);
+
+                
+                    basicQuery += " AND PLACES.MS50 = @ms50";
+                    ConnectionClass.AddParam("ms50", m50);
+                
             }
 
+            //Radiobutton Location is checked.
             if (radLocation.Checked && !String.IsNullOrWhiteSpace(txtLatDeg.Text) && !String.IsNullOrWhiteSpace(txtLatMin.Text) &&
                 !String.IsNullOrWhiteSpace(txtLatSec.Text) && !String.IsNullOrWhiteSpace(txtLongDeg.Text) &&
                 !String.IsNullOrWhiteSpace(txtLongMin.Text) && !String.IsNullOrWhiteSpace(txtLongSec.Text))
@@ -145,6 +170,7 @@ namespace IndustryProject
                 dgvSearch_SelectionChanged(sender, e);
             }
 
+            //Radiobutton Name is checked.
             if (radName.Checked && !String.IsNullOrWhiteSpace(enteredName))
             {
                 basicQuery += " AND NAMES.NAME_ACTUAL LIKE @name + '%'";
@@ -152,6 +178,7 @@ namespace IndustryProject
                 dgvSearch_SelectionChanged(sender, e);
             }
 
+            //Radiobutton FID is checked.
             if (radFID.Checked && !String.IsNullOrWhiteSpace(enteredName))
             {
                 basicQuery += " AND NAME_PLACES.FEATURE_ID = @ident";
@@ -159,6 +186,7 @@ namespace IndustryProject
                 dgvSearch_SelectionChanged(sender, e);
             }
 
+            //Radiobutton Status is checked.
             if (radStatus.Checked && !String.IsNullOrWhiteSpace(enteredName))
             {
                 basicQuery += " AND NAME_PLACES.STATUS_CODE = @statuscode";
@@ -166,20 +194,27 @@ namespace IndustryProject
                 dgvSearch_SelectionChanged(sender, e);
             }
 
+            //poulate the "Virtual" table according to the choice of radiobutton and entered "parameter"
             bds = ConnectionClass.getSQLData(basicQuery).Tables[0];
 
-
+            //Set the gridview's datasource.
             dgvSearch.DataSource = bds;
 
-
+            //Make only name column visible
             for (int i = 1; i < dgvSearch.ColumnCount; i++)
             {
                 dgvSearch.Columns[i].Visible = false;
             }
 
+            //Set the Column's size matching to a gridview.
             dgvSearch.Columns[0].Width = dgvSearch.Width;
         }
 
+        /// <summary>
+        /// Method to update the populated labels.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvSearch_SelectionChanged(object sender, EventArgs e)
         {
             if (dgvSearch.SelectedRows.Count > 0)
@@ -188,7 +223,7 @@ namespace IndustryProject
 
                 lblFID.Text = dgvSearch.CurrentRow.Cells["Unique National Identifier"].Value.ToString();
 
-                //Act From
+                //Act From is null
                 if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Act From"].Value.ToString()))
                 {
                     lblFrom.Text = "No Data";
@@ -200,7 +235,7 @@ namespace IndustryProject
                     lblFrom.Text = From;
                 }
 
-                //Act To
+                //Act To is Null
                 if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Act To"].Value.ToString()))
                 {
                     lblTo.Text = "No Data";
@@ -220,6 +255,7 @@ namespace IndustryProject
                     }
                 }
 
+                //Populating different labels.
                 lblLatitudeDegree.Text = dgvSearch.CurrentRow.Cells["LATITUDE Degrees"].Value.ToString();
                 lblLatitudeMinute.Text = dgvSearch.CurrentRow.Cells["LATITUDE Minutes"].Value.ToString();
                 lblLatitudeSecond.Text = dgvSearch.CurrentRow.Cells["LATITUDE Seconds"].Value.ToString();
@@ -239,11 +275,17 @@ namespace IndustryProject
                 {
                     string mess = DateTime.Parse(dgvSearch.CurrentRow.Cells["Date Changed"].Value.ToString()).ToShortDateString();
                     lblDateChanged.Text = mess;
-                    //lblDateChanged.TextAlign = ContentAlignment.BottomCenter;
                 }
+
+                //Combobox members populated.
+                cboFear.SelectedIndex = cboFear.FindStringExact(dgvSearch.CurrentRow.Cells["Feature Type"].Value.ToString());
+                cboStatus.SelectedIndex = cboStatus.FindStringExact(dgvSearch.CurrentRow.Cells["Status"].Value.ToString()); 
             }
         }
 
+        /// <summary>
+        /// Method to display red Casualties, as some names are named after casualty.
+        /// </summary>
         private void UpdateCasualtyCheckBox()
         {
             if (String.IsNullOrEmpty(dgvSearch.CurrentRow.Cells["Casualty Given Name"].Value.ToString()))
@@ -260,6 +302,11 @@ namespace IndustryProject
             }
         }
 
+        /// <summary>
+        /// Method to make sure checkbox gets updated as names are scrolled through.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChkCasualty_CheckedChanged(object sender, EventArgs e)
         {
             UpdateCasualtyCheckBox();
@@ -279,10 +326,18 @@ namespace IndustryProject
             }
         }
 
+        /// <summary>
+        /// Method for Features Combobox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboFeature_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            string basicQuery = @"SELECT NAMES.NAME_ACTUAL AS 'Geographical Name', 
+            try
+            {
+                //A block to build a virtual combotable to be used by labels and gridview.
+                string basicQuery = @"SELECT NAMES.NAME_ACTUAL AS 'Geographical Name', 
                                 NAME_PLACES.FEATURE_ID AS 'Unique National Identifier', NAME_PLACES.DATE_CH AS 'Date Changed',
                                 NAME_PLACES.STATUS_CODE AS 'Status', NAMES.CASUALTY AS 'Casualty',
                                 NAME_PLACES.ACT_FROM AS 'Act From', NAME_PLACES.ACT_TO AS 'Act To', NAME_PLACES.ACT_TO AS 'Act To',
@@ -300,51 +355,60 @@ namespace IndustryProject
                                 ON PLACES.PLACE_ID = NAME_PLACES.PLACE_ID LEFT JOIN CASUALTIES ON NAMES.CASUALTY_ID = CASUALTIES.CASUALTY_ID
                                 LEFT JOIN FEATURE_TYPES ON PLACES.FEAT_CODE = FEATURE_TYPES.FEAT_CODE";
 
-            if (chkInactive.Checked)
-            {
-                string message = "Are you sure you want to see INACTIVE NAMES";
-                string caption = "WARNING!";
-                MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
-                MessageBoxIcon icon = MessageBoxIcon.Warning;
-                DialogResult result;
-
-                result = MessageBox.Show(message, caption, buttons, icon);
-
-                if (result == System.Windows.Forms.DialogResult.OK)
+                //Message box brought about and alternative SELECT run.
+                if (chkInactive.Checked)
                 {
-                    basicQuery += " WHERE NAME_PLACES.ACT_TO != '12/31/2200' ";
+                    string message = "Are you sure you want to see INACTIVE NAMES";
+                    string caption = "WARNING!";
+                    MessageBoxButtons buttons = MessageBoxButtons.OKCancel;
+                    MessageBoxIcon icon = MessageBoxIcon.Warning;
+                    DialogResult result;
 
+                    result = MessageBox.Show(message, caption, buttons, icon);
+
+                    if (result == System.Windows.Forms.DialogResult.OK)
+                    {
+                        basicQuery += " WHERE NAME_PLACES.ACT_TO != '12/31/2200' ";
+                    }
+                    else
+                    {
+                        basicQuery += " WHERE NAME_PLACES.ACT_TO = '12/31/2200' ";
+                    }
                 }
                 else
                 {
                     basicQuery += " WHERE NAME_PLACES.ACT_TO = '12/31/2200' ";
-
                 }
+
+                //Radiobutton Feature selected.
+                if (radFeature.Checked)
+                {
+                    basicQuery += " AND FEATURE_TYPES.FEAT_TYPE = @feattype";
+                    ConnectionClass.AddParam("feattype", cboFeature.SelectedValue.ToString());
+                }
+
+                //Set the gridview's datasource.
+                bds = ConnectionClass.getSQLData(basicQuery).Tables[0];
+                dgvSearch.DataSource = bds;
+
+                for (int i = 1; i < dgvSearch.ColumnCount; i++)
+                {
+                    dgvSearch.Columns[i].Visible = false;
+                }
+
+                dgvSearch.Columns[0].Width = dgvSearch.Width;
             }
-            else
+            catch (Exception)
             {
-                basicQuery += " WHERE NAME_PLACES.ACT_TO = '12/31/2200' ";
+                //Always one exception, 'no pointer reference on form closing'.
             }
-
-            if (radFeature.Checked)
-            {
-                basicQuery += " AND FEATURE_TYPES.FEAT_TYPE = @feattype";
-                ConnectionClass.AddParam("feattype", cboFeature.SelectedValue.ToString());
-            }
-
-            //dgvSearch.DataSource = ConnectionClass.getSQLData(basicQuery).Tables[0];
-
-            bds = ConnectionClass.getSQLData(basicQuery).Tables[0];
-            dgvSearch.DataSource = bds;
-
-            for (int i = 1; i < dgvSearch.ColumnCount; i++)
-            {
-                dgvSearch.Columns[i].Visible = false;
-            }
-
-            dgvSearch.Columns[0].Width = dgvSearch.Width;
         }
 
+        /// <summary>
+        /// Method to display or not to display stuff as Radiobutton selected.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void radFeature_Click(object sender, EventArgs e)
         {
             txtSearch.Visible = false;
@@ -352,15 +416,25 @@ namespace IndustryProject
             btnSearch.Visible = false;
             lblSearch.Visible = false;
             cboFeature.DataSource = fEATURETYPESBindingSource;
-            cboFeature.DisplayMember = "FEAT_TYPE";
+            cboFeature.DisplayMember = "Feature Type";
             cboFeature.ValueMember = "FEAT_TYPE";
         }
 
+        /// <summary>
+        /// Method to enable lower information bar only after combobox itme selected.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboFeature_SelectionChangeCommitted(object sender, EventArgs e)
         {
             grpNameList.Enabled = true;
         }
 
+        /// <summary>
+        /// Method for Radiobuttons to cause different visibilities, except for Feature.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MakeSpecificRadioAvailabel(object sender, EventArgs e)
         {
             RadioButton btn = (RadioButton)sender;
@@ -371,10 +445,6 @@ namespace IndustryProject
                 cboFeature.Visible = false;
                 btnSearch.Visible = true;
                 lblSearch.Visible = true;
-                radMS250.Visible = false;
-                radMS50.Visible = false;
-                radMaps.Visible = true;
-
             }
 
             else if (btn.Name == radFeature.Name)
@@ -386,9 +456,6 @@ namespace IndustryProject
                 cboFeature.DataSource = fEATURETYPESBindingSource;
                 cboFeature.DisplayMember = "Feature Type";
                 cboFeature.ValueMember = "FEAT_TYPE";
-                radMS250.Visible = false;
-                radMS50.Visible = false;
-                radMaps.Visible = true;
             }
 
             else if (btn.Name == radMaps.Name)
@@ -397,20 +464,6 @@ namespace IndustryProject
                 cboFeature.Visible = false;
                 btnSearch.Visible = true;
                 lblSearch.Visible = true;
-
-                if (radMaps.Checked || radMS250.Checked || radMS50.Checked)
-                {
-                    radMS250.Visible = true;
-                    radMS50.Visible = true;
-                    radMaps.Visible = false;
-                }
-
-                else
-                {
-                    radMaps.Visible = true;
-                    radMS250.Visible = false;
-                    radMS50.Visible = false;
-                }
             }
 
             else if (btn.Name == radLocation.Name)
@@ -419,9 +472,6 @@ namespace IndustryProject
                 cboFeature.Visible = false;
                 btnSearch.Visible = true;
                 lblSearch.Visible = false;
-                radMS250.Visible = false;
-                radMS50.Visible = false;
-                radMaps.Visible = true;
 
                 if (radLocation.Checked)
                 {
@@ -443,9 +493,6 @@ namespace IndustryProject
                 cboFeature.Visible = false;
                 btnSearch.Visible = true;
                 lblSearch.Visible = true;
-                radMS250.Visible = false;
-                radMS50.Visible = false;
-                radMaps.Visible = true;
             }
 
             else if (btn.Name == radStatus.Name)
@@ -454,34 +501,42 @@ namespace IndustryProject
                 cboFeature.Visible = false;
                 btnSearch.Visible = true;
                 lblSearch.Visible = true;
-                radMS250.Visible = false;
-                radMS50.Visible = false;
-                radMaps.Visible = true;
             }
         }
 
-        private void grpSearchBottom_EnabledChanged(object sender, EventArgs e)
-        {
-            //cboStatus.DisplayMember = "Status";
-            //cboStatus.ValueMember = "STATUS_CODE";
-        }
-
+        /// <summary>
+        /// Method to bind lower comboboxes.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvSearch_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
+            //Queries specifically for Features and Statuses comboboxes
+            string feature = @"SELECT DISTINCT FEATURE_TYPES.FEAT_TYPE AS 'Feature Type' FROM FEATURE_TYPES ORDER BY 'Feature Type' ASC";
+            string status = @"SELECT DISTINCT NAME_PLACES.STATUS_CODE AS 'Status' FROM NAME_PLACES ORDER BY 'Status' ASC";
 
-            cboFear.DataSource = ConnectionClass.getSQLData("SELECT DISTINCT * FROM FEATURE_TYPES ORDER BY FEAT_TYPE ASC").Tables[0];
+            cboFear.DataSource = ConnectionClass.getSQLData(feature).Tables[0];
+            
+            // In this combo box, for each value from the source
+            // We display the value of feature type
             cboFear.DisplayMember =
-            cboFear.ValueMember = "FEAT_TYPE";
+            cboFear.ValueMember = "Feature Type";            
 
-            cboStatus.DataSource = ConnectionClass.getSQLData("SELECT DISTINCT STATUS_CODE FROM NAME_PLACES ORDER BY STATUS_CODE ASC").Tables[0];
+            if (dgvSearch.SelectedRows.Count > 0)
+            {
+                cboFear.SelectedIndex = cboFear.FindStringExact(dgvSearch.CurrentRow.Cells["Feature Type"].Value.ToString()); 
+            }
+
+            cboStatus.DataSource = ConnectionClass.getSQLData(status).Tables[0];
             cboStatus.DisplayMember =
-            cboStatus.ValueMember = "STATUS_CODE";
+            
+            cboStatus.ValueMember = "Status";
 
-        }
-
-        private void dgvSearch_Click(object sender, EventArgs e)
-        {
-            //cboFear.SelectedIndex[dgvSearch.CurrentRow.Cells["FEAT_CODE"]];
+            if (dgvSearch.SelectedRows.Count > 0)
+            {
+                cboStatus.SelectedIndex = cboStatus.FindStringExact(dgvSearch.CurrentRow.Cells["Status"].Value.ToString()); 
+            }
+           
         }
 
         /// <summary>
@@ -493,35 +548,29 @@ namespace IndustryProject
         private void btnCasualtyHistory_Click(object sender, EventArgs e)
         {
             frmCasualty frmCasualty = new frmCasualty(dgvSearch);
-
             frmCasualty.ShowDialog();
         }
 
         /// <summary>
-        /// Ends the application
+        /// Not implemented.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Form1_FormClosing_1(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
-        //private void btnCasualty_Click(object sender, EventArgs e)
-        //{
-        //    frmCasualty frm = new frmCasualty();
-        //    frm.Show();
-        //}
         private void btnNewPlace_Click(object sender, EventArgs e)
         {
             newplace frm2 = new newplace();
             frm2.Show();
         }
 
+        /// <summary>
+        /// Not implemented.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNewPlace_Click_1(object sender, EventArgs e)
         {
             newplace place = new newplace();
             place.Show();
-        }
+        }    
     }
 }
